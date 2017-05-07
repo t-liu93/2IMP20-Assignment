@@ -1,16 +1,30 @@
 module BaseGrammar
 
+import Prelude;
+
 //Keywords
 //i.e. if / else, do / end, while, repeat / times
-//About expressions
+//as well as Script, run as
 //http://tutor.rascal-mpl.org/Rascal/Libraries/Prelude/String/toLocation/toLocation.html#/Rascal/Declarations/SyntaxDefinition/SyntaxDefinition.html
-keyword Keywords = "if"
-                |"else"
-                |"do"
-                |"end"
-                |"while"
-                |"repeat"
-                |"times";
+keyword If = "if";
+keyword Else = "else";
+keyword Do = "do";
+keyword End = "end";
+keyword While = "while";
+keyword Repeat = "repeat";
+keyword Times = "times";
+keyword Script = "Script";
+keyword Runas = "runs as";
+//The whole keywords set
+keyword Keywords = If 
+                |Else
+                |Do
+                |End
+                |While
+                |Repeat
+                |Times
+                |Script
+                |Runas;
 
 //Whitespaces
 //i.e. spaces, tabs, newlines, carriage return
@@ -25,7 +39,80 @@ lexical Name = [a-zA-Z]+ !>> [a-zA-Z] \ Keywords;
 lexical UnsignedInt = [0]|([1-9][0-9]*);
 lexical SignedInt = [+\-]? UnsignedInt;
 lexical Integer = UnsignedInt | SignedInt;
+//Not sure whether in this case only unsigned int is needed or not
+//According to our interpertation, only unsigned int is needed.
+//Hence the 'repeat time' cannot be negative
 
 //Comment
 //Start with a \# and end with a line breaker
 layout Comment = "#" ![#]* $;
+
+//Message
+//Used for trace
+lexical Message = "\""![\"]*"\"";
+
+//Basic commands
+//i.e. step, turn left, drop, pick and trace
+lexical Step = "step";
+lexical TurnLeft = "turnLeft";
+lexical Drop = "drop";
+lexical Pick = "pick";
+lexical Trace = "trace";
+lexical Commands = Step
+                |TurnLeft
+                |Drop
+                |Pick
+                |Trace Message;
+
+//Logical expressions
+//i.e. full, mark, wall ahead, heading
+lexical Full = "full";
+lexical Mark = "mark";
+lexical WallAhead = "wall ahead";
+lexical Heading = "heading";
+lexical Logicals = Full
+                |Mark
+                |WallAhead
+                |Heading Directions;
+                
+//Directions
+//i.e. south, north, west, east, followed by heading
+lexical South = "south";
+lexical North = "north";
+lexical West = "west";
+lexical East = "east";
+lexical Directions = South
+                    |North
+                    |West
+                    |East;
+                    
+//Syntax Gramma
+//Main script
+start syntax Program = 
+    program: Script Name Runas Statement+ End;
+    
+//Statements
+//Incl. Commands, IfElse, While and Repeat
+syntax Statement = statement: CommandStatement
+                |IfStatement
+                |WhileStatement
+                |RepeatStatement;
+                
+//CommandStatements
+//I.e. all commands
+syntax CommandStatement = commandStatement: Commands+ commands;
+                        
+//IfStatement
+//if ... do ... end (optional) else do ... end
+syntax IfStatement = ifStatement: IfWithoutElse
+                    |IfWithElse;
+
+syntax IfWithoutElse = ifWithoutElse: If Logicals Commands+ body End;
+syntax IfWithElse = ifWithElse: If Logicals Commands+ body End Else Commands+ bodyElse End;
+
+//While statement
+//while ... do ... end
+syntax WhileStatement = whileStatement: While Logicals Commands+ body;
+
+//Repeat statement
+syntax RepeatStatement = repeatStatement: Repeat UnsignedInt Times Commands+ body End;

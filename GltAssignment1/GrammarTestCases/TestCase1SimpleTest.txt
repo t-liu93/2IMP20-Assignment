@@ -1,0 +1,5 @@
+#Simple test case
+#Only 1 command
+Script simple runs as
+    step
+end
