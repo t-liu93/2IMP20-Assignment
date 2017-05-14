@@ -1,0 +1,21 @@
+Script binaryExtension runs as
+    #few simple steps
+    step
+    turnLeft
+    drop
+    
+    #if statements
+    if not full and not heading north do
+        trace "if statement"
+        step
+    end
+    else do
+        #else stats
+        step
+    end
+    
+    #while statements
+    while full or not mark do
+        step
+    end
+end
