@@ -1,0 +1,87 @@
+Script ComplexTestCaseTwo runs as
+    #First build some scene
+    #How about a 4*4 scene?
+    #Then I should write 16 lines of code for building
+    buildWall at row: 1 col: 1
+    buildWall at row: 1 col: 2
+    buildWall at row: 1 col: 3
+    buildWall at row: 1 col: 4
+    buildWall at row: 2 col: 1
+    buildWall at row: 2 col: 2
+    buildWall at row: 2 col: 3
+    buildWall at row: 2 col: 4
+    buildWall at row: 3 col: 1
+    buildWall at row: 3 col: 2
+    buildWall at row: 3 col: 3
+    buildWall at row: 3 col: 4
+    buildWall at row: 4 col: 1
+    buildWall at row: 4 col: 2
+    buildWall at row: 4 col: 3
+    buildWall at row: 4 col: 4
+    
+    #need some marks I guess
+    dropMark at row: 1 col: 1
+    dropMark at row: 2 col: 2
+    dropMark at row: 3 col: 3
+    dropMark at row: 4 col: 4
+    
+    #Oh! a diagonal line
+    
+    #Now we can play!
+    
+    #First let the robot walk around
+    #Assume it is heading south and at 1,1
+    step
+    step
+    step
+    #well turn right is 3 time turn left
+    repeat 3 times
+        turnLeft
+    end
+    step
+    step
+    step
+    repeat 3 times
+        turnLeft
+    end
+    step
+    step
+    step
+    repeat 3 times
+        turnLeft
+    end
+    step
+    step
+    step
+    
+    #Now back to the start position
+    #Now lets have some automatic running
+    while not wall ahead do
+        step
+        if wall ahead do
+            turnLeft
+        end
+        if not full do
+            drop
+        end
+        else do
+            pick
+            trace "cell full, pick a mark"
+        end
+    end
+    
+    #put marks on all cells
+    while not full do
+        drop
+        if wall ahead do
+            turnLeft
+        end
+    end
+    
+    #Do not want to play anymore
+    #destroy the walls
+    destroyWall at row: 1 col: 1
+    
+    #Okay. too many walls
+        
+end

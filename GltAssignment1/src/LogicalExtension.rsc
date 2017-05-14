@@ -21,7 +21,7 @@ syntax LogicalExpsExtended = LogicalExpNegative
                             
 //Slightly modify if and while
 syntax IfWithoutElse = If OneSpace LogicalExpsExtended OneSpace Do Whitespaces 
-                            CommandStats Whitespaces End;   
+                            Statements Whitespaces End;   
 
 syntax WhileStats = While OneSpace LogicalExpsExtended OneSpace Do Whitespaces
-                    CommandStats Whitespaces End;
+                    Statements Whitespaces End;

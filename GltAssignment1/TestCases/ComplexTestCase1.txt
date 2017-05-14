@@ -58,4 +58,31 @@ Script complexTestOne runs as
     while wall ahead and heading west do
         turnLeft
     end
+    
+    #Another list of commands
+    step
+    step
+    step
+    turnLeft
+    turnLeft
+    drop
+    pick
+    trace "so many commands"
+    trace "it is sizeable"
+    trace "good parser"
+    
+    while full do
+        turnLeft
+    end
+    
+    while not full do
+        step
+    end
+    
+    while not wall ahead do
+        step
+        step
+        step
+        step
+    end
 end

@@ -126,19 +126,25 @@ syntax LogicalExps = Full
                 |HeadingDirection;
                 
 //Conditional statements
+//Note:
+//According to my interpretation of the description
+//The conditional or while statements' bodies contains all kinds of commands.
+//i.e. basic commands and control flow commands
+//So a loop in a loop is allowed in this grammar
+
 //If without Else
 syntax IfWithoutElse = If OneSpace LogicalExps OneSpace Do Whitespaces 
-                            CommandStats Whitespaces End;                 
+                            Statements Whitespaces End;                 
 //If with else
 syntax IfWithElse = IfWithoutElse Whitespaces
-                    Else Do Whitespaces CommandStats Whitespaces End;
+                    Else Do Whitespaces Statements Whitespaces End;
 //Whole if
 syntax IfStats = IfWithElse
                 >IfWithoutElse;
                 
 //While statements
 syntax WhileStats = While OneSpace LogicalExps OneSpace Do Whitespaces
-                    CommandStats Whitespaces End;
+                    Statements Whitespaces End;
                     
 //Repeat statements
 syntax RepeatStats = Repeat OneSpace UnsignedInt OneSpace Times Whitespaces
@@ -168,6 +174,6 @@ syntax NonCommandStats = IfStats
 //Since the description does not mention whether an empty statement list is allowed
 //Here we follow the description, i.e. allow empty list
 start syntax Program = 
-    program: Script OneSpace Name OneSpace Runsas Whitespaces 
-                Statements Whitespaces
-                End;
+    program: Whitespaces Script OneSpace Name OneSpace Runsas Whitespaces 
+                Statements* Whitespaces
+                End Whitespaces;

@@ -4,7 +4,7 @@ extend BaseGrammar;
 
 //4 extra commands
 lexical BuildWall = "buildWall";
-lexical DestroyWall = "destoryWall";
+lexical DestroyWall = "destroyWall";
 lexical DropMark = "dropMark";
 lexical PickMark = "pickMark";
 lexical At = "at";
@@ -29,12 +29,15 @@ syntax BuildScene = BuildWallStat
                     |DropMarkStat;
                     
 //These are command statements, add to commandStats
-syntax CommandStatsExtended = CommandStats
-                            |BuildScene
-                            |CommandStats Whitespaces CommandStatsExtended
-                            |BuildScene Whitespaces CommandStatsExtended;
+//syntax CommandStatsExtended = BuildScene
+//                            |BuildScene Whitespaces CommandStatsExtended
+//                            |BuildScene Whitespaces CommandStats
+//                            |BuildScene Whitespaces NonCommandStats;
+
+syntax NonCommandStats = BuildScene
+                        |BuildScene Whitespaces Statements
+                        |BuildScene Whitespaces NonCommandStats;
                             
 //new statements
 //modify it to suit CommandStatsExtended
-syntax Statements = CommandStatsExtended;
-                
+//syntax Statements = CommandStatsExtended;
