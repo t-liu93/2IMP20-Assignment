@@ -1,0 +1,61 @@
+Script complexTestOne runs as
+    #simple steps
+    step
+    turnLeft
+    
+    #if conditional test
+    if heading north do
+        step
+        pick
+    end
+    
+    #if with else
+    if full do
+        pick
+        drop
+    end
+    else do
+        step
+        trace "not full"
+    end
+    
+    #while loop test
+    while wall ahead do
+        #turn left
+        turnLeft
+    end
+    
+    #Turn left
+    repeat 3 times
+        turnLeft
+    end
+    
+    #another while loop
+    while mark do
+        pick
+    end
+    
+    #With some extension features
+    #both not
+    if not full and not mark do
+        drop
+        trace "dropped a mark"
+    end
+    
+    #one not at front
+    while not wall ahead and heading north do
+        step
+        trace "go one step"
+    end
+    
+    #one not at rear
+    if heading south and not full do
+        drop
+        trace "drop one"
+    end
+    
+    #both true
+    while wall ahead and heading west do
+        turnLeft
+    end
+end

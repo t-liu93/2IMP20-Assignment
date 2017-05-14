@@ -10,12 +10,14 @@ lexical Binaries = And
                 |Or;
                 
 //Add not into logical Exps
-syntax LogicalExpWithNot = LogicalExps
-                        |Not OneSpace LogicalExps;
+syntax LogicalExpNegative = Not OneSpace LogicalExps;
                      
 //Add binaries into it   
-syntax LogicalExpsExtended = LogicalExpWithNot
-                            |LogicalExpWithNot OneSpace Binaries OneSpace LogicalExpWithNot;
+syntax LogicalExpsExtended = LogicalExpNegative
+                            |LogicalExpNegative OneSpace Binaries OneSpace LogicalExpNegative
+                            |LogicalExps OneSpace Binaries OneSpace LogicalExpNegative
+                            |LogicalExpNegative OneSpace Binaries OneSpace LogicalExps
+                            |LogicalExps OneSpace Binaries OneSpace LogicalExps;
                             
 //Slightly modify if and while
 syntax IfWithoutElse = If OneSpace LogicalExpsExtended OneSpace Do Whitespaces 
