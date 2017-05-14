@@ -1,0 +1,4 @@
+Script simpleComment runs as
+    #a comment
+    step
+end

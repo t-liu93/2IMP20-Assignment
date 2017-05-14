@@ -1,0 +1,3 @@
+Script simple runs as
+    step
+end

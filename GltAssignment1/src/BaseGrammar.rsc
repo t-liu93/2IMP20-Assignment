@@ -15,7 +15,7 @@ keyword While = "while";
 keyword Repeat = "repeat";
 keyword Times = "times";
 keyword Script = "Script";
-keyword Runas = "runs as";
+keyword Runsas = "runs as";
 //The whole keywords set
 keyword Keywords = If 
                 |Else
@@ -25,13 +25,23 @@ keyword Keywords = If
                 |Repeat
                 |Times
                 |Script
-                |Runas;
+                |Runsas;
                 
 //Whitespaces
 //i.e. spaces, tabs, newlines, carriage return
 layout OneSpace = [\ ];
 layout NewLine = [\n];
-layout Whitespaces = [\ \t\n\r]*;
+lexical Whitespace = [\ \t\n\r];
+layout Whitespaces = Whitespace* !>> [\ \t\n\r];
+
+//Comment
+//Start with a \# and end with a line breaker
+layout Comment = "#" ![#]* $;
+
+//Combined whitespace and comments
+lexical WhitespaceAndComment = Whitespace
+                            |Comment;
+layout WhitespaceAndComments = WhitespaceAndComment* !>> [\ \t\n\r];
 
 //Name
 //upper or lowercase letters
@@ -45,10 +55,6 @@ lexical Integer = UnsignedInt | SignedInt;
 //Not sure whether in this case only unsigned int is needed or not
 //According to our interpertation, only unsigned int is needed.
 //Hence the 'repeat time' cannot be negative
-
-//Comment
-//Start with a \# and end with a line breaker
-layout Comment = "#" ![#]* $;
 
 //Message
 //Used for trace
@@ -111,9 +117,39 @@ syntax LogicalExps = Full
                 |WallAhead
                 |HeadingDirection;
                 
-//Do statements
-//I.e. statements between do and end
-//Including a list of commands.
-//Since the description does not say empty list is not allowed, we allow empty
-//list between do and end here.
-syntax DoStatements = ([CommandStats][Whitespaces])*;
+//Conditional statements
+//If without Else
+syntax IfWithoutElse = If OneSpace LogicalExps OneSpace Do WhitespaceAndComments 
+                            DoStatements WhitespaceAndComments End;                 
+//If with else
+syntax IfWithElse = IfWithoutElse WhitespaceAndComments 
+                    Else Do WhitespaceAndComments DoStatements WhitespaceAndComments End;
+//Whole if
+syntax IfStats = IfWithElse
+                >IfWithoutElse;
+                
+//While statements
+syntax WhileStats = While OneSpace LogicalExps OneSpace Do WhitespaceAndComments
+                    DoStatements WhitespaceAndComments End;
+                    
+//Repeat statements
+syntax RepeatStats = Repeat OneSpace UnsignedInt OneSpace Times WhitespaceAndComments
+                        DoStatements WhitespaceAndComments End;
+                        
+//The collection of all statements
+syntax Statements = CommandStats
+                |IfStats
+                |WhileStats
+                |RepeatStats
+                >CommandStats WhitespaceAndComments Statements
+                >IfStats WhitespaceAndComments Statements
+                >WhileStats WhitespaceAndComments Statements
+                >RepeatStats WhitespaceAndComments Statements;
+                
+//Main program
+//Since the description does not mention whether an empty statement list is allowed
+//Here we follow the description, i.e. allow empty list
+start syntax Program = 
+    program: Script OneSpace Name OneSpace Runsas WhitespaceAndComments 
+                Statements* WhitespaceAndComments
+                End;
