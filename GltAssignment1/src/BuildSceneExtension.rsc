@@ -36,12 +36,5 @@ syntax CommandStatsExtended = CommandStats
                             
 //new statements
 //modify it to suit CommandStatsExtended
-syntax Statements = CommandStatsExtended
-                |IfStats
-                |WhileStats
-                |RepeatStats
-                |CommandStatsExtended Whitespaces NonCommandStats
-                |IfStats Whitespaces Statements
-                |WhileStats Whitespaces Statements
-                |RepeatStats Whitespaces Statements;
+syntax Statements = CommandStatsExtended;
                 
