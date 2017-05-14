@@ -1,0 +1,8 @@
+Script simpleLoop runs as
+    step
+    step
+    # some comments
+    while full do
+        trace "full"
+    end
+end

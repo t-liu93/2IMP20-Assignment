@@ -1,0 +1,11 @@
+Script simpleCondition runs as
+    step
+    if heading north do
+        #command 1
+        turnLeft
+    end
+    else do
+        #command 2 
+        drop
+    end
+end

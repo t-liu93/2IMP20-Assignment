@@ -1,0 +1,10 @@
+Script simpleRepeat runs as
+    step
+    step
+    #a comment
+    #turn right
+    repeat 4 times
+        turnLeft
+    end
+    #Yes!
+end

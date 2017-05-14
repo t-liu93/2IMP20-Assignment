@@ -36,12 +36,13 @@ layout Whitespaces = Whitespace* !>> [\ \t\n\r];
 
 //Comment
 //Start with a \# and end with a line breaker
-layout Comment = "#" ![#]* $;
+//Since comment is considered as comment, so it is not layout
+lexical Comment = "#" ![\n]* [\n];
 
 //Combined whitespace and comments
-lexical WhitespaceAndComment = Whitespace
-                            |Comment;
-layout WhitespaceAndComments = WhitespaceAndComment* !>> [\ \t\n\r];
+//lexical WhitespaceAndComment = Whitespace
+//                            |Comment;
+//layout WhitespaceAndComments = WhitespaceAndComment* !>> [\ \t\n\r];
 
 //Name
 //upper or lowercase letters
@@ -105,7 +106,14 @@ syntax CommandStats = Step
                     |TurnLeft
                     |Drop
                     |Pick
-                    |TraceMessage;
+                    |TraceMessage
+                    |Comment
+                    |Comment Whitespaces CommandStats
+                    |Step Whitespaces CommandStats
+                    |TurnLeft Whitespaces CommandStats
+                    |Drop Whitespaces CommandStats
+                    |Pick Whitespaces CommandStats
+                    |TraceMessage Whitespaces CommandStats;
 
 //Heading direction
 //only one space can follow heading
@@ -119,37 +127,47 @@ syntax LogicalExps = Full
                 
 //Conditional statements
 //If without Else
-syntax IfWithoutElse = If OneSpace LogicalExps OneSpace Do WhitespaceAndComments 
-                            DoStatements WhitespaceAndComments End;                 
+syntax IfWithoutElse = If OneSpace LogicalExps OneSpace Do Whitespaces 
+                            CommandStats Whitespaces End;                 
 //If with else
-syntax IfWithElse = IfWithoutElse WhitespaceAndComments 
-                    Else Do WhitespaceAndComments DoStatements WhitespaceAndComments End;
+syntax IfWithElse = IfWithoutElse Whitespaces
+                    Else Do Whitespaces CommandStats Whitespaces End;
 //Whole if
 syntax IfStats = IfWithElse
                 >IfWithoutElse;
                 
 //While statements
-syntax WhileStats = While OneSpace LogicalExps OneSpace Do WhitespaceAndComments
-                    DoStatements WhitespaceAndComments End;
+syntax WhileStats = While OneSpace LogicalExps OneSpace Do Whitespaces
+                    CommandStats Whitespaces End;
                     
 //Repeat statements
-syntax RepeatStats = Repeat OneSpace UnsignedInt OneSpace Times WhitespaceAndComments
-                        DoStatements WhitespaceAndComments End;
+syntax RepeatStats = Repeat OneSpace UnsignedInt OneSpace Times Whitespaces
+                        CommandStats Whitespaces End;
                         
 //The collection of all statements
 syntax Statements = CommandStats
                 |IfStats
                 |WhileStats
                 |RepeatStats
-                >CommandStats WhitespaceAndComments Statements
-                >IfStats WhitespaceAndComments Statements
-                >WhileStats WhitespaceAndComments Statements
-                >RepeatStats WhitespaceAndComments Statements;
+                |CommandStats Whitespaces NonCommandStats
+                |IfStats Whitespaces Statements
+                |WhileStats Whitespaces Statements
+                |RepeatStats Whitespaces Statements;
+                
+//CommandStats only go to non-command stats
+syntax NonCommandStats = IfStats
+                        |WhileStats
+                        |RepeatStats
+                        |IfStats Whitespaces Statements
+                        |WhileStats Whitespaces Statements
+                        |RepeatStats Whitespaces Statements;
+                
+ 
                 
 //Main program
 //Since the description does not mention whether an empty statement list is allowed
 //Here we follow the description, i.e. allow empty list
 start syntax Program = 
-    program: Script OneSpace Name OneSpace Runsas WhitespaceAndComments 
-                Statements* WhitespaceAndComments
+    program: Script OneSpace Name OneSpace Runsas Whitespaces 
+                Statements Whitespaces
                 End;
