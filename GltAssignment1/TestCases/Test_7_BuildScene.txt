@@ -1,0 +1,4 @@
+Script buildScene runs as
+    buildWall at row: 1 col: 4
+    buildWall at row: 38 col: 2
+end
