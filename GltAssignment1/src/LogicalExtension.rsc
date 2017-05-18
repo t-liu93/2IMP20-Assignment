@@ -1,3 +1,7 @@
+/*
+Author: Tianyu Liu 0937147
+Xiayang Hao 0892474
+*/
 module LogicalExtension
 
 extend BaseGrammar;
