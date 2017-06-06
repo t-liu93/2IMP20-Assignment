@@ -3,16 +3,19 @@
 package robotDSLEcore.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import robotDSLEcore.IfStatement;
 import robotDSLEcore.LogicalExps;
 import robotDSLEcore.RobotDSLEcorePackage;
+import robotDSLEcore.Statements;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,20 +26,31 @@ import robotDSLEcore.RobotDSLEcorePackage;
  * </p>
  * <ul>
  *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getLogicalexps <em>Logicalexps</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	/**
-	 * The cached value of the '{@link #getLogicalexps() <em>Logicalexps</em>}' containment reference list.
+	 * The cached value of the '{@link #getLogicalexps() <em>Logicalexps</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLogicalexps()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LogicalExps> logicalexps;
+	protected LogicalExps logicalexps;
+
+	/**
+	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Statements> statements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,11 +76,54 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<LogicalExps> getLogicalexps() {
-		if (logicalexps == null) {
-			logicalexps = new EObjectContainmentEList<LogicalExps>(LogicalExps.class, this, RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS);
-		}
+	public LogicalExps getLogicalexps() {
 		return logicalexps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLogicalexps(LogicalExps newLogicalexps, NotificationChain msgs) {
+		LogicalExps oldLogicalexps = logicalexps;
+		logicalexps = newLogicalexps;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS, oldLogicalexps, newLogicalexps);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogicalexps(LogicalExps newLogicalexps) {
+		if (newLogicalexps != logicalexps) {
+			NotificationChain msgs = null;
+			if (logicalexps != null)
+				msgs = ((InternalEObject)logicalexps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS, null, msgs);
+			if (newLogicalexps != null)
+				msgs = ((InternalEObject)newLogicalexps).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS, null, msgs);
+			msgs = basicSetLogicalexps(newLogicalexps, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS, newLogicalexps, newLogicalexps));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Statements> getStatements() {
+		if (statements == null) {
+			statements = new EObjectContainmentEList<Statements>(Statements.class, this, RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS);
+		}
+		return statements;
 	}
 
 	/**
@@ -78,7 +135,9 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
-				return ((InternalEList<?>)getLogicalexps()).basicRemove(otherEnd, msgs);
+				return basicSetLogicalexps(null, msgs);
+			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
+				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -93,6 +152,8 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
 				return getLogicalexps();
+			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
+				return getStatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,8 +168,11 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
-				getLogicalexps().clear();
-				getLogicalexps().addAll((Collection<? extends LogicalExps>)newValue);
+				setLogicalexps((LogicalExps)newValue);
+				return;
+			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
+				getStatements().clear();
+				getStatements().addAll((Collection<? extends Statements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,7 +187,10 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
-				getLogicalexps().clear();
+				setLogicalexps((LogicalExps)null);
+				return;
+			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
+				getStatements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,7 +205,9 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
-				return logicalexps != null && !logicalexps.isEmpty();
+				return logicalexps != null;
+			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
+				return statements != null && !statements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

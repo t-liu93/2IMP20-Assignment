@@ -70,6 +70,10 @@ public class RobotDSLEcoreFactoryImpl extends EFactoryImpl implements RobotDSLEc
 			case RobotDSLEcorePackage.TRACE_MESSAGE: return createTraceMessage();
 			case RobotDSLEcorePackage.COMMENT: return createComment();
 			case RobotDSLEcorePackage.LOGICAL_EXPS: return createLogicalExps();
+			case RobotDSLEcorePackage.FULL: return createFull();
+			case RobotDSLEcorePackage.MARK: return createMark();
+			case RobotDSLEcorePackage.WALL_AHEAD: return createWallAhead();
+			case RobotDSLEcorePackage.HEADING: return createHeading();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -233,6 +237,46 @@ public class RobotDSLEcoreFactoryImpl extends EFactoryImpl implements RobotDSLEc
 	public LogicalExps createLogicalExps() {
 		LogicalExpsImpl logicalExps = new LogicalExpsImpl();
 		return logicalExps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Full createFull() {
+		FullImpl full = new FullImpl();
+		return full;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Mark createMark() {
+		MarkImpl mark = new MarkImpl();
+		return mark;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WallAhead createWallAhead() {
+		WallAheadImpl wallAhead = new WallAheadImpl();
+		return wallAhead;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Heading createHeading() {
+		HeadingImpl heading = new HeadingImpl();
+		return heading;
 	}
 
 	/**

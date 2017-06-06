@@ -120,6 +120,22 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 				return createLogicalExpsAdapter();
 			}
 			@Override
+			public Adapter caseFull(Full object) {
+				return createFullAdapter();
+			}
+			@Override
+			public Adapter caseMark(Mark object) {
+				return createMarkAdapter();
+			}
+			@Override
+			public Adapter caseWallAhead(WallAhead object) {
+				return createWallAheadAdapter();
+			}
+			@Override
+			public Adapter caseHeading(Heading object) {
+				return createHeadingAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -318,6 +334,62 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLogicalExpsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Full <em>Full</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Full
+	 * @generated
+	 */
+	public Adapter createFullAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Mark <em>Mark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Mark
+	 * @generated
+	 */
+	public Adapter createMarkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.WallAhead <em>Wall Ahead</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.WallAhead
+	 * @generated
+	 */
+	public Adapter createWallAheadAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Heading <em>Heading</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Heading
+	 * @generated
+	 */
+	public Adapter createHeadingAdapter() {
 		return null;
 	}
 

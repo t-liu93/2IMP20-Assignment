@@ -24,9 +24,11 @@
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/logicalexps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/statements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//RepeatStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//RepeatStatement/time"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//RepeatStatement/commandstatement"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Step"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//TurnLeft"/>
@@ -38,8 +40,12 @@
     <genClasses ecoreClass="robotDSLEcore.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Comment/comment"/>
     </genClasses>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//LogicalExps">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//LogicalExps/direction"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//LogicalExps"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Full"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Mark"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//WallAhead"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Heading">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Heading/direction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

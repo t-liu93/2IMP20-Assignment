@@ -171,7 +171,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int IF_STATEMENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Logicalexps</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Logicalexps</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,13 +180,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int IF_STATEMENT__LOGICALEXPS = STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__STATEMENTS = STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>If Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 1;
+	int IF_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>If Statement</em>' class.
@@ -208,13 +217,31 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int WHILE_STATEMENT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Logicalexps</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__LOGICALEXPS = STATEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__STATEMENTS = STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>While Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 0;
+	int WHILE_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>While Statement</em>' class.
@@ -245,13 +272,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int REPEAT_STATEMENT__TIME = STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Commandstatement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPEAT_STATEMENT__COMMANDSTATEMENT = STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Repeat Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 1;
+	int REPEAT_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Repeat Statement</em>' class.
@@ -423,13 +459,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int COMMENT = 11;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__COMMENT = COMMAND_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Comment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_FEATURE_COUNT = COMMAND_STATEMENT_FEATURE_COUNT + 0;
+	int COMMENT_FEATURE_COUNT = COMMAND_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Comment</em>' class.
@@ -452,22 +497,13 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int LOGICAL_EXPS = 12;
 
 	/**
-	 * The feature id for the '<em><b>Direction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL_EXPS__DIRECTION = 0;
-
-	/**
 	 * The number of structural features of the '<em>Logical Exps</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGICAL_EXPS_FEATURE_COUNT = 1;
+	int LOGICAL_EXPS_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Logical Exps</em>' class.
@@ -479,6 +515,127 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int LOGICAL_EXPS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.FullImpl <em>Full</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.FullImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getFull()
+	 * @generated
+	 */
+	int FULL = 13;
+
+	/**
+	 * The number of structural features of the '<em>Full</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FULL_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Full</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FULL_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.MarkImpl <em>Mark</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.MarkImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getMark()
+	 * @generated
+	 */
+	int MARK = 14;
+
+	/**
+	 * The number of structural features of the '<em>Mark</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARK_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mark</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARK_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.WallAheadImpl <em>Wall Ahead</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.WallAheadImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getWallAhead()
+	 * @generated
+	 */
+	int WALL_AHEAD = 15;
+
+	/**
+	 * The number of structural features of the '<em>Wall Ahead</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WALL_AHEAD_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Wall Ahead</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WALL_AHEAD_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.HeadingImpl <em>Heading</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.HeadingImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getHeading()
+	 * @generated
+	 */
+	int HEADING = 16;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEADING__DIRECTION = LOGICAL_EXPS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Heading</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEADING_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Heading</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEADING_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,7 +643,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDirections()
 	 * @generated
 	 */
-	int DIRECTIONS = 13;
+	int DIRECTIONS = 17;
 
 
 	/**
@@ -552,15 +709,26 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getIfStatement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.IfStatement#getLogicalexps <em>Logicalexps</em>}'.
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.IfStatement#getLogicalexps <em>Logicalexps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Logicalexps</em>'.
+	 * @return the meta object for the containment reference '<em>Logicalexps</em>'.
 	 * @see robotDSLEcore.IfStatement#getLogicalexps()
 	 * @see #getIfStatement()
 	 * @generated
 	 */
 	EReference getIfStatement_Logicalexps();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.IfStatement#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
+	 * @see robotDSLEcore.IfStatement#getStatements()
+	 * @see #getIfStatement()
+	 * @generated
+	 */
+	EReference getIfStatement_Statements();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.WhileStatement <em>While Statement</em>}'.
@@ -571,6 +739,28 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getWhileStatement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.WhileStatement#getLogicalexps <em>Logicalexps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Logicalexps</em>'.
+	 * @see robotDSLEcore.WhileStatement#getLogicalexps()
+	 * @see #getWhileStatement()
+	 * @generated
+	 */
+	EReference getWhileStatement_Logicalexps();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.WhileStatement#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
+	 * @see robotDSLEcore.WhileStatement#getStatements()
+	 * @see #getWhileStatement()
+	 * @generated
+	 */
+	EReference getWhileStatement_Statements();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.RepeatStatement <em>Repeat Statement</em>}'.
@@ -592,6 +782,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRepeatStatement_Time();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.RepeatStatement#getCommandstatement <em>Commandstatement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Commandstatement</em>'.
+	 * @see robotDSLEcore.RepeatStatement#getCommandstatement()
+	 * @see #getRepeatStatement()
+	 * @generated
+	 */
+	EReference getRepeatStatement_Commandstatement();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.Step <em>Step</em>}'.
@@ -665,6 +866,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getComment();
 
 	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.Comment#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Comment</em>'.
+	 * @see robotDSLEcore.Comment#getComment()
+	 * @see #getComment()
+	 * @generated
+	 */
+	EAttribute getComment_Comment();
+
+	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.LogicalExps <em>Logical Exps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -675,15 +887,55 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getLogicalExps();
 
 	/**
-	 * Returns the meta object for the attribute '{@link robotDSLEcore.LogicalExps#getDirection <em>Direction</em>}'.
+	 * Returns the meta object for class '{@link robotDSLEcore.Full <em>Full</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Full</em>'.
+	 * @see robotDSLEcore.Full
+	 * @generated
+	 */
+	EClass getFull();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.Mark <em>Mark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mark</em>'.
+	 * @see robotDSLEcore.Mark
+	 * @generated
+	 */
+	EClass getMark();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.WallAhead <em>Wall Ahead</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Wall Ahead</em>'.
+	 * @see robotDSLEcore.WallAhead
+	 * @generated
+	 */
+	EClass getWallAhead();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.Heading <em>Heading</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Heading</em>'.
+	 * @see robotDSLEcore.Heading
+	 * @generated
+	 */
+	EClass getHeading();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.Heading#getDirection <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Direction</em>'.
-	 * @see robotDSLEcore.LogicalExps#getDirection()
-	 * @see #getLogicalExps()
+	 * @see robotDSLEcore.Heading#getDirection()
+	 * @see #getHeading()
 	 * @generated
 	 */
-	EAttribute getLogicalExps_Direction();
+	EAttribute getHeading_Direction();
 
 	/**
 	 * Returns the meta object for enum '{@link robotDSLEcore.Directions <em>Directions</em>}'.
@@ -775,12 +1027,20 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EClass IF_STATEMENT = eINSTANCE.getIfStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Logicalexps</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Logicalexps</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference IF_STATEMENT__LOGICALEXPS = eINSTANCE.getIfStatement_Logicalexps();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_STATEMENT__STATEMENTS = eINSTANCE.getIfStatement_Statements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -791,6 +1051,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Logicalexps</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WHILE_STATEMENT__LOGICALEXPS = eINSTANCE.getWhileStatement_Logicalexps();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WHILE_STATEMENT__STATEMENTS = eINSTANCE.getWhileStatement_Statements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
@@ -809,6 +1085,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REPEAT_STATEMENT__TIME = eINSTANCE.getRepeatStatement_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Commandstatement</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REPEAT_STATEMENT__COMMANDSTATEMENT = eINSTANCE.getRepeatStatement_Commandstatement();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.StepImpl <em>Step</em>}' class.
@@ -879,6 +1163,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EClass COMMENT = eINSTANCE.getComment();
 
 		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMENT__COMMENT = eINSTANCE.getComment_Comment();
+
+		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.LogicalExpsImpl <em>Logical Exps</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -889,12 +1181,52 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EClass LOGICAL_EXPS = eINSTANCE.getLogicalExps();
 
 		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.FullImpl <em>Full</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.FullImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getFull()
+		 * @generated
+		 */
+		EClass FULL = eINSTANCE.getFull();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.MarkImpl <em>Mark</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.MarkImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getMark()
+		 * @generated
+		 */
+		EClass MARK = eINSTANCE.getMark();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.WallAheadImpl <em>Wall Ahead</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.WallAheadImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getWallAhead()
+		 * @generated
+		 */
+		EClass WALL_AHEAD = eINSTANCE.getWallAhead();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.HeadingImpl <em>Heading</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.HeadingImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getHeading()
+		 * @generated
+		 */
+		EClass HEADING = eINSTANCE.getHeading();
+
+		/**
 		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LOGICAL_EXPS__DIRECTION = eINSTANCE.getLogicalExps_Direction();
+		EAttribute HEADING__DIRECTION = eINSTANCE.getHeading_Direction();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.

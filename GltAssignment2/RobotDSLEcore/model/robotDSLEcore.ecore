@@ -18,9 +18,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//Statements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalexps" lowerBound="1"
         eType="#//LogicalExps" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statements" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement" eSuperTypes="#//Statements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commandstatement" upperBound="-1"
+        eType="#//CommandStatement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//CommandStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TurnLeft" eSuperTypes="#//CommandStatement"/>
@@ -38,8 +42,11 @@
     <eLiterals name="west" value="2"/>
     <eLiterals name="east" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LogicalExps">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Directions"
-        defaultValueLiteral="north"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalExps"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Full" eSuperTypes="#//LogicalExps"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Mark" eSuperTypes="#//LogicalExps"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WallAhead" eSuperTypes="#//LogicalExps"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Heading" eSuperTypes="#//LogicalExps">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Directions"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -139,6 +139,42 @@ public interface RobotDSLEcoreFactory extends EFactory {
 	LogicalExps createLogicalExps();
 
 	/**
+	 * Returns a new object of class '<em>Full</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Full</em>'.
+	 * @generated
+	 */
+	Full createFull();
+
+	/**
+	 * Returns a new object of class '<em>Mark</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mark</em>'.
+	 * @generated
+	 */
+	Mark createMark();
+
+	/**
+	 * Returns a new object of class '<em>Wall Ahead</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Wall Ahead</em>'.
+	 * @generated
+	 */
+	WallAhead createWallAhead();
+
+	/**
+	 * Returns a new object of class '<em>Heading</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Heading</em>'.
+	 * @generated
+	 */
+	Heading createHeading();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

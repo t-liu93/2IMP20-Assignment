@@ -14,8 +14,11 @@ import robotDSLEcore.CommandStatement;
 import robotDSLEcore.Comment;
 import robotDSLEcore.Directions;
 import robotDSLEcore.Drop;
+import robotDSLEcore.Full;
+import robotDSLEcore.Heading;
 import robotDSLEcore.IfStatement;
 import robotDSLEcore.LogicalExps;
+import robotDSLEcore.Mark;
 import robotDSLEcore.Pick;
 import robotDSLEcore.RepeatStatement;
 import robotDSLEcore.RobotDSLEcoreFactory;
@@ -25,6 +28,7 @@ import robotDSLEcore.Statements;
 import robotDSLEcore.Step;
 import robotDSLEcore.TraceMessage;
 import robotDSLEcore.TurnLeft;
+import robotDSLEcore.WallAhead;
 import robotDSLEcore.WhileStatement;
 
 /**
@@ -124,6 +128,34 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * @generated
 	 */
 	private EClass logicalExpsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fullEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass markEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass wallAheadEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass headingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,8 +293,35 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIfStatement_Statements() {
+		return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getWhileStatement() {
 		return whileStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWhileStatement_Logicalexps() {
+		return (EReference)whileStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWhileStatement_Statements() {
+		return (EReference)whileStatementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -281,6 +340,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 */
 	public EAttribute getRepeatStatement_Time() {
 		return (EAttribute)repeatStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRepeatStatement_Commandstatement() {
+		return (EReference)repeatStatementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -351,6 +419,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComment_Comment() {
+		return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLogicalExps() {
 		return logicalExpsEClass;
 	}
@@ -360,8 +437,44 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLogicalExps_Direction() {
-		return (EAttribute)logicalExpsEClass.getEStructuralFeatures().get(0);
+	public EClass getFull() {
+		return fullEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMark() {
+		return markEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWallAhead() {
+		return wallAheadEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHeading() {
+		return headingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHeading_Direction() {
+		return (EAttribute)headingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -411,11 +524,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		ifStatementEClass = createEClass(IF_STATEMENT);
 		createEReference(ifStatementEClass, IF_STATEMENT__LOGICALEXPS);
+		createEReference(ifStatementEClass, IF_STATEMENT__STATEMENTS);
 
 		whileStatementEClass = createEClass(WHILE_STATEMENT);
+		createEReference(whileStatementEClass, WHILE_STATEMENT__LOGICALEXPS);
+		createEReference(whileStatementEClass, WHILE_STATEMENT__STATEMENTS);
 
 		repeatStatementEClass = createEClass(REPEAT_STATEMENT);
 		createEAttribute(repeatStatementEClass, REPEAT_STATEMENT__TIME);
+		createEReference(repeatStatementEClass, REPEAT_STATEMENT__COMMANDSTATEMENT);
 
 		stepEClass = createEClass(STEP);
 
@@ -429,9 +546,18 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		createEAttribute(traceMessageEClass, TRACE_MESSAGE__MESSAGE);
 
 		commentEClass = createEClass(COMMENT);
+		createEAttribute(commentEClass, COMMENT__COMMENT);
 
 		logicalExpsEClass = createEClass(LOGICAL_EXPS);
-		createEAttribute(logicalExpsEClass, LOGICAL_EXPS__DIRECTION);
+
+		fullEClass = createEClass(FULL);
+
+		markEClass = createEClass(MARK);
+
+		wallAheadEClass = createEClass(WALL_AHEAD);
+
+		headingEClass = createEClass(HEADING);
+		createEAttribute(headingEClass, HEADING__DIRECTION);
 
 		// Create enums
 		directionsEEnum = createEEnum(DIRECTIONS);
@@ -475,6 +601,10 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		pickEClass.getESuperTypes().add(this.getCommandStatement());
 		traceMessageEClass.getESuperTypes().add(this.getCommandStatement());
 		commentEClass.getESuperTypes().add(this.getCommandStatement());
+		fullEClass.getESuperTypes().add(this.getLogicalExps());
+		markEClass.getESuperTypes().add(this.getLogicalExps());
+		wallAheadEClass.getESuperTypes().add(this.getLogicalExps());
+		headingEClass.getESuperTypes().add(this.getLogicalExps());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -486,12 +616,16 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEClass(commandStatementEClass, CommandStatement.class, "CommandStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIfStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 1, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Statements(), this.getStatements(), null, "statements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWhileStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 1, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWhileStatement_Statements(), this.getStatements(), null, "statements", null, 0, -1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(repeatStatementEClass, RepeatStatement.class, "RepeatStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRepeatStatement_Time(), ecorePackage.getEInt(), "time", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRepeatStatement_Commandstatement(), this.getCommandStatement(), null, "commandstatement", null, 0, -1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -505,9 +639,18 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEAttribute(getTraceMessage_Message(), ecorePackage.getEString(), "message", null, 0, 1, TraceMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComment_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(logicalExpsEClass, LogicalExps.class, "LogicalExps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLogicalExps_Direction(), this.getDirections(), "direction", "north", 0, 1, LogicalExps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fullEClass, Full.class, "Full", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(markEClass, Mark.class, "Mark", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(wallAheadEClass, WallAhead.class, "WallAhead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(headingEClass, Heading.class, "Heading", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHeading_Direction(), this.getDirections(), "direction", null, 0, 1, Heading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(directionsEEnum, Directions.class, "Directions");

@@ -160,6 +160,34 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RobotDSLEcorePackage.FULL: {
+				Full full = (Full)theEObject;
+				T result = caseFull(full);
+				if (result == null) result = caseLogicalExps(full);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.MARK: {
+				Mark mark = (Mark)theEObject;
+				T result = caseMark(mark);
+				if (result == null) result = caseLogicalExps(mark);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.WALL_AHEAD: {
+				WallAhead wallAhead = (WallAhead)theEObject;
+				T result = caseWallAhead(wallAhead);
+				if (result == null) result = caseLogicalExps(wallAhead);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.HEADING: {
+				Heading heading = (Heading)theEObject;
+				T result = caseHeading(heading);
+				if (result == null) result = caseLogicalExps(heading);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -356,6 +384,66 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLogicalExps(LogicalExps object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Full</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Full</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFull(Full object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mark</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mark</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMark(Mark object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Wall Ahead</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Wall Ahead</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWallAhead(WallAhead object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Heading</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Heading</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHeading(Heading object) {
 		return null;
 	}
 

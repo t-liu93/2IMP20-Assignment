@@ -3,50 +3,55 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import robotDSLEcore.Comment;
+
+import robotDSLEcore.Directions;
+import robotDSLEcore.Heading;
 import robotDSLEcore.RobotDSLEcorePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Comment</b></em>'.
+ * An implementation of the model object '<em><b>Heading</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotDSLEcore.impl.CommentImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.HeadingImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CommentImpl extends CommandStatementImpl implements Comment {
+public class HeadingImpl extends LogicalExpsImpl implements Heading {
 	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getDirection()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COMMENT_EDEFAULT = null;
+	protected static final Directions DIRECTION_EDEFAULT = Directions.SOUTH;
+
 	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getDirection()
 	 * @generated
 	 * @ordered
 	 */
-	protected String comment = COMMENT_EDEFAULT;
+	protected Directions direction = DIRECTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommentImpl() {
+	protected HeadingImpl() {
 		super();
 	}
 
@@ -57,7 +62,7 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RobotDSLEcorePackage.Literals.COMMENT;
+		return RobotDSLEcorePackage.Literals.HEADING;
 	}
 
 	/**
@@ -65,8 +70,8 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComment() {
-		return comment;
+	public Directions getDirection() {
+		return direction;
 	}
 
 	/**
@@ -74,11 +79,11 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
+	public void setDirection(Directions newDirection) {
+		Directions oldDirection = direction;
+		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.COMMENT__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.HEADING__DIRECTION, oldDirection, direction));
 	}
 
 	/**
@@ -89,8 +94,8 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.COMMENT__COMMENT:
-				return getComment();
+			case RobotDSLEcorePackage.HEADING__DIRECTION:
+				return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,8 +108,8 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.COMMENT__COMMENT:
-				setComment((String)newValue);
+			case RobotDSLEcorePackage.HEADING__DIRECTION:
+				setDirection((Directions)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,8 +123,8 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.COMMENT__COMMENT:
-				setComment(COMMENT_EDEFAULT);
+			case RobotDSLEcorePackage.HEADING__DIRECTION:
+				setDirection(DIRECTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -133,8 +138,8 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.COMMENT__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case RobotDSLEcorePackage.HEADING__DIRECTION:
+				return direction != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -149,10 +154,10 @@ public class CommentImpl extends CommandStatementImpl implements Comment {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
+		result.append(" (direction: ");
+		result.append(direction);
 		result.append(')');
 		return result.toString();
 	}
 
-} //CommentImpl
+} //HeadingImpl

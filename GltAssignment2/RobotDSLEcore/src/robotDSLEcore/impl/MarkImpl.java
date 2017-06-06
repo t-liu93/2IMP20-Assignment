@@ -3,24 +3,24 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import robotDSLEcore.LogicalExps;
+
+import robotDSLEcore.Mark;
 import robotDSLEcore.RobotDSLEcorePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Logical Exps</b></em>'.
+ * An implementation of the model object '<em><b>Mark</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class LogicalExpsImpl extends MinimalEObjectImpl.Container implements LogicalExps {
+public class MarkImpl extends LogicalExpsImpl implements Mark {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LogicalExpsImpl() {
+	protected MarkImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class LogicalExpsImpl extends MinimalEObjectImpl.Container implements Log
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RobotDSLEcorePackage.Literals.LOGICAL_EXPS;
+		return RobotDSLEcorePackage.Literals.MARK;
 	}
 
-} //LogicalExpsImpl
+} //MarkImpl
