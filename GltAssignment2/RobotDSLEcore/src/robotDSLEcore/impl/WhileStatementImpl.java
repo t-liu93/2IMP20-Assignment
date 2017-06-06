@@ -50,7 +50,6 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 	 * @ordered
 	 */
 	protected EList<Statements> statements;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

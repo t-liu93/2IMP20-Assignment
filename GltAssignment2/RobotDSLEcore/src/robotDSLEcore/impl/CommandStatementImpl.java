@@ -3,7 +3,6 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import robotDSLEcore.CommandStatement;
 import robotDSLEcore.RobotDSLEcorePackage;
 

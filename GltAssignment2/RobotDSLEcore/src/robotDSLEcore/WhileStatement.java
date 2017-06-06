@@ -4,7 +4,6 @@ package robotDSLEcore;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>While Statement</b></em>'.

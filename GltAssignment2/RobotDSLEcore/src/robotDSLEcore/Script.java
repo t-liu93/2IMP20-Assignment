@@ -50,7 +50,7 @@ public interface Script extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Statements</b></em>' reference list.
+	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
 	 * The list contents are of type {@link robotDSLEcore.Statements}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -58,9 +58,9 @@ public interface Script extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statements</em>' reference list.
+	 * @return the value of the '<em>Statements</em>' containment reference list.
 	 * @see robotDSLEcore.RobotDSLEcorePackage#getScript_Statements()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Statements> getStatements();

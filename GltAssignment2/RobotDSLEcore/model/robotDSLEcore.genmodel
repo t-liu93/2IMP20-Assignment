@@ -14,7 +14,7 @@
     </genEnums>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Script">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Script/name"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/statements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Statements"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//CommandStatement"/>

@@ -77,7 +77,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int SCRIPT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' reference list.
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -668,10 +668,10 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EAttribute getScript_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link robotDSLEcore.Script#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.Script#getStatements <em>Statements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Statements</em>'.
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
 	 * @see robotDSLEcore.Script#getStatements()
 	 * @see #getScript()
 	 * @generated
@@ -989,7 +989,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

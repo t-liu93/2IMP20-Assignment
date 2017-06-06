@@ -5,7 +5,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statements"/>
+        eType="#//Statements" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statements"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommandStatement" eSuperTypes="#//Statements"/>

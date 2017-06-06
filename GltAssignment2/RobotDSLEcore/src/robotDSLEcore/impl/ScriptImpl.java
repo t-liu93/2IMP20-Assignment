@@ -5,13 +5,16 @@ package robotDSLEcore.impl;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import robotDSLEcore.RobotDSLEcorePackage;
 import robotDSLEcore.Script;
 import robotDSLEcore.Statements;
@@ -52,7 +55,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' reference list.
+	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatements()
@@ -108,9 +111,23 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 */
 	public EList<Statements> getStatements() {
 		if (statements == null) {
-			statements = new EObjectResolvingEList<Statements>(Statements.class, this, RobotDSLEcorePackage.SCRIPT__STATEMENTS);
+			statements = new EObjectContainmentEList<Statements>(Statements.class, this, RobotDSLEcorePackage.SCRIPT__STATEMENTS);
 		}
 		return statements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
+				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

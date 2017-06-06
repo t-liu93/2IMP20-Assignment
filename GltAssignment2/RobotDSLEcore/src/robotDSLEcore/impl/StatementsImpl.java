@@ -3,7 +3,6 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import robotDSLEcore.RobotDSLEcorePackage;
 import robotDSLEcore.Statements;

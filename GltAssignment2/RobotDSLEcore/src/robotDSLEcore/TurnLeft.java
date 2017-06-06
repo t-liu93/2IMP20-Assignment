@@ -2,7 +2,6 @@
  */
 package robotDSLEcore;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Turn Left</b></em>'.
