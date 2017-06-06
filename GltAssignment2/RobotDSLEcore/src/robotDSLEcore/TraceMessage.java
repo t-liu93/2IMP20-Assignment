@@ -12,7 +12,7 @@ package robotDSLEcore;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link robotDSLEcore.TraceMessage#getTrace <em>Trace</em>}</li>
+ *   <li>{@link robotDSLEcore.TraceMessage#getMessage <em>Message</em>}</li>
  * </ul>
  *
  * @see robotDSLEcore.RobotDSLEcorePackage#getTraceMessage()
@@ -21,29 +21,29 @@ package robotDSLEcore;
  */
 public interface TraceMessage extends CommandStatement {
 	/**
-	 * Returns the value of the '<em><b>Trace</b></em>' attribute.
+	 * Returns the value of the '<em><b>Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Trace</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Message</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Trace</em>' attribute.
-	 * @see #setTrace(String)
-	 * @see robotDSLEcore.RobotDSLEcorePackage#getTraceMessage_Trace()
+	 * @return the value of the '<em>Message</em>' attribute.
+	 * @see #setMessage(String)
+	 * @see robotDSLEcore.RobotDSLEcorePackage#getTraceMessage_Message()
 	 * @model
 	 * @generated
 	 */
-	String getTrace();
+	String getMessage();
 
 	/**
-	 * Sets the value of the '{@link robotDSLEcore.TraceMessage#getTrace <em>Trace</em>}' attribute.
+	 * Sets the value of the '{@link robotDSLEcore.TraceMessage#getMessage <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Trace</em>' attribute.
-	 * @see #getTrace()
+	 * @param value the new value of the '<em>Message</em>' attribute.
+	 * @see #getMessage()
 	 * @generated
 	 */
-	void setTrace(String value);
+	void setMessage(String value);
 
 } // TraceMessage

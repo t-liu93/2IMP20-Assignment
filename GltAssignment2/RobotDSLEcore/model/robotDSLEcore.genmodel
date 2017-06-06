@@ -6,33 +6,40 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>robotDSLEcore.ecore</foreignModel>
   <genPackages prefix="RobotDSLEcore" disposableProviderFactory="true" ecorePackage="robotDSLEcore.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotDSLEcore.ecore#//Directions">
+      <genEnumLiterals ecoreEnumLiteral="robotDSLEcore.ecore#//Directions/south"/>
+      <genEnumLiterals ecoreEnumLiteral="robotDSLEcore.ecore#//Directions/north"/>
+      <genEnumLiterals ecoreEnumLiteral="robotDSLEcore.ecore#//Directions/west"/>
+      <genEnumLiterals ecoreEnumLiteral="robotDSLEcore.ecore#//Directions/east"/>
+    </genEnums>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Script">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Script/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Script/end"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/statements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Statements"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//CommandStatement"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//IfStatementWithoutElse"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//WhileStatement"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//RepeatStatement"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//Step">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Step/step"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/logicalexps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/statements"/>
     </genClasses>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//TurnLeft">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//TurnLeft/turnLeft"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//WhileStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/logicalexps"/>
     </genClasses>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//Drop">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Drop/drop"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//RepeatStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//RepeatStatement/time"/>
     </genClasses>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//Pick">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Pick/pick"/>
-    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Step"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//TurnLeft"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Drop"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Pick"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//TraceMessage">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//TraceMessage/trace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//TraceMessage/message"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Comment/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//LogicalExps">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//LogicalExps/direction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -3,24 +3,23 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import robotDSLEcore.IfStatementWithoutElse;
+import robotDSLEcore.Comment;
 import robotDSLEcore.RobotDSLEcorePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>If Statement Without Else</b></em>'.
+ * An implementation of the model object '<em><b>Comment</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class IfStatementWithoutElseImpl extends StatementsImpl implements IfStatementWithoutElse {
+public class CommentImpl extends CommandStatementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IfStatementWithoutElseImpl() {
+	protected CommentImpl() {
 		super();
 	}
 
@@ -31,7 +30,7 @@ public class IfStatementWithoutElseImpl extends StatementsImpl implements IfStat
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RobotDSLEcorePackage.Literals.IF_STATEMENT_WITHOUT_ELSE;
+		return RobotDSLEcorePackage.Literals.COMMENT;
 	}
 
-} //IfStatementWithoutElseImpl
+} //CommentImpl

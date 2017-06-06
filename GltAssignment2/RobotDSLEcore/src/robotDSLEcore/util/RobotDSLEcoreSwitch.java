@@ -85,10 +85,10 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RobotDSLEcorePackage.IF_STATEMENT_WITHOUT_ELSE: {
-				IfStatementWithoutElse ifStatementWithoutElse = (IfStatementWithoutElse)theEObject;
-				T result = caseIfStatementWithoutElse(ifStatementWithoutElse);
-				if (result == null) result = caseStatements(ifStatementWithoutElse);
+			case RobotDSLEcorePackage.IF_STATEMENT: {
+				IfStatement ifStatement = (IfStatement)theEObject;
+				T result = caseIfStatement(ifStatement);
+				if (result == null) result = caseStatements(ifStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,6 +146,20 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RobotDSLEcorePackage.COMMENT: {
+				Comment comment = (Comment)theEObject;
+				T result = caseComment(comment);
+				if (result == null) result = caseCommandStatement(comment);
+				if (result == null) result = caseStatements(comment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.LOGICAL_EXPS: {
+				LogicalExps logicalExps = (LogicalExps)theEObject;
+				T result = caseLogicalExps(logicalExps);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -196,17 +210,17 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>If Statement Without Else</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>If Statement Without Else</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIfStatementWithoutElse(IfStatementWithoutElse object) {
+	public T caseIfStatement(IfStatement object) {
 		return null;
 	}
 
@@ -312,6 +326,36 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTraceMessage(TraceMessage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComment(Comment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logical Exps</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logical Exps</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogicalExps(LogicalExps object) {
 		return null;
 	}
 

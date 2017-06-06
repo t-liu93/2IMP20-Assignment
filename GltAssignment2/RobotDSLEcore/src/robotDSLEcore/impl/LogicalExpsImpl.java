@@ -3,51 +3,56 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import robotDSLEcore.RepeatStatement;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import robotDSLEcore.Directions;
+import robotDSLEcore.LogicalExps;
 import robotDSLEcore.RobotDSLEcorePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Repeat Statement</b></em>'.
+ * An implementation of the model object '<em><b>Logical Exps</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotDSLEcore.impl.RepeatStatementImpl#getTime <em>Time</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.LogicalExpsImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RepeatStatementImpl extends StatementsImpl implements RepeatStatement {
+public class LogicalExpsImpl extends MinimalEObjectImpl.Container implements LogicalExps {
 	/**
-	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
+	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTime()
+	 * @see #getDirection()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TIME_EDEFAULT = 0;
+	protected static final Directions DIRECTION_EDEFAULT = Directions.NORTH;
+
 	/**
-	 * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
+	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTime()
+	 * @see #getDirection()
 	 * @generated
 	 * @ordered
 	 */
-	protected int time = TIME_EDEFAULT;
+	protected Directions direction = DIRECTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RepeatStatementImpl() {
+	protected LogicalExpsImpl() {
 		super();
 	}
 
@@ -58,7 +63,7 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RobotDSLEcorePackage.Literals.REPEAT_STATEMENT;
+		return RobotDSLEcorePackage.Literals.LOGICAL_EXPS;
 	}
 
 	/**
@@ -66,8 +71,8 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getTime() {
-		return time;
+	public Directions getDirection() {
+		return direction;
 	}
 
 	/**
@@ -75,11 +80,11 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTime(int newTime) {
-		int oldTime = time;
-		time = newTime;
+	public void setDirection(Directions newDirection) {
+		Directions oldDirection = direction;
+		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.REPEAT_STATEMENT__TIME, oldTime, time));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.LOGICAL_EXPS__DIRECTION, oldDirection, direction));
 	}
 
 	/**
@@ -90,8 +95,8 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.REPEAT_STATEMENT__TIME:
-				return getTime();
+			case RobotDSLEcorePackage.LOGICAL_EXPS__DIRECTION:
+				return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,8 +109,8 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.REPEAT_STATEMENT__TIME:
-				setTime((Integer)newValue);
+			case RobotDSLEcorePackage.LOGICAL_EXPS__DIRECTION:
+				setDirection((Directions)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -119,8 +124,8 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.REPEAT_STATEMENT__TIME:
-				setTime(TIME_EDEFAULT);
+			case RobotDSLEcorePackage.LOGICAL_EXPS__DIRECTION:
+				setDirection(DIRECTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -134,8 +139,8 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.REPEAT_STATEMENT__TIME:
-				return time != TIME_EDEFAULT;
+			case RobotDSLEcorePackage.LOGICAL_EXPS__DIRECTION:
+				return direction != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -150,10 +155,10 @@ public class RepeatStatementImpl extends StatementsImpl implements RepeatStateme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (time: ");
-		result.append(time);
+		result.append(" (direction: ");
+		result.append(direction);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RepeatStatementImpl
+} //LogicalExpsImpl

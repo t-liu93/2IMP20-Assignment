@@ -49,13 +49,13 @@ public interface RobotDSLEcoreFactory extends EFactory {
 	CommandStatement createCommandStatement();
 
 	/**
-	 * Returns a new object of class '<em>If Statement Without Else</em>'.
+	 * Returns a new object of class '<em>If Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>If Statement Without Else</em>'.
+	 * @return a new object of class '<em>If Statement</em>'.
 	 * @generated
 	 */
-	IfStatementWithoutElse createIfStatementWithoutElse();
+	IfStatement createIfStatement();
 
 	/**
 	 * Returns a new object of class '<em>While Statement</em>'.
@@ -119,6 +119,24 @@ public interface RobotDSLEcoreFactory extends EFactory {
 	 * @generated
 	 */
 	TraceMessage createTraceMessage();
+
+	/**
+	 * Returns a new object of class '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Comment</em>'.
+	 * @generated
+	 */
+	Comment createComment();
+
+	/**
+	 * Returns a new object of class '<em>Logical Exps</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logical Exps</em>'.
+	 * @generated
+	 */
+	LogicalExps createLogicalExps();
 
 	/**
 	 * Returns the package supported by this factory.

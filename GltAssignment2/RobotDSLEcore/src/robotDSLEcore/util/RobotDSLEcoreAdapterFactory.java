@@ -80,8 +80,8 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 				return createCommandStatementAdapter();
 			}
 			@Override
-			public Adapter caseIfStatementWithoutElse(IfStatementWithoutElse object) {
-				return createIfStatementWithoutElseAdapter();
+			public Adapter caseIfStatement(IfStatement object) {
+				return createIfStatementAdapter();
 			}
 			@Override
 			public Adapter caseWhileStatement(WhileStatement object) {
@@ -110,6 +110,14 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTraceMessage(TraceMessage object) {
 				return createTraceMessageAdapter();
+			}
+			@Override
+			public Adapter caseComment(Comment object) {
+				return createCommentAdapter();
+			}
+			@Override
+			public Adapter caseLogicalExps(LogicalExps object) {
+				return createLogicalExpsAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -174,16 +182,16 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link robotDSLEcore.IfStatementWithoutElse <em>If Statement Without Else</em>}'.
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.IfStatement <em>If Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see robotDSLEcore.IfStatementWithoutElse
+	 * @see robotDSLEcore.IfStatement
 	 * @generated
 	 */
-	public Adapter createIfStatementWithoutElseAdapter() {
+	public Adapter createIfStatementAdapter() {
 		return null;
 	}
 
@@ -282,6 +290,34 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTraceMessageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Comment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Comment
+	 * @generated
+	 */
+	public Adapter createCommentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.LogicalExps <em>Logical Exps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.LogicalExps
+	 * @generated
+	 */
+	public Adapter createLogicalExpsAdapter() {
 		return null;
 	}
 

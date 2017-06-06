@@ -4,31 +4,42 @@
     nsPrefix="robotDSLEcore">
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statements"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statements"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommandStatement" eSuperTypes="#//Statements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IfStatementWithoutElse" eSuperTypes="#//Statements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//Statements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement" eSuperTypes="#//Statements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//CommandStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="step" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalexps" lowerBound="1"
+        eType="#//LogicalExps" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statements" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TurnLeft" eSuperTypes="#//CommandStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="turnLeft" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalexps" lowerBound="1"
+        eType="#//LogicalExps" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Drop" eSuperTypes="#//CommandStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="drop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pick" eSuperTypes="#//CommandStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pick" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//CommandStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TurnLeft" eSuperTypes="#//CommandStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Drop" eSuperTypes="#//CommandStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Pick" eSuperTypes="#//CommandStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TraceMessage" eSuperTypes="#//CommandStatement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//CommandStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Directions">
+    <eLiterals name="south"/>
+    <eLiterals name="north" value="1"/>
+    <eLiterals name="west" value="2"/>
+    <eLiterals name="east" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalExps">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Directions"
+        defaultValueLiteral="north"/>
   </eClassifiers>
 </ecore:EPackage>

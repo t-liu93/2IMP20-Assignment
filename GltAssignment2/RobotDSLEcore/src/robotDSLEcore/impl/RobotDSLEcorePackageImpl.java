@@ -4,14 +4,18 @@ package robotDSLEcore.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import robotDSLEcore.CommandStatement;
+import robotDSLEcore.Comment;
+import robotDSLEcore.Directions;
 import robotDSLEcore.Drop;
-import robotDSLEcore.IfStatementWithoutElse;
+import robotDSLEcore.IfStatement;
+import robotDSLEcore.LogicalExps;
 import robotDSLEcore.Pick;
 import robotDSLEcore.RepeatStatement;
 import robotDSLEcore.RobotDSLEcoreFactory;
@@ -56,7 +60,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ifStatementWithoutElseEClass = null;
+	private EClass ifStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,6 +110,27 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * @generated
 	 */
 	private EClass traceMessageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicalExpsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum directionsEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -191,8 +216,8 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getScript_End() {
-		return (EAttribute)scriptEClass.getEStructuralFeatures().get(1);
+	public EReference getScript_Statements() {
+		return (EReference)scriptEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -209,15 +234,6 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStatements_Script() {
-		return (EReference)statementsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCommandStatement() {
 		return commandStatementEClass;
 	}
@@ -227,8 +243,17 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIfStatementWithoutElse() {
-		return ifStatementWithoutElseEClass;
+	public EClass getIfStatement() {
+		return ifStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIfStatement_Logicalexps() {
+		return (EReference)ifStatementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -254,8 +279,8 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStep() {
-		return stepEClass;
+	public EAttribute getRepeatStatement_Time() {
+		return (EAttribute)repeatStatementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -263,8 +288,8 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStep_Step() {
-		return (EAttribute)stepEClass.getEStructuralFeatures().get(0);
+	public EClass getStep() {
+		return stepEClass;
 	}
 
 	/**
@@ -281,26 +306,8 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTurnLeft_TurnLeft() {
-		return (EAttribute)turnLeftEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDrop() {
 		return dropEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDrop_Drop() {
-		return (EAttribute)dropEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -317,15 +324,6 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPick_Pick() {
-		return (EAttribute)pickEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTraceMessage() {
 		return traceMessageEClass;
 	}
@@ -335,8 +333,44 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTraceMessage_Trace() {
+	public EAttribute getTraceMessage_Message() {
 		return (EAttribute)traceMessageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComment() {
+		return commentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogicalExps() {
+		return logicalExpsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogicalExps_Direction() {
+		return (EAttribute)logicalExpsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDirections() {
+		return directionsEEnum;
 	}
 
 	/**
@@ -369,33 +403,38 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		// Create classes and their features
 		scriptEClass = createEClass(SCRIPT);
 		createEAttribute(scriptEClass, SCRIPT__NAME);
-		createEAttribute(scriptEClass, SCRIPT__END);
+		createEReference(scriptEClass, SCRIPT__STATEMENTS);
 
 		statementsEClass = createEClass(STATEMENTS);
-		createEReference(statementsEClass, STATEMENTS__SCRIPT);
 
 		commandStatementEClass = createEClass(COMMAND_STATEMENT);
 
-		ifStatementWithoutElseEClass = createEClass(IF_STATEMENT_WITHOUT_ELSE);
+		ifStatementEClass = createEClass(IF_STATEMENT);
+		createEReference(ifStatementEClass, IF_STATEMENT__LOGICALEXPS);
 
 		whileStatementEClass = createEClass(WHILE_STATEMENT);
 
 		repeatStatementEClass = createEClass(REPEAT_STATEMENT);
+		createEAttribute(repeatStatementEClass, REPEAT_STATEMENT__TIME);
 
 		stepEClass = createEClass(STEP);
-		createEAttribute(stepEClass, STEP__STEP);
 
 		turnLeftEClass = createEClass(TURN_LEFT);
-		createEAttribute(turnLeftEClass, TURN_LEFT__TURN_LEFT);
 
 		dropEClass = createEClass(DROP);
-		createEAttribute(dropEClass, DROP__DROP);
 
 		pickEClass = createEClass(PICK);
-		createEAttribute(pickEClass, PICK__PICK);
 
 		traceMessageEClass = createEClass(TRACE_MESSAGE);
-		createEAttribute(traceMessageEClass, TRACE_MESSAGE__TRACE);
+		createEAttribute(traceMessageEClass, TRACE_MESSAGE__MESSAGE);
+
+		commentEClass = createEClass(COMMENT);
+
+		logicalExpsEClass = createEClass(LOGICAL_EXPS);
+		createEAttribute(logicalExpsEClass, LOGICAL_EXPS__DIRECTION);
+
+		// Create enums
+		directionsEEnum = createEEnum(DIRECTIONS);
 	}
 
 	/**
@@ -427,7 +466,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		// Add supertypes to classes
 		commandStatementEClass.getESuperTypes().add(this.getStatements());
-		ifStatementWithoutElseEClass.getESuperTypes().add(this.getStatements());
+		ifStatementEClass.getESuperTypes().add(this.getStatements());
 		whileStatementEClass.getESuperTypes().add(this.getStatements());
 		repeatStatementEClass.getESuperTypes().add(this.getStatements());
 		stepEClass.getESuperTypes().add(this.getCommandStatement());
@@ -435,37 +474,47 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		dropEClass.getESuperTypes().add(this.getCommandStatement());
 		pickEClass.getESuperTypes().add(this.getCommandStatement());
 		traceMessageEClass.getESuperTypes().add(this.getCommandStatement());
+		commentEClass.getESuperTypes().add(this.getCommandStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getScript_End(), ecorePackage.getEString(), "end", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Statements(), this.getStatements(), null, "statements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementsEClass, Statements.class, "Statements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStatements_Script(), this.getScript(), null, "script", null, 0, -1, Statements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commandStatementEClass, CommandStatement.class, "CommandStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(ifStatementWithoutElseEClass, IfStatementWithoutElse.class, "IfStatementWithoutElse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIfStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(repeatStatementEClass, RepeatStatement.class, "RepeatStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRepeatStatement_Time(), ecorePackage.getEInt(), "time", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStep_Step(), ecorePackage.getEString(), "step", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(turnLeftEClass, TurnLeft.class, "TurnLeft", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTurnLeft_TurnLeft(), ecorePackage.getEString(), "turnLeft", null, 0, 1, TurnLeft.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dropEClass, Drop.class, "Drop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDrop_Drop(), ecorePackage.getEString(), "drop", null, 0, 1, Drop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pickEClass, Pick.class, "Pick", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPick_Pick(), ecorePackage.getEString(), "pick", null, 0, 1, Pick.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(traceMessageEClass, TraceMessage.class, "TraceMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTraceMessage_Trace(), ecorePackage.getEString(), "trace", null, 0, 1, TraceMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTraceMessage_Message(), ecorePackage.getEString(), "message", null, 0, 1, TraceMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(logicalExpsEClass, LogicalExps.class, "LogicalExps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogicalExps_Direction(), this.getDirections(), "direction", "north", 0, 1, LogicalExps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(directionsEEnum, Directions.class, "Directions");
+		addEEnumLiteral(directionsEEnum, Directions.SOUTH);
+		addEEnumLiteral(directionsEEnum, Directions.NORTH);
+		addEEnumLiteral(directionsEEnum, Directions.WEST);
+		addEEnumLiteral(directionsEEnum, Directions.EAST);
 
 		// Create resource
 		createResource(eNS_URI);

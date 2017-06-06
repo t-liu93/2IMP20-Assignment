@@ -19,31 +19,31 @@ import robotDSLEcore.TraceMessage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotDSLEcore.impl.TraceMessageImpl#getTrace <em>Trace</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.TraceMessageImpl#getMessage <em>Message</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TraceMessageImpl extends CommandStatementImpl implements TraceMessage {
 	/**
-	 * The default value of the '{@link #getTrace() <em>Trace</em>}' attribute.
+	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrace()
+	 * @see #getMessage()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TRACE_EDEFAULT = null;
+	protected static final String MESSAGE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTrace() <em>Trace</em>}' attribute.
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrace()
+	 * @see #getMessage()
 	 * @generated
 	 * @ordered
 	 */
-	protected String trace = TRACE_EDEFAULT;
+	protected String message = MESSAGE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +69,8 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTrace() {
-		return trace;
+	public String getMessage() {
+		return message;
 	}
 
 	/**
@@ -78,11 +78,11 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTrace(String newTrace) {
-		String oldTrace = trace;
-		trace = newTrace;
+	public void setMessage(String newMessage) {
+		String oldMessage = message;
+		message = newMessage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.TRACE_MESSAGE__TRACE, oldTrace, trace));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.TRACE_MESSAGE__MESSAGE, oldMessage, message));
 	}
 
 	/**
@@ -93,8 +93,8 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.TRACE_MESSAGE__TRACE:
-				return getTrace();
+			case RobotDSLEcorePackage.TRACE_MESSAGE__MESSAGE:
+				return getMessage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,8 +107,8 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.TRACE_MESSAGE__TRACE:
-				setTrace((String)newValue);
+			case RobotDSLEcorePackage.TRACE_MESSAGE__MESSAGE:
+				setMessage((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +122,8 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.TRACE_MESSAGE__TRACE:
-				setTrace(TRACE_EDEFAULT);
+			case RobotDSLEcorePackage.TRACE_MESSAGE__MESSAGE:
+				setMessage(MESSAGE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +137,8 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotDSLEcorePackage.TRACE_MESSAGE__TRACE:
-				return TRACE_EDEFAULT == null ? trace != null : !TRACE_EDEFAULT.equals(trace);
+			case RobotDSLEcorePackage.TRACE_MESSAGE__MESSAGE:
+				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -153,8 +153,8 @@ public class TraceMessageImpl extends CommandStatementImpl implements TraceMessa
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (trace: ");
-		result.append(trace);
+		result.append(" (message: ");
+		result.append(message);
 		result.append(')');
 		return result.toString();
 	}

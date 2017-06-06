@@ -2,6 +2,7 @@
  */
 package robotDSLEcore;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link robotDSLEcore.Script#getName <em>Name</em>}</li>
- *   <li>{@link robotDSLEcore.Script#getEnd <em>End</em>}</li>
+ *   <li>{@link robotDSLEcore.Script#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @see robotDSLEcore.RobotDSLEcorePackage#getScript()
@@ -49,29 +50,19 @@ public interface Script extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>End</b></em>' attribute.
+	 * Returns the value of the '<em><b>Statements</b></em>' reference list.
+	 * The list contents are of type {@link robotDSLEcore.Statements}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>End</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Statements</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>End</em>' attribute.
-	 * @see #setEnd(String)
-	 * @see robotDSLEcore.RobotDSLEcorePackage#getScript_End()
+	 * @return the value of the '<em>Statements</em>' reference list.
+	 * @see robotDSLEcore.RobotDSLEcorePackage#getScript_Statements()
 	 * @model
 	 * @generated
 	 */
-	String getEnd();
-
-	/**
-	 * Sets the value of the '{@link robotDSLEcore.Script#getEnd <em>End</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End</em>' attribute.
-	 * @see #getEnd()
-	 * @generated
-	 */
-	void setEnd(String value);
+	EList<Statements> getStatements();
 
 } // Script

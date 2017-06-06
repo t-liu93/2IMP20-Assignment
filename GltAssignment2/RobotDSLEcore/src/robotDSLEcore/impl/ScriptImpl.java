@@ -2,15 +2,19 @@
  */
 package robotDSLEcore.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import robotDSLEcore.RobotDSLEcorePackage;
 import robotDSLEcore.Script;
+import robotDSLEcore.Statements;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +25,7 @@ import robotDSLEcore.Script;
  * </p>
  * <ul>
  *   <li>{@link robotDSLEcore.impl.ScriptImpl#getName <em>Name</em>}</li>
- *   <li>{@link robotDSLEcore.impl.ScriptImpl#getEnd <em>End</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.ScriptImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,24 +52,14 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
+	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEnd()
+	 * @see #getStatements()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String END_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnd()
-	 * @generated
-	 * @ordered
-	 */
-	protected String end = END_EDEFAULT;
+	protected EList<Statements> statements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,20 +106,11 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getEnd() {
-		return end;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEnd(String newEnd) {
-		String oldEnd = end;
-		end = newEnd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.SCRIPT__END, oldEnd, end));
+	public EList<Statements> getStatements() {
+		if (statements == null) {
+			statements = new EObjectResolvingEList<Statements>(Statements.class, this, RobotDSLEcorePackage.SCRIPT__STATEMENTS);
+		}
+		return statements;
 	}
 
 	/**
@@ -138,8 +123,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 		switch (featureID) {
 			case RobotDSLEcorePackage.SCRIPT__NAME:
 				return getName();
-			case RobotDSLEcorePackage.SCRIPT__END:
-				return getEnd();
+			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
+				return getStatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -149,14 +134,16 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RobotDSLEcorePackage.SCRIPT__NAME:
 				setName((String)newValue);
 				return;
-			case RobotDSLEcorePackage.SCRIPT__END:
-				setEnd((String)newValue);
+			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
+				getStatements().clear();
+				getStatements().addAll((Collection<? extends Statements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +160,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 			case RobotDSLEcorePackage.SCRIPT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case RobotDSLEcorePackage.SCRIPT__END:
-				setEnd(END_EDEFAULT);
+			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
+				getStatements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +177,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 		switch (featureID) {
 			case RobotDSLEcorePackage.SCRIPT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RobotDSLEcorePackage.SCRIPT__END:
-				return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
+			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
+				return statements != null && !statements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,8 +195,6 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", end: ");
-		result.append(end);
 		result.append(')');
 		return result.toString();
 	}
