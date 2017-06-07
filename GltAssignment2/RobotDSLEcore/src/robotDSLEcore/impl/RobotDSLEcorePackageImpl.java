@@ -1064,7 +1064,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		initEClass(binaryLogicalExpEClass, BinaryLogicalExp.class, "BinaryLogicalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBinaryLogicalExp_Binaries(), this.getBinaries(), null, "binaries", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 2, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runningStatementsEClass, RunningStatements.class, "RunningStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

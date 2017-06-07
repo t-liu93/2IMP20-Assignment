@@ -49,7 +49,7 @@ public interface BinaryLogicalExp extends LogicalExps {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singlelogalexp</em>' containment reference list.
 	 * @see robotDSLEcore.RobotDSLEcorePackage#getBinaryLogicalExp_Singlelogalexp()
-	 * @model containment="true" required="true"
+	 * @model containment="true" lower="2"
 	 * @generated
 	 */
 	EList<SingleLogalExp> getSinglelogalexp();
