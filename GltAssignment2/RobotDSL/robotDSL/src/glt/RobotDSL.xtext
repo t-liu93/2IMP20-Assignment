@@ -7,29 +7,31 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 Script returns Script:
 	{Script}
 	'Script'
-	name=EString
-	'{'
-		('statements' '{' statements+=Statements ( "," statements+=Statements)* '}' )?
-	'}';
+	name=NAME
+	'runs'
+	'as'
+	( statements+=Statements ( statements+=Statements)* )?
+	'end'
+	;
 
 Statements returns Statements:
-	Statements_Impl | CommandStatement_Impl | IfStatement | WhileStatement | RepeatStatement | Step | TurnLeft | Drop | Pick | TraceMessage | Comment | BuildStatements_Impl | DestroyWall | PickMark | DropMark | BuildWall | RunningStatements_Impl;
+	IfStatement | WhileStatement | RepeatStatement | Step | TurnLeft | Drop | Pick | TraceMessage | Comment | DestroyWall | PickMark | DropMark | BuildWall;
 
 LogicalExps returns LogicalExps:
-	LogicalExps_Impl | Full | Mark | WallAhead | Heading | SingleLogalExp_Impl | BinaryLogicalExp;
+	Full | Mark | WallAhead | Heading | BinaryLogicalExp;
 
 RunningStatements returns RunningStatements:
-	RunningStatements_Impl | CommandStatement_Impl | IfStatement | WhileStatement | RepeatStatement | Step | TurnLeft | Drop | Pick | TraceMessage | Comment;
+	IfStatement | WhileStatement | RepeatStatement | Step | TurnLeft | Drop | Pick | TraceMessage | Comment;
 
 CommandStatement returns CommandStatement:
-	CommandStatement_Impl | Step | TurnLeft | Drop | Pick | TraceMessage | Comment;
+	Step | TurnLeft | Drop | Pick | TraceMessage | Comment;
 
 
 Binaries returns Binaries:
-	Binaries_Impl | And | Or;
+	And | Or;
 
 SingleLogalExp returns SingleLogalExp:
-	SingleLogalExp_Impl | Full | Mark | WallAhead | Heading;
+	Full | Mark | WallAhead | Heading;
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -45,60 +47,67 @@ CommandStatement_Impl returns CommandStatement:
 	;
 
 IfStatement returns IfStatement:
-	'IfStatement'
-	'{'
-		'logicalexps' logicalexps=LogicalExps
-		('runningstatements' '{' runningstatements+=RunningStatements ( "," runningstatements+=RunningStatements)* '}' )?
-	'}';
+	{IfStatement}
+	'if'
+	logicalexps=LogicalExps
+	( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
+	'end'
+	(
+		'else'
+		'do'
+		( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
+		'end'
+	)?
+	;
 
 WhileStatement returns WhileStatement:
-	'WhileStatement'
-	'{'
-		'logicalexps' logicalexps=LogicalExps
-		('runningstatements' '{' runningstatements+=RunningStatements ( "," runningstatements+=RunningStatements)* '}' )?
-	'}';
+	{WhileStatement}
+	'while'
+	logicalexps=LogicalExps
+	( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
+	'end'
+	;
 
 RepeatStatement returns RepeatStatement:
 	{RepeatStatement}
-	'RepeatStatement'
-	'{'
-		('time' time=EInt)?
-		('commandstatement' '{' commandstatement+=CommandStatement ( "," commandstatement+=CommandStatement)* '}' )?
-	'}';
+	'repeat'
+	time=EInt
+	'times'
+	( commandstatement+=CommandStatement ( commandstatement+=CommandStatement)* )?
+	'end'
+	;
 
 Step returns Step:
 	{Step}
-	'Step'
+	'step'
 	;
 
 TurnLeft returns TurnLeft:
 	{TurnLeft}
-	'TurnLeft'
+	'turnLeft'
 	;
 
 Drop returns Drop:
 	{Drop}
-	'Drop'
+	'drop'
 	;
 
 Pick returns Pick:
 	{Pick}
-	'Pick'
+	'pick'
 	;
 
 TraceMessage returns TraceMessage:
 	{TraceMessage}
-	'TraceMessage'
-	'{'
-		('message' message=EString)?
-	'}';
+	'trace'
+	message=Messages
+	;
 
 Comment returns Comment:
 	{Comment}
-	'Comment'
-	'{'
-		('comment' comment=EString)?
-	'}';
+	'#'
+	comment=Comments
+	;
 
 BuildStatements_Impl returns BuildStatements:
 	{BuildStatements}
@@ -107,35 +116,43 @@ BuildStatements_Impl returns BuildStatements:
 
 DestroyWall returns DestroyWall:
 	{DestroyWall}
-	'DestroyWall'
-	'{'
-		('row' row=EInt)?
-		('column' column=EInt)?
-	'}';
+	'destroyWall'
+	'at'
+	'row:'
+	row=INT
+	'col:'
+	column=INT
+	;
 
 PickMark returns PickMark:
 	{PickMark}
-	'PickMark'
-	'{'
-		('row' row=EInt)?
-		('column' column=EInt)?
-	'}';
+	'pickMark'
+	'at'
+	'row:'
+	row=INT
+	'col:'
+	column=INT
+	;
 
 DropMark returns DropMark:
 	{DropMark}
-	'DropMark'
-	'{'
-		('row' row=EInt)?
-		('column' column=EInt)?
-	'}';
+	'dropMark'
+	'at'
+	'row:'
+	row=INT
+	'col:'
+	column=INT
+	;
 
 BuildWall returns BuildWall:
 	{BuildWall}
-	'BuildWall'
-	'{'
-		('row' row=EInt)?
-		('column' column=EInt)?
-	'}';
+	'buildWall'
+	'at'
+	'row:'
+	row=INT
+	'col:'
+	column=INT
+	;
 
 RunningStatements_Impl returns RunningStatements:
 	{RunningStatements}
@@ -149,32 +166,29 @@ LogicalExps_Impl returns LogicalExps:
 
 Full returns Full:
 	{Full}
-	'Full'
-	'{'
-		('not' not=Not)?
-	'}';
+	(not = Not)?
+	'full'
+	;
 
 Mark returns Mark:
 	{Mark}
-	'Mark'
-	'{'
-		('not' not=Not)?
-	'}';
+	(not = Not)?
+	'mark'
+	;
 
 WallAhead returns WallAhead:
 	{WallAhead}
-	'WallAhead'
-	'{'
-		('not' not=Not)?
-	'}';
+	(not = Not)?
+	'wall'
+	'head'
+	;
 
 Heading returns Heading:
 	{Heading}
-	'Heading'
-	'{'
-		('direction' direction=Directions)?
-		('not' not=Not)?
-	'}';
+	(not = Not)?
+	'heading'
+	direction = Directions
+	;
 
 SingleLogalExp_Impl returns SingleLogalExp:
 	{SingleLogalExp}
@@ -186,11 +200,14 @@ BinaryLogicalExp returns BinaryLogicalExp:
 	'{'
 		'binaries' '{' binaries+=Binaries ( "," binaries+=Binaries)* '}' 
 		'singlelogalexp' '{' singlelogalexp+=SingleLogalExp ( "," singlelogalexp+=SingleLogalExp)* '}' 
-	'}';
+	'}'
+	singlelogalexp+=SingleLogalExp
+	(binaries+=Binaries
+	singlelogalexp+=SingleLogalExp)+;
 
 Not returns Not:
 	{Not}
-	'Not'
+	'not'
 	;
 
 enum Directions returns Directions:
@@ -203,13 +220,25 @@ Binaries_Impl returns Binaries:
 
 And returns And:
 	{And}
-	'And'
+	'and'
 	;
 
 Or returns Or:
 	{Or}
-	'Or'
+	'or'
 	;
 
 EInt returns ecore::EInt:
 	'-'? INT;
+	
+Messages returns ecore::EString:
+	STRING
+;
+
+Comments returns ecore::EString:
+	(WS* EString)*
+;
+
+terminal NAME returns ecore::EString:
+	('a'..'z' | 'A'..'Z')+
+;
