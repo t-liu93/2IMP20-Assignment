@@ -167,7 +167,6 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Binaries returns Binaries
 	 *     Binaries_Impl returns Binaries
 	 *
 	 * Constraint:
@@ -184,7 +183,7 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BinaryLogicalExp returns BinaryLogicalExp
 	 *
 	 * Constraint:
-	 *     (binaries+=Binaries binaries+=Binaries* singlelogalexp+=SingleLogalExp singlelogalexp+=SingleLogalExp*)
+	 *     (singlelogalexp+=SingleLogalExp (binaries+=Binaries singlelogalexp+=SingleLogalExp)+)
 	 */
 	protected void sequence_BinaryLogicalExp(ISerializationContext context, BinaryLogicalExp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -209,10 +208,19 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BuildWall returns BuildWall
 	 *
 	 * Constraint:
-	 *     (row=EInt? column=EInt?)
+	 *     (row=INT column=INT)
 	 */
 	protected void sequence_BuildWall(ISerializationContext context, BuildWall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.BUILD_WALL__ROW) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.BUILD_WALL__ROW));
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.BUILD_WALL__COLUMN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.BUILD_WALL__COLUMN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBuildWallAccess().getRowINTTerminalRuleCall_4_0(), semanticObject.getRow());
+		feeder.accept(grammarAccess.getBuildWallAccess().getColumnINTTerminalRuleCall_6_0(), semanticObject.getColumn());
+		feeder.finish();
 	}
 	
 	
@@ -236,7 +244,7 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Comment returns Comment
 	 *
 	 * Constraint:
-	 *     comment=Comments
+	 *     comment=COMMENTS
 	 */
 	protected void sequence_Comment(ISerializationContext context, Comment semanticObject) {
 		if (errorAcceptor != null) {
@@ -244,7 +252,7 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.COMMENT__COMMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCommentAccess().getCommentCommentsParserRuleCall_2_0(), semanticObject.getComment());
+		feeder.accept(grammarAccess.getCommentAccess().getCommentCOMMENTSTerminalRuleCall_1_0(), semanticObject.getComment());
 		feeder.finish();
 	}
 	
@@ -277,10 +285,19 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     DropMark returns DropMark
 	 *
 	 * Constraint:
-	 *     (row=EInt? column=EInt?)
+	 *     (row=INT column=INT)
 	 */
 	protected void sequence_DropMark(ISerializationContext context, DropMark semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.DROP_MARK__ROW) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.DROP_MARK__ROW));
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.DROP_MARK__COLUMN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.DROP_MARK__COLUMN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDropMarkAccess().getRowINTTerminalRuleCall_4_0(), semanticObject.getRow());
+		feeder.accept(grammarAccess.getDropMarkAccess().getColumnINTTerminalRuleCall_6_0(), semanticObject.getColumn());
+		feeder.finish();
 	}
 	
 	
@@ -320,7 +337,7 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Heading returns Heading
 	 *
 	 * Constraint:
-	 *     (direction=Directions? not=Not?)
+	 *     (not=Not? direction=Directions)
 	 */
 	protected void sequence_Heading(ISerializationContext context, Heading semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -402,10 +419,19 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     PickMark returns PickMark
 	 *
 	 * Constraint:
-	 *     (row=EInt? column=EInt?)
+	 *     (row=INT column=INT)
 	 */
 	protected void sequence_PickMark(ISerializationContext context, PickMark semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.PICK_MARK__ROW) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.PICK_MARK__ROW));
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.PICK_MARK__COLUMN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.PICK_MARK__COLUMN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPickMarkAccess().getRowINTTerminalRuleCall_4_0(), semanticObject.getRow());
+		feeder.accept(grammarAccess.getPickMarkAccess().getColumnINTTerminalRuleCall_6_0(), semanticObject.getColumn());
+		feeder.finish();
 	}
 	
 	
@@ -464,7 +490,6 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     SingleLogalExp returns SingleLogalExp
 	 *     SingleLogalExp_Impl returns SingleLogalExp
 	 *
 	 * Constraint:

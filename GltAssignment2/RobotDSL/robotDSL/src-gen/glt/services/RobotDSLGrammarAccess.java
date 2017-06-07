@@ -271,56 +271,48 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class BinariesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Binaries");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cBinaries_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAndParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cOrParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cAndParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cOrParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Binaries:
-		//	Binaries_Impl | And | Or;
+		//	And | Or;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Binaries_Impl | And | Or
+		//And | Or
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Binaries_Impl
-		public RuleCall getBinaries_ImplParserRuleCall_0() { return cBinaries_ImplParserRuleCall_0; }
-		
 		//And
-		public RuleCall getAndParserRuleCall_1() { return cAndParserRuleCall_1; }
+		public RuleCall getAndParserRuleCall_0() { return cAndParserRuleCall_0; }
 		
 		//Or
-		public RuleCall getOrParserRuleCall_2() { return cOrParserRuleCall_2; }
+		public RuleCall getOrParserRuleCall_1() { return cOrParserRuleCall_1; }
 	}
 	public class SingleLogalExpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.SingleLogalExp");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSingleLogalExp_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFullParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMarkParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cWallAheadParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cHeadingParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cFullParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMarkParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cWallAheadParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cHeadingParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//SingleLogalExp:
-		//	SingleLogalExp_Impl | Full | Mark | WallAhead | Heading;
+		//	Full | Mark | WallAhead | Heading;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//SingleLogalExp_Impl | Full | Mark | WallAhead | Heading
+		//Full | Mark | WallAhead | Heading
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//SingleLogalExp_Impl
-		public RuleCall getSingleLogalExp_ImplParserRuleCall_0() { return cSingleLogalExp_ImplParserRuleCall_0; }
-		
 		//Full
-		public RuleCall getFullParserRuleCall_1() { return cFullParserRuleCall_1; }
+		public RuleCall getFullParserRuleCall_0() { return cFullParserRuleCall_0; }
 		
 		//Mark
-		public RuleCall getMarkParserRuleCall_2() { return cMarkParserRuleCall_2; }
+		public RuleCall getMarkParserRuleCall_1() { return cMarkParserRuleCall_1; }
 		
 		//WallAhead
-		public RuleCall getWallAheadParserRuleCall_3() { return cWallAheadParserRuleCall_3; }
+		public RuleCall getWallAheadParserRuleCall_2() { return cWallAheadParserRuleCall_2; }
 		
 		//Heading
-		public RuleCall getHeadingParserRuleCall_4() { return cHeadingParserRuleCall_4; }
+		public RuleCall getHeadingParserRuleCall_3() { return cHeadingParserRuleCall_3; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.EString");
@@ -388,33 +380,36 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIfKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cLogicalexpsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cLogicalexpsLogicalExpsParserRuleCall_2_0 = (RuleCall)cLogicalexpsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cRunningstatementsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_3_0_0 = (RuleCall)cRunningstatementsAssignment_3_0.eContents().get(0);
-		private final Assignment cRunningstatementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_3_1_0 = (RuleCall)cRunningstatementsAssignment_3_1.eContents().get(0);
-		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cElseKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cDoKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
-		private final Assignment cRunningstatementsAssignment_5_2_0 = (Assignment)cGroup_5_2.eContents().get(0);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_5_2_0_0 = (RuleCall)cRunningstatementsAssignment_5_2_0.eContents().get(0);
-		private final Assignment cRunningstatementsAssignment_5_2_1 = (Assignment)cGroup_5_2.eContents().get(1);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_5_2_1_0 = (RuleCall)cRunningstatementsAssignment_5_2_1.eContents().get(0);
-		private final Keyword cEndKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cDoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cRunningstatementsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_4_0_0 = (RuleCall)cRunningstatementsAssignment_4_0.eContents().get(0);
+		private final Assignment cRunningstatementsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_4_1_0 = (RuleCall)cRunningstatementsAssignment_4_1.eContents().get(0);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cElseKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cDoKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Group cGroup_6_2 = (Group)cGroup_6.eContents().get(2);
+		private final Assignment cRunningstatementsAssignment_6_2_0 = (Assignment)cGroup_6_2.eContents().get(0);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_6_2_0_0 = (RuleCall)cRunningstatementsAssignment_6_2_0.eContents().get(0);
+		private final Assignment cRunningstatementsAssignment_6_2_1 = (Assignment)cGroup_6_2.eContents().get(1);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_6_2_1_0 = (RuleCall)cRunningstatementsAssignment_6_2_1.eContents().get(0);
+		private final Keyword cEndKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
 		
 		//IfStatement:
 		//	{IfStatement}
 		//	'if'
-		//	logicalexps=LogicalExps (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+		//	logicalexps=LogicalExps
+		//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
 		//	'end' ('else'
 		//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
 		//	'end')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IfStatement} 'if' logicalexps=LogicalExps (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		//'end' ('else' 'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)? 'end')?
+		//{IfStatement} 'if' logicalexps=LogicalExps 'do' (runningstatements+=RunningStatements
+		//runningstatements+=RunningStatements*)? 'end' ('else' 'do' (runningstatements+=RunningStatements
+		//runningstatements+=RunningStatements*)? 'end')?
 		public Group getGroup() { return cGroup; }
 		
 		//{IfStatement}
@@ -429,50 +424,53 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//LogicalExps
 		public RuleCall getLogicalexpsLogicalExpsParserRuleCall_2_0() { return cLogicalexpsLogicalExpsParserRuleCall_2_0; }
 		
+		//'do'
+		public Keyword getDoKeyword_3() { return cDoKeyword_3; }
+		
 		//(runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//runningstatements+=RunningStatements
-		public Assignment getRunningstatementsAssignment_3_0() { return cRunningstatementsAssignment_3_0; }
+		public Assignment getRunningstatementsAssignment_4_0() { return cRunningstatementsAssignment_4_0; }
 		
 		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_3_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_3_0_0; }
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_4_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_4_0_0; }
 		
 		//runningstatements+=RunningStatements*
-		public Assignment getRunningstatementsAssignment_3_1() { return cRunningstatementsAssignment_3_1; }
+		public Assignment getRunningstatementsAssignment_4_1() { return cRunningstatementsAssignment_4_1; }
 		
 		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_3_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_3_1_0; }
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_4_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_4_1_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 		
 		//('else' 'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)? 'end')?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'else'
-		public Keyword getElseKeyword_5_0() { return cElseKeyword_5_0; }
+		public Keyword getElseKeyword_6_0() { return cElseKeyword_6_0; }
 		
 		//'do'
-		public Keyword getDoKeyword_5_1() { return cDoKeyword_5_1; }
+		public Keyword getDoKeyword_6_1() { return cDoKeyword_6_1; }
 		
 		//(runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		public Group getGroup_5_2() { return cGroup_5_2; }
+		public Group getGroup_6_2() { return cGroup_6_2; }
 		
 		//runningstatements+=RunningStatements
-		public Assignment getRunningstatementsAssignment_5_2_0() { return cRunningstatementsAssignment_5_2_0; }
+		public Assignment getRunningstatementsAssignment_6_2_0() { return cRunningstatementsAssignment_6_2_0; }
 		
 		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_5_2_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_5_2_0_0; }
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_6_2_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_6_2_0_0; }
 		
 		//runningstatements+=RunningStatements*
-		public Assignment getRunningstatementsAssignment_5_2_1() { return cRunningstatementsAssignment_5_2_1; }
+		public Assignment getRunningstatementsAssignment_6_2_1() { return cRunningstatementsAssignment_6_2_1; }
 		
 		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_5_2_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_5_2_1_0; }
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_6_2_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_6_2_1_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_5_3() { return cEndKeyword_5_3; }
+		public Keyword getEndKeyword_6_3() { return cEndKeyword_6_3; }
 	}
 	public class WhileStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.WhileStatement");
@@ -481,21 +479,23 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cWhileKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cLogicalexpsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cLogicalexpsLogicalExpsParserRuleCall_2_0 = (RuleCall)cLogicalexpsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cRunningstatementsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_3_0_0 = (RuleCall)cRunningstatementsAssignment_3_0.eContents().get(0);
-		private final Assignment cRunningstatementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_3_1_0 = (RuleCall)cRunningstatementsAssignment_3_1.eContents().get(0);
-		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cDoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cRunningstatementsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_4_0_0 = (RuleCall)cRunningstatementsAssignment_4_0.eContents().get(0);
+		private final Assignment cRunningstatementsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_4_1_0 = (RuleCall)cRunningstatementsAssignment_4_1.eContents().get(0);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//WhileStatement:
 		//	{WhileStatement}
 		//	'while'
-		//	logicalexps=LogicalExps (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+		//	logicalexps=LogicalExps
+		//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{WhileStatement} 'while' logicalexps=LogicalExps (runningstatements+=RunningStatements
+		//{WhileStatement} 'while' logicalexps=LogicalExps 'do' (runningstatements+=RunningStatements
 		//runningstatements+=RunningStatements*)? 'end'
 		public Group getGroup() { return cGroup; }
 		
@@ -511,23 +511,26 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//LogicalExps
 		public RuleCall getLogicalexpsLogicalExpsParserRuleCall_2_0() { return cLogicalexpsLogicalExpsParserRuleCall_2_0; }
 		
+		//'do'
+		public Keyword getDoKeyword_3() { return cDoKeyword_3; }
+		
 		//(runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//runningstatements+=RunningStatements
-		public Assignment getRunningstatementsAssignment_3_0() { return cRunningstatementsAssignment_3_0; }
+		public Assignment getRunningstatementsAssignment_4_0() { return cRunningstatementsAssignment_4_0; }
 		
 		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_3_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_3_0_0; }
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_4_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_4_0_0; }
 		
 		//runningstatements+=RunningStatements*
-		public Assignment getRunningstatementsAssignment_3_1() { return cRunningstatementsAssignment_3_1; }
+		public Assignment getRunningstatementsAssignment_4_1() { return cRunningstatementsAssignment_4_1; }
 		
 		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_3_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_3_1_0; }
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_4_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_4_1_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 	}
 	public class RepeatStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.RepeatStatement");
@@ -702,30 +705,24 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Comment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCommentAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cNumberSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cCommentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCommentCommentsParserRuleCall_2_0 = (RuleCall)cCommentAssignment_2.eContents().get(0);
+		private final Assignment cCommentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCommentCOMMENTSTerminalRuleCall_1_0 = (RuleCall)cCommentAssignment_1.eContents().get(0);
 		
 		//Comment:
-		//	{Comment}
-		//	'#'
-		//	comment=Comments;
+		//	{Comment} comment=COMMENTS;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Comment} '#' comment=Comments
+		//{Comment} comment=COMMENTS
 		public Group getGroup() { return cGroup; }
 		
 		//{Comment}
 		public Action getCommentAction_0() { return cCommentAction_0; }
 		
-		//'#'
-		public Keyword getNumberSignKeyword_1() { return cNumberSignKeyword_1; }
+		//comment=COMMENTS
+		public Assignment getCommentAssignment_1() { return cCommentAssignment_1; }
 		
-		//comment=Comments
-		public Assignment getCommentAssignment_2() { return cCommentAssignment_2; }
-		
-		//Comments
-		public RuleCall getCommentCommentsParserRuleCall_2_0() { return cCommentCommentsParserRuleCall_2_0; }
+		//COMMENTS
+		public RuleCall getCommentCOMMENTSTerminalRuleCall_1_0() { return cCommentCOMMENTSTerminalRuleCall_1_0; }
 	}
 	public class BuildStatements_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.BuildStatements_Impl");
@@ -751,30 +748,189 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.DestroyWall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDestroyWallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cBuildWallKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDestroyWallKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cRowKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cRowAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cRowINTTerminalRuleCall_4_0 = (RuleCall)cRowAssignment_4.eContents().get(0);
-		private final Keyword cColumnKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cColumnAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cColumnINTTerminalRuleCall_6_0 = (RuleCall)cColumnAssignment_6.eContents().get(0);
 		
 		//DestroyWall:
 		//	{DestroyWall}
-		//	'buildWall'
+		//	'destroyWall'
 		//	'at'
 		//	'row:'
 		//	row=INT
-		//	'column:'
+		//	'col:'
 		//	column=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{DestroyWall} 'buildWall' 'at' 'row:' row=INT 'column:' column=INT
+		//{DestroyWall} 'destroyWall' 'at' 'row:' row=INT 'col:' column=INT
 		public Group getGroup() { return cGroup; }
 		
 		//{DestroyWall}
 		public Action getDestroyWallAction_0() { return cDestroyWallAction_0; }
+		
+		//'destroyWall'
+		public Keyword getDestroyWallKeyword_1() { return cDestroyWallKeyword_1; }
+		
+		//'at'
+		public Keyword getAtKeyword_2() { return cAtKeyword_2; }
+		
+		//'row:'
+		public Keyword getRowKeyword_3() { return cRowKeyword_3; }
+		
+		//row=INT
+		public Assignment getRowAssignment_4() { return cRowAssignment_4; }
+		
+		//INT
+		public RuleCall getRowINTTerminalRuleCall_4_0() { return cRowINTTerminalRuleCall_4_0; }
+		
+		//'col:'
+		public Keyword getColKeyword_5() { return cColKeyword_5; }
+		
+		//column=INT
+		public Assignment getColumnAssignment_6() { return cColumnAssignment_6; }
+		
+		//INT
+		public RuleCall getColumnINTTerminalRuleCall_6_0() { return cColumnINTTerminalRuleCall_6_0; }
+	}
+	public class PickMarkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.PickMark");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPickMarkAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cPickMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRowKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRowAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRowINTTerminalRuleCall_4_0 = (RuleCall)cRowAssignment_4.eContents().get(0);
+		private final Keyword cColKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cColumnAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cColumnINTTerminalRuleCall_6_0 = (RuleCall)cColumnAssignment_6.eContents().get(0);
+		
+		//PickMark:
+		//	{PickMark}
+		//	'pickMark'
+		//	'at'
+		//	'row:'
+		//	row=INT
+		//	'col:'
+		//	column=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{PickMark} 'pickMark' 'at' 'row:' row=INT 'col:' column=INT
+		public Group getGroup() { return cGroup; }
+		
+		//{PickMark}
+		public Action getPickMarkAction_0() { return cPickMarkAction_0; }
+		
+		//'pickMark'
+		public Keyword getPickMarkKeyword_1() { return cPickMarkKeyword_1; }
+		
+		//'at'
+		public Keyword getAtKeyword_2() { return cAtKeyword_2; }
+		
+		//'row:'
+		public Keyword getRowKeyword_3() { return cRowKeyword_3; }
+		
+		//row=INT
+		public Assignment getRowAssignment_4() { return cRowAssignment_4; }
+		
+		//INT
+		public RuleCall getRowINTTerminalRuleCall_4_0() { return cRowINTTerminalRuleCall_4_0; }
+		
+		//'col:'
+		public Keyword getColKeyword_5() { return cColKeyword_5; }
+		
+		//column=INT
+		public Assignment getColumnAssignment_6() { return cColumnAssignment_6; }
+		
+		//INT
+		public RuleCall getColumnINTTerminalRuleCall_6_0() { return cColumnINTTerminalRuleCall_6_0; }
+	}
+	public class DropMarkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.DropMark");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDropMarkAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDropMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRowKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRowAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRowINTTerminalRuleCall_4_0 = (RuleCall)cRowAssignment_4.eContents().get(0);
+		private final Keyword cColKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cColumnAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cColumnINTTerminalRuleCall_6_0 = (RuleCall)cColumnAssignment_6.eContents().get(0);
+		
+		//DropMark:
+		//	{DropMark}
+		//	'dropMark'
+		//	'at'
+		//	'row:'
+		//	row=INT
+		//	'col:'
+		//	column=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{DropMark} 'dropMark' 'at' 'row:' row=INT 'col:' column=INT
+		public Group getGroup() { return cGroup; }
+		
+		//{DropMark}
+		public Action getDropMarkAction_0() { return cDropMarkAction_0; }
+		
+		//'dropMark'
+		public Keyword getDropMarkKeyword_1() { return cDropMarkKeyword_1; }
+		
+		//'at'
+		public Keyword getAtKeyword_2() { return cAtKeyword_2; }
+		
+		//'row:'
+		public Keyword getRowKeyword_3() { return cRowKeyword_3; }
+		
+		//row=INT
+		public Assignment getRowAssignment_4() { return cRowAssignment_4; }
+		
+		//INT
+		public RuleCall getRowINTTerminalRuleCall_4_0() { return cRowINTTerminalRuleCall_4_0; }
+		
+		//'col:'
+		public Keyword getColKeyword_5() { return cColKeyword_5; }
+		
+		//column=INT
+		public Assignment getColumnAssignment_6() { return cColumnAssignment_6; }
+		
+		//INT
+		public RuleCall getColumnINTTerminalRuleCall_6_0() { return cColumnINTTerminalRuleCall_6_0; }
+	}
+	public class BuildWallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.BuildWall");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBuildWallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cBuildWallKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRowKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRowAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRowINTTerminalRuleCall_4_0 = (RuleCall)cRowAssignment_4.eContents().get(0);
+		private final Keyword cColKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cColumnAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cColumnINTTerminalRuleCall_6_0 = (RuleCall)cColumnAssignment_6.eContents().get(0);
+		
+		//BuildWall:
+		//	{BuildWall}
+		//	'buildWall'
+		//	'at'
+		//	'row:'
+		//	row=INT
+		//	'col:'
+		//	column=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BuildWall} 'buildWall' 'at' 'row:' row=INT 'col:' column=INT
+		public Group getGroup() { return cGroup; }
+		
+		//{BuildWall}
+		public Action getBuildWallAction_0() { return cBuildWallAction_0; }
 		
 		//'buildWall'
 		public Keyword getBuildWallKeyword_1() { return cBuildWallKeyword_1; }
@@ -791,200 +947,14 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getRowINTTerminalRuleCall_4_0() { return cRowINTTerminalRuleCall_4_0; }
 		
-		//'column:'
-		public Keyword getColumnKeyword_5() { return cColumnKeyword_5; }
+		//'col:'
+		public Keyword getColKeyword_5() { return cColKeyword_5; }
 		
 		//column=INT
 		public Assignment getColumnAssignment_6() { return cColumnAssignment_6; }
 		
 		//INT
 		public RuleCall getColumnINTTerminalRuleCall_6_0() { return cColumnINTTerminalRuleCall_6_0; }
-	}
-	public class PickMarkElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.PickMark");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cPickMarkAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cPickMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cRowKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cRowAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cRowEIntParserRuleCall_3_1_0 = (RuleCall)cRowAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColumnKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cColumnAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cColumnEIntParserRuleCall_4_1_0 = (RuleCall)cColumnAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//PickMark:
-		//	{PickMark}
-		//	'PickMark'
-		//	'{' ('row' row=EInt)? ('column' column=EInt)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{PickMark} 'PickMark' '{' ('row' row=EInt)? ('column' column=EInt)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{PickMark}
-		public Action getPickMarkAction_0() { return cPickMarkAction_0; }
-		
-		//'PickMark'
-		public Keyword getPickMarkKeyword_1() { return cPickMarkKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('row' row=EInt)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'row'
-		public Keyword getRowKeyword_3_0() { return cRowKeyword_3_0; }
-		
-		//row=EInt
-		public Assignment getRowAssignment_3_1() { return cRowAssignment_3_1; }
-		
-		//EInt
-		public RuleCall getRowEIntParserRuleCall_3_1_0() { return cRowEIntParserRuleCall_3_1_0; }
-		
-		//('column' column=EInt)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'column'
-		public Keyword getColumnKeyword_4_0() { return cColumnKeyword_4_0; }
-		
-		//column=EInt
-		public Assignment getColumnAssignment_4_1() { return cColumnAssignment_4_1; }
-		
-		//EInt
-		public RuleCall getColumnEIntParserRuleCall_4_1_0() { return cColumnEIntParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class DropMarkElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.DropMark");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cDropMarkAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDropMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cRowKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cRowAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cRowEIntParserRuleCall_3_1_0 = (RuleCall)cRowAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColumnKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cColumnAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cColumnEIntParserRuleCall_4_1_0 = (RuleCall)cColumnAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//DropMark:
-		//	{DropMark}
-		//	'DropMark'
-		//	'{' ('row' row=EInt)? ('column' column=EInt)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{DropMark} 'DropMark' '{' ('row' row=EInt)? ('column' column=EInt)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{DropMark}
-		public Action getDropMarkAction_0() { return cDropMarkAction_0; }
-		
-		//'DropMark'
-		public Keyword getDropMarkKeyword_1() { return cDropMarkKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('row' row=EInt)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'row'
-		public Keyword getRowKeyword_3_0() { return cRowKeyword_3_0; }
-		
-		//row=EInt
-		public Assignment getRowAssignment_3_1() { return cRowAssignment_3_1; }
-		
-		//EInt
-		public RuleCall getRowEIntParserRuleCall_3_1_0() { return cRowEIntParserRuleCall_3_1_0; }
-		
-		//('column' column=EInt)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'column'
-		public Keyword getColumnKeyword_4_0() { return cColumnKeyword_4_0; }
-		
-		//column=EInt
-		public Assignment getColumnAssignment_4_1() { return cColumnAssignment_4_1; }
-		
-		//EInt
-		public RuleCall getColumnEIntParserRuleCall_4_1_0() { return cColumnEIntParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class BuildWallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.BuildWall");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cBuildWallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cBuildWallKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cRowKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cRowAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cRowEIntParserRuleCall_3_1_0 = (RuleCall)cRowAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cColumnKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cColumnAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cColumnEIntParserRuleCall_4_1_0 = (RuleCall)cColumnAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//BuildWall:
-		//	{BuildWall}
-		//	'BuildWall'
-		//	'{' ('row' row=EInt)? ('column' column=EInt)?
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{BuildWall} 'BuildWall' '{' ('row' row=EInt)? ('column' column=EInt)? '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{BuildWall}
-		public Action getBuildWallAction_0() { return cBuildWallAction_0; }
-		
-		//'BuildWall'
-		public Keyword getBuildWallKeyword_1() { return cBuildWallKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('row' row=EInt)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'row'
-		public Keyword getRowKeyword_3_0() { return cRowKeyword_3_0; }
-		
-		//row=EInt
-		public Assignment getRowAssignment_3_1() { return cRowAssignment_3_1; }
-		
-		//EInt
-		public RuleCall getRowEIntParserRuleCall_3_1_0() { return cRowEIntParserRuleCall_3_1_0; }
-		
-		//('column' column=EInt)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'column'
-		public Keyword getColumnKeyword_4_0() { return cColumnKeyword_4_0; }
-		
-		//column=EInt
-		public Assignment getColumnAssignment_4_1() { return cColumnAssignment_4_1; }
-		
-		//EInt
-		public RuleCall getColumnEIntParserRuleCall_4_1_0() { return cColumnEIntParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class RunningStatements_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.RunningStatements_Impl");
@@ -1030,201 +1000,127 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Full");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFullAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cFullKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cNotKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNotAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNotNotParserRuleCall_3_1_0 = (RuleCall)cNotAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNotAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNotNotParserRuleCall_1_0 = (RuleCall)cNotAssignment_1.eContents().get(0);
+		private final Keyword cFullKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Full:
-		//	{Full}
-		//	'Full'
-		//	'{' ('not' not=Not)?
-		//	'}';
+		//	{Full} not=Not?
+		//	'full';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Full} 'Full' '{' ('not' not=Not)? '}'
+		//{Full} not=Not? 'full'
 		public Group getGroup() { return cGroup; }
 		
 		//{Full}
 		public Action getFullAction_0() { return cFullAction_0; }
 		
-		//'Full'
-		public Keyword getFullKeyword_1() { return cFullKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('not' not=Not)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'not'
-		public Keyword getNotKeyword_3_0() { return cNotKeyword_3_0; }
-		
-		//not=Not
-		public Assignment getNotAssignment_3_1() { return cNotAssignment_3_1; }
+		//not=Not?
+		public Assignment getNotAssignment_1() { return cNotAssignment_1; }
 		
 		//Not
-		public RuleCall getNotNotParserRuleCall_3_1_0() { return cNotNotParserRuleCall_3_1_0; }
+		public RuleCall getNotNotParserRuleCall_1_0() { return cNotNotParserRuleCall_1_0; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//'full'
+		public Keyword getFullKeyword_2() { return cFullKeyword_2; }
 	}
 	public class MarkElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Mark");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cMarkAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cNotKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNotAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNotNotParserRuleCall_3_1_0 = (RuleCall)cNotAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNotAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNotNotParserRuleCall_1_0 = (RuleCall)cNotAssignment_1.eContents().get(0);
+		private final Keyword cMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Mark:
-		//	{Mark}
-		//	'Mark'
-		//	'{' ('not' not=Not)?
-		//	'}';
+		//	{Mark} not=Not?
+		//	'mark';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Mark} 'Mark' '{' ('not' not=Not)? '}'
+		//{Mark} not=Not? 'mark'
 		public Group getGroup() { return cGroup; }
 		
 		//{Mark}
 		public Action getMarkAction_0() { return cMarkAction_0; }
 		
-		//'Mark'
-		public Keyword getMarkKeyword_1() { return cMarkKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('not' not=Not)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'not'
-		public Keyword getNotKeyword_3_0() { return cNotKeyword_3_0; }
-		
-		//not=Not
-		public Assignment getNotAssignment_3_1() { return cNotAssignment_3_1; }
+		//not=Not?
+		public Assignment getNotAssignment_1() { return cNotAssignment_1; }
 		
 		//Not
-		public RuleCall getNotNotParserRuleCall_3_1_0() { return cNotNotParserRuleCall_3_1_0; }
+		public RuleCall getNotNotParserRuleCall_1_0() { return cNotNotParserRuleCall_1_0; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//'mark'
+		public Keyword getMarkKeyword_2() { return cMarkKeyword_2; }
 	}
 	public class WallAheadElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.WallAhead");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cWallAheadAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cWallAheadKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cNotKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNotAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNotNotParserRuleCall_3_1_0 = (RuleCall)cNotAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNotAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNotNotParserRuleCall_1_0 = (RuleCall)cNotAssignment_1.eContents().get(0);
+		private final Keyword cWallKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cAheadKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//WallAhead:
-		//	{WallAhead}
-		//	'WallAhead'
-		//	'{' ('not' not=Not)?
-		//	'}';
+		//	{WallAhead} not=Not?
+		//	'wall'
+		//	'ahead';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{WallAhead} 'WallAhead' '{' ('not' not=Not)? '}'
+		//{WallAhead} not=Not? 'wall' 'ahead'
 		public Group getGroup() { return cGroup; }
 		
 		//{WallAhead}
 		public Action getWallAheadAction_0() { return cWallAheadAction_0; }
 		
-		//'WallAhead'
-		public Keyword getWallAheadKeyword_1() { return cWallAheadKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('not' not=Not)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'not'
-		public Keyword getNotKeyword_3_0() { return cNotKeyword_3_0; }
-		
-		//not=Not
-		public Assignment getNotAssignment_3_1() { return cNotAssignment_3_1; }
+		//not=Not?
+		public Assignment getNotAssignment_1() { return cNotAssignment_1; }
 		
 		//Not
-		public RuleCall getNotNotParserRuleCall_3_1_0() { return cNotNotParserRuleCall_3_1_0; }
+		public RuleCall getNotNotParserRuleCall_1_0() { return cNotNotParserRuleCall_1_0; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//'wall'
+		public Keyword getWallKeyword_2() { return cWallKeyword_2; }
+		
+		//'ahead'
+		public Keyword getAheadKeyword_3() { return cAheadKeyword_3; }
 	}
 	public class HeadingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Heading");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cHeadingAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cHeadingKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDirectionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDirectionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDirectionDirectionsEnumRuleCall_3_1_0 = (RuleCall)cDirectionAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cNotKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cNotAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cNotNotParserRuleCall_4_1_0 = (RuleCall)cNotAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cNotAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNotNotParserRuleCall_1_0 = (RuleCall)cNotAssignment_1.eContents().get(0);
+		private final Keyword cHeadingKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cDirectionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDirectionDirectionsEnumRuleCall_3_0 = (RuleCall)cDirectionAssignment_3.eContents().get(0);
 		
 		//Heading:
-		//	{Heading}
-		//	'Heading'
-		//	'{' ('direction' direction=Directions)? ('not' not=Not)?
-		//	'}';
+		//	{Heading} not=Not?
+		//	'heading'
+		//	direction=Directions;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Heading} 'Heading' '{' ('direction' direction=Directions)? ('not' not=Not)? '}'
+		//{Heading} not=Not? 'heading' direction=Directions
 		public Group getGroup() { return cGroup; }
 		
 		//{Heading}
 		public Action getHeadingAction_0() { return cHeadingAction_0; }
 		
-		//'Heading'
-		public Keyword getHeadingKeyword_1() { return cHeadingKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('direction' direction=Directions)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'direction'
-		public Keyword getDirectionKeyword_3_0() { return cDirectionKeyword_3_0; }
-		
-		//direction=Directions
-		public Assignment getDirectionAssignment_3_1() { return cDirectionAssignment_3_1; }
-		
-		//Directions
-		public RuleCall getDirectionDirectionsEnumRuleCall_3_1_0() { return cDirectionDirectionsEnumRuleCall_3_1_0; }
-		
-		//('not' not=Not)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'not'
-		public Keyword getNotKeyword_4_0() { return cNotKeyword_4_0; }
-		
-		//not=Not
-		public Assignment getNotAssignment_4_1() { return cNotAssignment_4_1; }
+		//not=Not?
+		public Assignment getNotAssignment_1() { return cNotAssignment_1; }
 		
 		//Not
-		public RuleCall getNotNotParserRuleCall_4_1_0() { return cNotNotParserRuleCall_4_1_0; }
+		public RuleCall getNotNotParserRuleCall_1_0() { return cNotNotParserRuleCall_1_0; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		//'heading'
+		public Keyword getHeadingKeyword_2() { return cHeadingKeyword_2; }
+		
+		//direction=Directions
+		public Assignment getDirectionAssignment_3() { return cDirectionAssignment_3; }
+		
+		//Directions
+		public RuleCall getDirectionDirectionsEnumRuleCall_3_0() { return cDirectionDirectionsEnumRuleCall_3_0; }
 	}
 	public class SingleLogalExp_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.SingleLogalExp_Impl");
@@ -1249,102 +1145,42 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class BinaryLogicalExpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.BinaryLogicalExp");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBinaryLogicalExpKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cBinariesKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cBinariesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBinariesBinariesParserRuleCall_4_0 = (RuleCall)cBinariesAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cBinariesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cBinariesBinariesParserRuleCall_5_1_0 = (RuleCall)cBinariesAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cSinglelogalexpKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cSinglelogalexpAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_9_0 = (RuleCall)cSinglelogalexpAssignment_9.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cSinglelogalexpAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_10_1_0 = (RuleCall)cSinglelogalexpAssignment_10_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cSinglelogalexpAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_0_0 = (RuleCall)cSinglelogalexpAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cBinariesAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cBinariesBinariesParserRuleCall_1_0_0 = (RuleCall)cBinariesAssignment_1_0.eContents().get(0);
+		private final Assignment cSinglelogalexpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_1_1_0 = (RuleCall)cSinglelogalexpAssignment_1_1.eContents().get(0);
 		
 		//BinaryLogicalExp:
-		//	'BinaryLogicalExp'
-		//	'{'
-		//	'binaries' '{' binaries+=Binaries ("," binaries+=Binaries)* '}'
-		//	'singlelogalexp' '{' singlelogalexp+=SingleLogalExp ("," singlelogalexp+=SingleLogalExp)* '}'
-		//	'}';
+		//	singlelogalexp+=SingleLogalExp (binaries+=Binaries
+		//	singlelogalexp+=SingleLogalExp)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'BinaryLogicalExp' '{' 'binaries' '{' binaries+=Binaries ("," binaries+=Binaries)* '}' 'singlelogalexp' '{'
-		//singlelogalexp+=SingleLogalExp ("," singlelogalexp+=SingleLogalExp)* '}' '}'
+		//singlelogalexp+=SingleLogalExp (binaries+=Binaries singlelogalexp+=SingleLogalExp)+
 		public Group getGroup() { return cGroup; }
 		
-		//'BinaryLogicalExp'
-		public Keyword getBinaryLogicalExpKeyword_0() { return cBinaryLogicalExpKeyword_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//'binaries'
-		public Keyword getBinariesKeyword_2() { return cBinariesKeyword_2; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//binaries+=Binaries
-		public Assignment getBinariesAssignment_4() { return cBinariesAssignment_4; }
-		
-		//Binaries
-		public RuleCall getBinariesBinariesParserRuleCall_4_0() { return cBinariesBinariesParserRuleCall_4_0; }
-		
-		//("," binaries+=Binaries)*
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
-		
-		//binaries+=Binaries
-		public Assignment getBinariesAssignment_5_1() { return cBinariesAssignment_5_1; }
-		
-		//Binaries
-		public RuleCall getBinariesBinariesParserRuleCall_5_1_0() { return cBinariesBinariesParserRuleCall_5_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
-		
-		//'singlelogalexp'
-		public Keyword getSinglelogalexpKeyword_7() { return cSinglelogalexpKeyword_7; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
-		
 		//singlelogalexp+=SingleLogalExp
-		public Assignment getSinglelogalexpAssignment_9() { return cSinglelogalexpAssignment_9; }
+		public Assignment getSinglelogalexpAssignment_0() { return cSinglelogalexpAssignment_0; }
 		
 		//SingleLogalExp
-		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_9_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_9_0; }
+		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_0_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_0_0; }
 		
-		//("," singlelogalexp+=SingleLogalExp)*
-		public Group getGroup_10() { return cGroup_10; }
+		//(binaries+=Binaries singlelogalexp+=SingleLogalExp)+
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//","
-		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		//binaries+=Binaries
+		public Assignment getBinariesAssignment_1_0() { return cBinariesAssignment_1_0; }
+		
+		//Binaries
+		public RuleCall getBinariesBinariesParserRuleCall_1_0_0() { return cBinariesBinariesParserRuleCall_1_0_0; }
 		
 		//singlelogalexp+=SingleLogalExp
-		public Assignment getSinglelogalexpAssignment_10_1() { return cSinglelogalexpAssignment_10_1; }
+		public Assignment getSinglelogalexpAssignment_1_1() { return cSinglelogalexpAssignment_1_1; }
 		
 		//SingleLogalExp
-		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_10_1_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_10_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_1_1_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_1_1_0; }
 	}
 	public class NotElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Not");
@@ -1354,16 +1190,16 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Not:
 		//	{Not}
-		//	'Not';
+		//	'not';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Not} 'Not'
+		//{Not} 'not'
 		public Group getGroup() { return cGroup; }
 		
 		//{Not}
 		public Action getNotAction_0() { return cNotAction_0; }
 		
-		//'Not'
+		//'not'
 		public Keyword getNotKeyword_1() { return cNotKeyword_1; }
 	}
 	public class Binaries_ImplElements extends AbstractParserRuleElementFinder {
@@ -1394,16 +1230,16 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//And:
 		//	{And}
-		//	'And';
+		//	'and';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{And} 'And'
+		//{And} 'and'
 		public Group getGroup() { return cGroup; }
 		
 		//{And}
 		public Action getAndAction_0() { return cAndAction_0; }
 		
-		//'And'
+		//'and'
 		public Keyword getAndKeyword_1() { return cAndKeyword_1; }
 	}
 	public class OrElements extends AbstractParserRuleElementFinder {
@@ -1414,16 +1250,16 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Or:
 		//	{Or}
-		//	'Or';
+		//	'or';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Or} 'Or'
+		//{Or} 'or'
 		public Group getGroup() { return cGroup; }
 		
 		//{Or}
 		public Action getOrAction_0() { return cOrAction_0; }
 		
-		//'Or'
+		//'or'
 		public Keyword getOrKeyword_1() { return cOrKeyword_1; }
 	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
@@ -1455,25 +1291,6 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING
 		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
-	}
-	public class CommentsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Comments");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cWSTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cEStringParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//Comments:
-		//	(WS* EString)*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//(WS* EString)*
-		public Group getGroup() { return cGroup; }
-		
-		//WS*
-		public RuleCall getWSTerminalRuleCall_0() { return cWSTerminalRuleCall_0; }
-		
-		//EString
-		public RuleCall getEStringParserRuleCall_1() { return cEStringParserRuleCall_1; }
 	}
 	
 	public class DirectionsElements extends AbstractEnumRuleElementFinder {
@@ -1559,7 +1376,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final OrElements pOr;
 	private final EIntElements pEInt;
 	private final MessagesElements pMessages;
-	private final CommentsElements pComments;
+	private final TerminalRule tCOMMENTS;
 	private final TerminalRule tNAME;
 	
 	private final Grammar grammar;
@@ -1610,7 +1427,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOr = new OrElements();
 		this.pEInt = new EIntElements();
 		this.pMessages = new MessagesElements();
-		this.pComments = new CommentsElements();
+		this.tCOMMENTS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.COMMENTS");
 		this.tNAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.NAME");
 	}
 	
@@ -1698,7 +1515,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Binaries:
-	//	Binaries_Impl | And | Or;
+	//	And | Or;
 	public BinariesElements getBinariesAccess() {
 		return pBinaries;
 	}
@@ -1708,7 +1525,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SingleLogalExp:
-	//	SingleLogalExp_Impl | Full | Mark | WallAhead | Heading;
+	//	Full | Mark | WallAhead | Heading;
 	public SingleLogalExpElements getSingleLogalExpAccess() {
 		return pSingleLogalExp;
 	}
@@ -1752,7 +1569,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//IfStatement:
 	//	{IfStatement}
 	//	'if'
-	//	logicalexps=LogicalExps (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+	//	logicalexps=LogicalExps
+	//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
 	//	'end' ('else'
 	//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
 	//	'end')?;
@@ -1767,7 +1585,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//WhileStatement:
 	//	{WhileStatement}
 	//	'while'
-	//	logicalexps=LogicalExps (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+	//	logicalexps=LogicalExps
+	//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
 	//	'end';
 	public WhileStatementElements getWhileStatementAccess() {
 		return pWhileStatement;
@@ -1848,9 +1667,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Comment:
-	//	{Comment}
-	//	'#'
-	//	comment=Comments;
+	//	{Comment} comment=COMMENTS;
 	public CommentElements getCommentAccess() {
 		return pComment;
 	}
@@ -1872,11 +1689,11 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//DestroyWall:
 	//	{DestroyWall}
-	//	'buildWall'
+	//	'destroyWall'
 	//	'at'
 	//	'row:'
 	//	row=INT
-	//	'column:'
+	//	'col:'
 	//	column=INT;
 	public DestroyWallElements getDestroyWallAccess() {
 		return pDestroyWall;
@@ -1888,9 +1705,12 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//PickMark:
 	//	{PickMark}
-	//	'PickMark'
-	//	'{' ('row' row=EInt)? ('column' column=EInt)?
-	//	'}';
+	//	'pickMark'
+	//	'at'
+	//	'row:'
+	//	row=INT
+	//	'col:'
+	//	column=INT;
 	public PickMarkElements getPickMarkAccess() {
 		return pPickMark;
 	}
@@ -1901,9 +1721,12 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//DropMark:
 	//	{DropMark}
-	//	'DropMark'
-	//	'{' ('row' row=EInt)? ('column' column=EInt)?
-	//	'}';
+	//	'dropMark'
+	//	'at'
+	//	'row:'
+	//	row=INT
+	//	'col:'
+	//	column=INT;
 	public DropMarkElements getDropMarkAccess() {
 		return pDropMark;
 	}
@@ -1914,9 +1737,12 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//BuildWall:
 	//	{BuildWall}
-	//	'BuildWall'
-	//	'{' ('row' row=EInt)? ('column' column=EInt)?
-	//	'}';
+	//	'buildWall'
+	//	'at'
+	//	'row:'
+	//	row=INT
+	//	'col:'
+	//	column=INT;
 	public BuildWallElements getBuildWallAccess() {
 		return pBuildWall;
 	}
@@ -1948,10 +1774,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Full:
-	//	{Full}
-	//	'Full'
-	//	'{' ('not' not=Not)?
-	//	'}';
+	//	{Full} not=Not?
+	//	'full';
 	public FullElements getFullAccess() {
 		return pFull;
 	}
@@ -1961,10 +1785,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Mark:
-	//	{Mark}
-	//	'Mark'
-	//	'{' ('not' not=Not)?
-	//	'}';
+	//	{Mark} not=Not?
+	//	'mark';
 	public MarkElements getMarkAccess() {
 		return pMark;
 	}
@@ -1974,10 +1796,9 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WallAhead:
-	//	{WallAhead}
-	//	'WallAhead'
-	//	'{' ('not' not=Not)?
-	//	'}';
+	//	{WallAhead} not=Not?
+	//	'wall'
+	//	'ahead';
 	public WallAheadElements getWallAheadAccess() {
 		return pWallAhead;
 	}
@@ -1987,10 +1808,9 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Heading:
-	//	{Heading}
-	//	'Heading'
-	//	'{' ('direction' direction=Directions)? ('not' not=Not)?
-	//	'}';
+	//	{Heading} not=Not?
+	//	'heading'
+	//	direction=Directions;
 	public HeadingElements getHeadingAccess() {
 		return pHeading;
 	}
@@ -2011,11 +1831,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BinaryLogicalExp:
-	//	'BinaryLogicalExp'
-	//	'{'
-	//	'binaries' '{' binaries+=Binaries ("," binaries+=Binaries)* '}'
-	//	'singlelogalexp' '{' singlelogalexp+=SingleLogalExp ("," singlelogalexp+=SingleLogalExp)* '}'
-	//	'}';
+	//	singlelogalexp+=SingleLogalExp (binaries+=Binaries
+	//	singlelogalexp+=SingleLogalExp)+;
 	public BinaryLogicalExpElements getBinaryLogicalExpAccess() {
 		return pBinaryLogicalExp;
 	}
@@ -2026,7 +1843,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Not:
 	//	{Not}
-	//	'Not';
+	//	'not';
 	public NotElements getNotAccess() {
 		return pNot;
 	}
@@ -2058,7 +1875,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//And:
 	//	{And}
-	//	'And';
+	//	'and';
 	public AndElements getAndAccess() {
 		return pAnd;
 	}
@@ -2069,7 +1886,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Or:
 	//	{Or}
-	//	'Or';
+	//	'or';
 	public OrElements getOrAccess() {
 		return pOr;
 	}
@@ -2098,14 +1915,13 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessagesAccess().getRule();
 	}
 	
-	//Comments:
-	//	(WS* EString)*;
-	public CommentsElements getCommentsAccess() {
-		return pComments;
-	}
-	
-	public ParserRule getCommentsRule() {
-		return getCommentsAccess().getRule();
+	//terminal COMMENTS:
+	//	'#' ('a'..'z' | 'A'..'Z' | '_' | '0'..'9' | ' ' |
+	//	'!' | '*' | '&' | '^' | '%' | '$' | '@' | '(' | ')' |
+	//	'-' | '=' | '+' | '[' | ']' | '{' | '}' | ';' | ':' |
+	//	',' | '<' | '.' | '/' | '>' | '?')* '\n';
+	public TerminalRule getCOMMENTSRule() {
+		return tCOMMENTS;
 	}
 	
 	//terminal NAME:

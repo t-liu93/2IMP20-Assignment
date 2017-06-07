@@ -50,6 +50,7 @@ IfStatement returns IfStatement:
 	{IfStatement}
 	'if'
 	logicalexps=LogicalExps
+	'do'
 	( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
 	'end'
 	(
@@ -64,6 +65,7 @@ WhileStatement returns WhileStatement:
 	{WhileStatement}
 	'while'
 	logicalexps=LogicalExps
+	'do'
 	( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
 	'end'
 	;
@@ -105,8 +107,7 @@ TraceMessage returns TraceMessage:
 
 Comment returns Comment:
 	{Comment}
-	'#'
-	comment=Comments
+	comment=COMMENTS
 	;
 
 BuildStatements_Impl returns BuildStatements:
@@ -180,7 +181,7 @@ WallAhead returns WallAhead:
 	{WallAhead}
 	(not = Not)?
 	'wall'
-	'head'
+	'ahead'
 	;
 
 Heading returns Heading:
@@ -196,11 +197,6 @@ SingleLogalExp_Impl returns SingleLogalExp:
 	;
 
 BinaryLogicalExp returns BinaryLogicalExp:
-	'BinaryLogicalExp'
-	'{'
-		'binaries' '{' binaries+=Binaries ( "," binaries+=Binaries)* '}' 
-		'singlelogalexp' '{' singlelogalexp+=SingleLogalExp ( "," singlelogalexp+=SingleLogalExp)* '}' 
-	'}'
 	singlelogalexp+=SingleLogalExp
 	(binaries+=Binaries
 	singlelogalexp+=SingleLogalExp)+;
@@ -235,8 +231,11 @@ Messages returns ecore::EString:
 	STRING
 ;
 
-Comments returns ecore::EString:
-	(WS* EString)*
+terminal COMMENTS returns ecore::EString:
+	'#' ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|' '|
+	'!'|'*'|'&'|'^'|'%'|'$'|'@'|'('|')'|
+	'-'|'='|'+'|'['|']'|'{'|'}'|';'|':'|
+	','|'<'|'.'|'/'|'>'|'?')* '\n'
 ;
 
 terminal NAME returns ecore::EString:
