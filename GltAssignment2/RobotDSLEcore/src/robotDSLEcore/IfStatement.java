@@ -15,14 +15,14 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link robotDSLEcore.IfStatement#getLogicalexps <em>Logicalexps</em>}</li>
- *   <li>{@link robotDSLEcore.IfStatement#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotDSLEcore.IfStatement#getRunningstatements <em>Runningstatements</em>}</li>
  * </ul>
  *
  * @see robotDSLEcore.RobotDSLEcorePackage#getIfStatement()
  * @model
  * @generated
  */
-public interface IfStatement extends Statements {
+public interface IfStatement extends RunningStatements {
 
 	/**
 	 * Returns the value of the '<em><b>Logicalexps</b></em>' containment reference.
@@ -51,18 +51,18 @@ public interface IfStatement extends Statements {
 	void setLogicalexps(LogicalExps value);
 
 	/**
-	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
-	 * The list contents are of type {@link robotDSLEcore.Statements}.
+	 * Returns the value of the '<em><b>Runningstatements</b></em>' containment reference list.
+	 * The list contents are of type {@link robotDSLEcore.RunningStatements}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Runningstatements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statements</em>' containment reference list.
-	 * @see robotDSLEcore.RobotDSLEcorePackage#getIfStatement_Statements()
+	 * @return the value of the '<em>Runningstatements</em>' containment reference list.
+	 * @see robotDSLEcore.RobotDSLEcorePackage#getIfStatement_Runningstatements()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Statements> getStatements();
+	EList<RunningStatements> getRunningstatements();
 } // IfStatement

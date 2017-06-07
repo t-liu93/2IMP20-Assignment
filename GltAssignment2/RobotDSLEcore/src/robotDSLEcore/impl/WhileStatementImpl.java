@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import robotDSLEcore.LogicalExps;
 import robotDSLEcore.RobotDSLEcorePackage;
-import robotDSLEcore.Statements;
+import robotDSLEcore.RunningStatements;
 import robotDSLEcore.WhileStatement;
 
 /**
@@ -26,12 +26,12 @@ import robotDSLEcore.WhileStatement;
  * </p>
  * <ul>
  *   <li>{@link robotDSLEcore.impl.WhileStatementImpl#getLogicalexps <em>Logicalexps</em>}</li>
- *   <li>{@link robotDSLEcore.impl.WhileStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.WhileStatementImpl#getRunningstatements <em>Runningstatements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WhileStatementImpl extends StatementsImpl implements WhileStatement {
+public class WhileStatementImpl extends RunningStatementsImpl implements WhileStatement {
 	/**
 	 * The cached value of the '{@link #getLogicalexps() <em>Logicalexps</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -42,14 +42,14 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 	 */
 	protected LogicalExps logicalexps;
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getRunningstatements() <em>Runningstatements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getRunningstatements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statements> statements;
+	protected EList<RunningStatements> runningstatements;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,11 +117,11 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statements> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statements>(Statements.class, this, RobotDSLEcorePackage.WHILE_STATEMENT__STATEMENTS);
+	public EList<RunningStatements> getRunningstatements() {
+		if (runningstatements == null) {
+			runningstatements = new EObjectContainmentEList<RunningStatements>(RunningStatements.class, this, RobotDSLEcorePackage.WHILE_STATEMENT__RUNNINGSTATEMENTS);
 		}
-		return statements;
+		return runningstatements;
 	}
 
 	/**
@@ -134,8 +134,8 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 		switch (featureID) {
 			case RobotDSLEcorePackage.WHILE_STATEMENT__LOGICALEXPS:
 				return basicSetLogicalexps(null, msgs);
-			case RobotDSLEcorePackage.WHILE_STATEMENT__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+			case RobotDSLEcorePackage.WHILE_STATEMENT__RUNNINGSTATEMENTS:
+				return ((InternalEList<?>)getRunningstatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -150,8 +150,8 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 		switch (featureID) {
 			case RobotDSLEcorePackage.WHILE_STATEMENT__LOGICALEXPS:
 				return getLogicalexps();
-			case RobotDSLEcorePackage.WHILE_STATEMENT__STATEMENTS:
-				return getStatements();
+			case RobotDSLEcorePackage.WHILE_STATEMENT__RUNNINGSTATEMENTS:
+				return getRunningstatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,9 +168,9 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 			case RobotDSLEcorePackage.WHILE_STATEMENT__LOGICALEXPS:
 				setLogicalexps((LogicalExps)newValue);
 				return;
-			case RobotDSLEcorePackage.WHILE_STATEMENT__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends Statements>)newValue);
+			case RobotDSLEcorePackage.WHILE_STATEMENT__RUNNINGSTATEMENTS:
+				getRunningstatements().clear();
+				getRunningstatements().addAll((Collection<? extends RunningStatements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,8 +187,8 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 			case RobotDSLEcorePackage.WHILE_STATEMENT__LOGICALEXPS:
 				setLogicalexps((LogicalExps)null);
 				return;
-			case RobotDSLEcorePackage.WHILE_STATEMENT__STATEMENTS:
-				getStatements().clear();
+			case RobotDSLEcorePackage.WHILE_STATEMENT__RUNNINGSTATEMENTS:
+				getRunningstatements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -204,8 +204,8 @@ public class WhileStatementImpl extends StatementsImpl implements WhileStatement
 		switch (featureID) {
 			case RobotDSLEcorePackage.WHILE_STATEMENT__LOGICALEXPS:
 				return logicalexps != null;
-			case RobotDSLEcorePackage.WHILE_STATEMENT__STATEMENTS:
-				return statements != null && !statements.isEmpty();
+			case RobotDSLEcorePackage.WHILE_STATEMENT__RUNNINGSTATEMENTS:
+				return runningstatements != null && !runningstatements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

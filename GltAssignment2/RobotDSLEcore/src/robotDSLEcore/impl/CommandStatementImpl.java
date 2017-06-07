@@ -13,7 +13,7 @@ import robotDSLEcore.RobotDSLEcorePackage;
  *
  * @generated
  */
-public class CommandStatementImpl extends StatementsImpl implements CommandStatement {
+public class CommandStatementImpl extends RunningStatementsImpl implements CommandStatement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

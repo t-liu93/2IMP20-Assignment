@@ -12,5 +12,5 @@ package robotDSLEcore;
  * @model
  * @generated
  */
-public interface CommandStatement extends Statements {
+public interface CommandStatement extends RunningStatements {
 } // CommandStatement

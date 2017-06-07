@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import robotDSLEcore.IfStatement;
 import robotDSLEcore.LogicalExps;
 import robotDSLEcore.RobotDSLEcorePackage;
-import robotDSLEcore.Statements;
+import robotDSLEcore.RunningStatements;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,12 +26,12 @@ import robotDSLEcore.Statements;
  * </p>
  * <ul>
  *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getLogicalexps <em>Logicalexps</em>}</li>
- *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getRunningstatements <em>Runningstatements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IfStatementImpl extends StatementsImpl implements IfStatement {
+public class IfStatementImpl extends RunningStatementsImpl implements IfStatement {
 	/**
 	 * The cached value of the '{@link #getLogicalexps() <em>Logicalexps</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,14 +43,14 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	protected LogicalExps logicalexps;
 
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getRunningstatements() <em>Runningstatements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getRunningstatements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statements> statements;
+	protected EList<RunningStatements> runningstatements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,11 +119,11 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statements> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statements>(Statements.class, this, RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS);
+	public EList<RunningStatements> getRunningstatements() {
+		if (runningstatements == null) {
+			runningstatements = new EObjectContainmentEList<RunningStatements>(RunningStatements.class, this, RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS);
 		}
-		return statements;
+		return runningstatements;
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
 				return basicSetLogicalexps(null, msgs);
-			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
+				return ((InternalEList<?>)getRunningstatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -152,8 +152,8 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
 				return getLogicalexps();
-			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
-				return getStatements();
+			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
+				return getRunningstatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,9 +170,9 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
 				setLogicalexps((LogicalExps)newValue);
 				return;
-			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends Statements>)newValue);
+			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
+				getRunningstatements().clear();
+				getRunningstatements().addAll((Collection<? extends RunningStatements>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,8 +189,8 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
 				setLogicalexps((LogicalExps)null);
 				return;
-			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
-				getStatements().clear();
+			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
+				getRunningstatements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -206,8 +206,8 @@ public class IfStatementImpl extends StatementsImpl implements IfStatement {
 		switch (featureID) {
 			case RobotDSLEcorePackage.IF_STATEMENT__LOGICALEXPS:
 				return logicalexps != null;
-			case RobotDSLEcorePackage.IF_STATEMENT__STATEMENTS:
-				return statements != null && !statements.isEmpty();
+			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
+				return runningstatements != null && !runningstatements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

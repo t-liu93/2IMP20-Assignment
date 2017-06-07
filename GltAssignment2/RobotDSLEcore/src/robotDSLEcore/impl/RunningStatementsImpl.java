@@ -3,23 +3,24 @@
 package robotDSLEcore.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import robotDSLEcore.BuildStatements;
+
 import robotDSLEcore.RobotDSLEcorePackage;
+import robotDSLEcore.RunningStatements;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Build Statements</b></em>'.
+ * An implementation of the model object '<em><b>Running Statements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class BuildStatementsImpl extends StatementsImpl implements BuildStatements {
+public class RunningStatementsImpl extends StatementsImpl implements RunningStatements {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BuildStatementsImpl() {
+	protected RunningStatementsImpl() {
 		super();
 	}
 
@@ -30,7 +31,7 @@ public class BuildStatementsImpl extends StatementsImpl implements BuildStatemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RobotDSLEcorePackage.Literals.BUILD_STATEMENTS;
+		return RobotDSLEcorePackage.Literals.RUNNING_STATEMENTS;
 	}
 
-} //BuildStatementsImpl
+} //RunningStatementsImpl

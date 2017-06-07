@@ -5,24 +5,22 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statements" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="buildstatements" upperBound="-1"
-        eType="#//BuildStatements" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CommandStatement" eSuperTypes="#//Statements"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//Statements">
+  <eClassifiers xsi:type="ecore:EClass" name="CommandStatement" eSuperTypes="#//RunningStatements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//RunningStatements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalexps" lowerBound="1"
         eType="#//LogicalExps" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statements" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningstatements" upperBound="-1"
+        eType="#//RunningStatements" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//Statements">
+  <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//RunningStatements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalexps" lowerBound="1"
         eType="#//LogicalExps" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
-        eType="#//Statements" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningstatements" upperBound="-1"
+        eType="#//RunningStatements" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement" eSuperTypes="#//Statements">
+  <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement" eSuperTypes="#//RunningStatements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="commandstatement" upperBound="-1"
         eType="#//CommandStatement" containment="true"/>
@@ -57,7 +55,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Directions"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="not" eType="#//Not" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BuildStatements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BuildStatements" eSuperTypes="#//Statements"/>
   <eClassifiers xsi:type="ecore:EClass" name="DestroyWall" eSuperTypes="#//BuildStatements">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="row" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="column" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -85,4 +83,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="singlelogalexp" lowerBound="1"
         upperBound="-1" eType="#//SingleLogalExp" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunningStatements" eSuperTypes="#//Statements"/>
 </ecore:EPackage>

@@ -33,6 +33,7 @@ import robotDSLEcore.PickMark;
 import robotDSLEcore.RepeatStatement;
 import robotDSLEcore.RobotDSLEcoreFactory;
 import robotDSLEcore.RobotDSLEcorePackage;
+import robotDSLEcore.RunningStatements;
 import robotDSLEcore.Script;
 import robotDSLEcore.SingleLogalExp;
 import robotDSLEcore.Statements;
@@ -250,6 +251,13 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass runningStatementsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum directionsEEnum = null;
 
 	/**
@@ -345,15 +353,6 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScript_Buildstatements() {
-		return (EReference)scriptEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getStatements() {
 		return statementsEClass;
 	}
@@ -390,7 +389,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIfStatement_Statements() {
+	public EReference getIfStatement_Runningstatements() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -417,7 +416,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWhileStatement_Statements() {
+	public EReference getWhileStatement_Runningstatements() {
 		return (EReference)whileStatementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -804,6 +803,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRunningStatements() {
+		return runningStatementsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDirections() {
 		return directionsEEnum;
 	}
@@ -839,7 +847,6 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		scriptEClass = createEClass(SCRIPT);
 		createEAttribute(scriptEClass, SCRIPT__NAME);
 		createEReference(scriptEClass, SCRIPT__STATEMENTS);
-		createEReference(scriptEClass, SCRIPT__BUILDSTATEMENTS);
 
 		statementsEClass = createEClass(STATEMENTS);
 
@@ -847,11 +854,11 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		ifStatementEClass = createEClass(IF_STATEMENT);
 		createEReference(ifStatementEClass, IF_STATEMENT__LOGICALEXPS);
-		createEReference(ifStatementEClass, IF_STATEMENT__STATEMENTS);
+		createEReference(ifStatementEClass, IF_STATEMENT__RUNNINGSTATEMENTS);
 
 		whileStatementEClass = createEClass(WHILE_STATEMENT);
 		createEReference(whileStatementEClass, WHILE_STATEMENT__LOGICALEXPS);
-		createEReference(whileStatementEClass, WHILE_STATEMENT__STATEMENTS);
+		createEReference(whileStatementEClass, WHILE_STATEMENT__RUNNINGSTATEMENTS);
 
 		repeatStatementEClass = createEClass(REPEAT_STATEMENT);
 		createEAttribute(repeatStatementEClass, REPEAT_STATEMENT__TIME);
@@ -918,6 +925,8 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		createEReference(binaryLogicalExpEClass, BINARY_LOGICAL_EXP__BINARIES);
 		createEReference(binaryLogicalExpEClass, BINARY_LOGICAL_EXP__SINGLELOGALEXP);
 
+		runningStatementsEClass = createEClass(RUNNING_STATEMENTS);
+
 		// Create enums
 		directionsEEnum = createEEnum(DIRECTIONS);
 	}
@@ -950,10 +959,10 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		commandStatementEClass.getESuperTypes().add(this.getStatements());
-		ifStatementEClass.getESuperTypes().add(this.getStatements());
-		whileStatementEClass.getESuperTypes().add(this.getStatements());
-		repeatStatementEClass.getESuperTypes().add(this.getStatements());
+		commandStatementEClass.getESuperTypes().add(this.getRunningStatements());
+		ifStatementEClass.getESuperTypes().add(this.getRunningStatements());
+		whileStatementEClass.getESuperTypes().add(this.getRunningStatements());
+		repeatStatementEClass.getESuperTypes().add(this.getRunningStatements());
 		stepEClass.getESuperTypes().add(this.getCommandStatement());
 		turnLeftEClass.getESuperTypes().add(this.getCommandStatement());
 		dropEClass.getESuperTypes().add(this.getCommandStatement());
@@ -964,6 +973,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		markEClass.getESuperTypes().add(this.getSingleLogalExp());
 		wallAheadEClass.getESuperTypes().add(this.getSingleLogalExp());
 		headingEClass.getESuperTypes().add(this.getSingleLogalExp());
+		buildStatementsEClass.getESuperTypes().add(this.getStatements());
 		destroyWallEClass.getESuperTypes().add(this.getBuildStatements());
 		pickMarkEClass.getESuperTypes().add(this.getBuildStatements());
 		dropMarkEClass.getESuperTypes().add(this.getBuildStatements());
@@ -972,12 +982,12 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		orEClass.getESuperTypes().add(this.getBinaries());
 		singleLogalExpEClass.getESuperTypes().add(this.getLogicalExps());
 		binaryLogicalExpEClass.getESuperTypes().add(this.getLogicalExps());
+		runningStatementsEClass.getESuperTypes().add(this.getStatements());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScript_Statements(), this.getStatements(), null, "statements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScript_Buildstatements(), this.getBuildStatements(), null, "buildstatements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementsEClass, Statements.class, "Statements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -985,11 +995,11 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIfStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 1, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIfStatement_Statements(), this.getStatements(), null, "statements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Runningstatements(), this.getRunningStatements(), null, "runningstatements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWhileStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 1, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWhileStatement_Statements(), this.getStatements(), null, "statements", null, 0, -1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWhileStatement_Runningstatements(), this.getRunningStatements(), null, "runningstatements", null, 0, -1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(repeatStatementEClass, RepeatStatement.class, "RepeatStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRepeatStatement_Time(), ecorePackage.getEInt(), "time", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1055,6 +1065,8 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEClass(binaryLogicalExpEClass, BinaryLogicalExp.class, "BinaryLogicalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBinaryLogicalExp_Binaries(), this.getBinaries(), null, "binaries", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runningStatementsEClass, RunningStatements.class, "RunningStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(directionsEEnum, Directions.class, "Directions");

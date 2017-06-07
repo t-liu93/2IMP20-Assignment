@@ -15,17 +15,16 @@
     <genClasses ecoreClass="robotDSLEcore.ecore#//Script">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Script/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/statements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/buildstatements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Statements"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//CommandStatement"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/logicalexps"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/runningstatements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/logicalexps"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/runningstatements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//RepeatStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//RepeatStatement/time"/>
@@ -81,5 +80,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//BinaryLogicalExp/binaries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//BinaryLogicalExp/singlelogalexp"/>
     </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//RunningStatements"/>
   </genPackages>
 </genmodel:GenModel>

@@ -30,7 +30,7 @@ import robotDSLEcore.RobotDSLEcorePackage;
  *
  * @generated
  */
-public class RepeatStatementImpl extends StatementsImpl implements RepeatStatement {
+public class RepeatStatementImpl extends RunningStatementsImpl implements RepeatStatement {
 	/**
 	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->

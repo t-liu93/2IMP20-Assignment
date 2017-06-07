@@ -85,6 +85,7 @@ public class RobotDSLEcoreFactoryImpl extends EFactoryImpl implements RobotDSLEc
 			case RobotDSLEcorePackage.NOT: return createNot();
 			case RobotDSLEcorePackage.SINGLE_LOGAL_EXP: return createSingleLogalExp();
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP: return createBinaryLogicalExp();
+			case RobotDSLEcorePackage.RUNNING_STATEMENTS: return createRunningStatements();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -398,6 +399,16 @@ public class RobotDSLEcoreFactoryImpl extends EFactoryImpl implements RobotDSLEc
 	public BinaryLogicalExp createBinaryLogicalExp() {
 		BinaryLogicalExpImpl binaryLogicalExp = new BinaryLogicalExpImpl();
 		return binaryLogicalExp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RunningStatements createRunningStatements() {
+		RunningStatementsImpl runningStatements = new RunningStatementsImpl();
+		return runningStatements;
 	}
 
 	/**

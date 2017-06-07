@@ -81,6 +81,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.COMMAND_STATEMENT: {
 				CommandStatement commandStatement = (CommandStatement)theEObject;
 				T result = caseCommandStatement(commandStatement);
+				if (result == null) result = caseRunningStatements(commandStatement);
 				if (result == null) result = caseStatements(commandStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -88,6 +89,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.IF_STATEMENT: {
 				IfStatement ifStatement = (IfStatement)theEObject;
 				T result = caseIfStatement(ifStatement);
+				if (result == null) result = caseRunningStatements(ifStatement);
 				if (result == null) result = caseStatements(ifStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -95,6 +97,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.WHILE_STATEMENT: {
 				WhileStatement whileStatement = (WhileStatement)theEObject;
 				T result = caseWhileStatement(whileStatement);
+				if (result == null) result = caseRunningStatements(whileStatement);
 				if (result == null) result = caseStatements(whileStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -102,6 +105,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.REPEAT_STATEMENT: {
 				RepeatStatement repeatStatement = (RepeatStatement)theEObject;
 				T result = caseRepeatStatement(repeatStatement);
+				if (result == null) result = caseRunningStatements(repeatStatement);
 				if (result == null) result = caseStatements(repeatStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -110,6 +114,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				Step step = (Step)theEObject;
 				T result = caseStep(step);
 				if (result == null) result = caseCommandStatement(step);
+				if (result == null) result = caseRunningStatements(step);
 				if (result == null) result = caseStatements(step);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -118,6 +123,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				TurnLeft turnLeft = (TurnLeft)theEObject;
 				T result = caseTurnLeft(turnLeft);
 				if (result == null) result = caseCommandStatement(turnLeft);
+				if (result == null) result = caseRunningStatements(turnLeft);
 				if (result == null) result = caseStatements(turnLeft);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -126,6 +132,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				Drop drop = (Drop)theEObject;
 				T result = caseDrop(drop);
 				if (result == null) result = caseCommandStatement(drop);
+				if (result == null) result = caseRunningStatements(drop);
 				if (result == null) result = caseStatements(drop);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -134,6 +141,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				Pick pick = (Pick)theEObject;
 				T result = casePick(pick);
 				if (result == null) result = caseCommandStatement(pick);
+				if (result == null) result = caseRunningStatements(pick);
 				if (result == null) result = caseStatements(pick);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -142,6 +150,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				TraceMessage traceMessage = (TraceMessage)theEObject;
 				T result = caseTraceMessage(traceMessage);
 				if (result == null) result = caseCommandStatement(traceMessage);
+				if (result == null) result = caseRunningStatements(traceMessage);
 				if (result == null) result = caseStatements(traceMessage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -150,6 +159,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				Comment comment = (Comment)theEObject;
 				T result = caseComment(comment);
 				if (result == null) result = caseCommandStatement(comment);
+				if (result == null) result = caseRunningStatements(comment);
 				if (result == null) result = caseStatements(comment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -195,6 +205,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.BUILD_STATEMENTS: {
 				BuildStatements buildStatements = (BuildStatements)theEObject;
 				T result = caseBuildStatements(buildStatements);
+				if (result == null) result = caseStatements(buildStatements);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -202,6 +213,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				DestroyWall destroyWall = (DestroyWall)theEObject;
 				T result = caseDestroyWall(destroyWall);
 				if (result == null) result = caseBuildStatements(destroyWall);
+				if (result == null) result = caseStatements(destroyWall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -209,6 +221,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				PickMark pickMark = (PickMark)theEObject;
 				T result = casePickMark(pickMark);
 				if (result == null) result = caseBuildStatements(pickMark);
+				if (result == null) result = caseStatements(pickMark);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -216,6 +229,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				DropMark dropMark = (DropMark)theEObject;
 				T result = caseDropMark(dropMark);
 				if (result == null) result = caseBuildStatements(dropMark);
+				if (result == null) result = caseStatements(dropMark);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -223,6 +237,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				BuildWall buildWall = (BuildWall)theEObject;
 				T result = caseBuildWall(buildWall);
 				if (result == null) result = caseBuildStatements(buildWall);
+				if (result == null) result = caseStatements(buildWall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -263,6 +278,13 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 				BinaryLogicalExp binaryLogicalExp = (BinaryLogicalExp)theEObject;
 				T result = caseBinaryLogicalExp(binaryLogicalExp);
 				if (result == null) result = caseLogicalExps(binaryLogicalExp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.RUNNING_STATEMENTS: {
+				RunningStatements runningStatements = (RunningStatements)theEObject;
+				T result = caseRunningStatements(runningStatements);
+				if (result == null) result = caseStatements(runningStatements);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -687,6 +709,21 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBinaryLogicalExp(BinaryLogicalExp object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Running Statements</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Running Statements</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRunningStatements(RunningStatements object) {
 		return null;
 	}
 

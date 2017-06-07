@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface RepeatStatement extends Statements {
+public interface RepeatStatement extends RunningStatements {
 
 	/**
 	 * Returns the value of the '<em><b>Time</b></em>' attribute.

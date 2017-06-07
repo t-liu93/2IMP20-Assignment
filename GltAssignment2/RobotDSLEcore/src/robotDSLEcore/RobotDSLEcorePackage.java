@@ -86,22 +86,13 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int SCRIPT__STATEMENTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Buildstatements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT__BUILDSTATEMENTS = 2;
-
-	/**
 	 * The number of structural features of the '<em>Script</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_FEATURE_COUNT = 3;
+	int SCRIPT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Script</em>' class.
@@ -141,6 +132,34 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int STATEMENTS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.RunningStatementsImpl <em>Running Statements</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.RunningStatementsImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getRunningStatements()
+	 * @generated
+	 */
+	int RUNNING_STATEMENTS = 28;
+
+	/**
+	 * The number of structural features of the '<em>Running Statements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNNING_STATEMENTS_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Running Statements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNNING_STATEMENTS_OPERATION_COUNT = STATEMENTS_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.CommandStatementImpl <em>Command Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,7 +176,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 0;
+	int COMMAND_STATEMENT_FEATURE_COUNT = RUNNING_STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Command Statement</em>' class.
@@ -166,7 +185,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_STATEMENT_OPERATION_COUNT = STATEMENTS_OPERATION_COUNT + 0;
+	int COMMAND_STATEMENT_OPERATION_COUNT = RUNNING_STATEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.IfStatementImpl <em>If Statement</em>}' class.
@@ -185,16 +204,16 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT__LOGICALEXPS = STATEMENTS_FEATURE_COUNT + 0;
+	int IF_STATEMENT__LOGICALEXPS = RUNNING_STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Runningstatements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT__STATEMENTS = STATEMENTS_FEATURE_COUNT + 1;
+	int IF_STATEMENT__RUNNINGSTATEMENTS = RUNNING_STATEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>If Statement</em>' class.
@@ -203,7 +222,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 2;
+	int IF_STATEMENT_FEATURE_COUNT = RUNNING_STATEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>If Statement</em>' class.
@@ -212,7 +231,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT_OPERATION_COUNT = STATEMENTS_OPERATION_COUNT + 0;
+	int IF_STATEMENT_OPERATION_COUNT = RUNNING_STATEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -231,16 +250,16 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT__LOGICALEXPS = STATEMENTS_FEATURE_COUNT + 0;
+	int WHILE_STATEMENT__LOGICALEXPS = RUNNING_STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Runningstatements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT__STATEMENTS = STATEMENTS_FEATURE_COUNT + 1;
+	int WHILE_STATEMENT__RUNNINGSTATEMENTS = RUNNING_STATEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>While Statement</em>' class.
@@ -249,7 +268,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 2;
+	int WHILE_STATEMENT_FEATURE_COUNT = RUNNING_STATEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>While Statement</em>' class.
@@ -258,7 +277,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT_OPERATION_COUNT = STATEMENTS_OPERATION_COUNT + 0;
+	int WHILE_STATEMENT_OPERATION_COUNT = RUNNING_STATEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
@@ -277,7 +296,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT__TIME = STATEMENTS_FEATURE_COUNT + 0;
+	int REPEAT_STATEMENT__TIME = RUNNING_STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Commandstatement</b></em>' containment reference list.
@@ -286,7 +305,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT__COMMANDSTATEMENT = STATEMENTS_FEATURE_COUNT + 1;
+	int REPEAT_STATEMENT__COMMANDSTATEMENT = RUNNING_STATEMENTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Repeat Statement</em>' class.
@@ -295,7 +314,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 2;
+	int REPEAT_STATEMENT_FEATURE_COUNT = RUNNING_STATEMENTS_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Repeat Statement</em>' class.
@@ -304,7 +323,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT_OPERATION_COUNT = STATEMENTS_OPERATION_COUNT + 0;
+	int REPEAT_STATEMENT_OPERATION_COUNT = RUNNING_STATEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.StepImpl <em>Step</em>}' class.
@@ -722,7 +741,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILD_STATEMENTS_FEATURE_COUNT = 0;
+	int BUILD_STATEMENTS_FEATURE_COUNT = STATEMENTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Build Statements</em>' class.
@@ -731,7 +750,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILD_STATEMENTS_OPERATION_COUNT = 0;
+	int BUILD_STATEMENTS_OPERATION_COUNT = STATEMENTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.DestroyWallImpl <em>Destroy Wall</em>}' class.
@@ -1083,7 +1102,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDirections()
 	 * @generated
 	 */
-	int DIRECTIONS = 28;
+	int DIRECTIONS = 29;
 
 
 	/**
@@ -1117,17 +1136,6 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getScript_Statements();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.Script#getBuildstatements <em>Buildstatements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Buildstatements</em>'.
-	 * @see robotDSLEcore.Script#getBuildstatements()
-	 * @see #getScript()
-	 * @generated
-	 */
-	EReference getScript_Buildstatements();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.Statements <em>Statements</em>}'.
@@ -1171,15 +1179,15 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EReference getIfStatement_Logicalexps();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.IfStatement#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.IfStatement#getRunningstatements <em>Runningstatements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see robotDSLEcore.IfStatement#getStatements()
+	 * @return the meta object for the containment reference list '<em>Runningstatements</em>'.
+	 * @see robotDSLEcore.IfStatement#getRunningstatements()
 	 * @see #getIfStatement()
 	 * @generated
 	 */
-	EReference getIfStatement_Statements();
+	EReference getIfStatement_Runningstatements();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.WhileStatement <em>While Statement</em>}'.
@@ -1203,15 +1211,15 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EReference getWhileStatement_Logicalexps();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.WhileStatement#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.WhileStatement#getRunningstatements <em>Runningstatements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see robotDSLEcore.WhileStatement#getStatements()
+	 * @return the meta object for the containment reference list '<em>Runningstatements</em>'.
+	 * @see robotDSLEcore.WhileStatement#getRunningstatements()
 	 * @see #getWhileStatement()
 	 * @generated
 	 */
-	EReference getWhileStatement_Statements();
+	EReference getWhileStatement_Runningstatements();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.RepeatStatement <em>Repeat Statement</em>}'.
@@ -1653,6 +1661,16 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EReference getBinaryLogicalExp_Singlelogalexp();
 
 	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.RunningStatements <em>Running Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Running Statements</em>'.
+	 * @see robotDSLEcore.RunningStatements
+	 * @generated
+	 */
+	EClass getRunningStatements();
+
+	/**
 	 * Returns the meta object for enum '{@link robotDSLEcore.Directions <em>Directions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1712,14 +1730,6 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EReference SCRIPT__STATEMENTS = eINSTANCE.getScript_Statements();
 
 		/**
-		 * The meta object literal for the '<em><b>Buildstatements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCRIPT__BUILDSTATEMENTS = eINSTANCE.getScript_Buildstatements();
-
-		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.StatementsImpl <em>Statements</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1758,12 +1768,12 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EReference IF_STATEMENT__LOGICALEXPS = eINSTANCE.getIfStatement_Logicalexps();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Runningstatements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IF_STATEMENT__STATEMENTS = eINSTANCE.getIfStatement_Statements();
+		EReference IF_STATEMENT__RUNNINGSTATEMENTS = eINSTANCE.getIfStatement_Runningstatements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -1784,12 +1794,12 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EReference WHILE_STATEMENT__LOGICALEXPS = eINSTANCE.getWhileStatement_Logicalexps();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Runningstatements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WHILE_STATEMENT__STATEMENTS = eINSTANCE.getWhileStatement_Statements();
+		EReference WHILE_STATEMENT__RUNNINGSTATEMENTS = eINSTANCE.getWhileStatement_Runningstatements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
@@ -2172,6 +2182,16 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BINARY_LOGICAL_EXP__SINGLELOGALEXP = eINSTANCE.getBinaryLogicalExp_Singlelogalexp();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.RunningStatementsImpl <em>Running Statements</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.RunningStatementsImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getRunningStatements()
+		 * @generated
+		 */
+		EClass RUNNING_STATEMENTS = eINSTANCE.getRunningStatements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.

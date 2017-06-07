@@ -180,6 +180,10 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 				return createBinaryLogicalExpAdapter();
 			}
 			@Override
+			public Adapter caseRunningStatements(RunningStatements object) {
+				return createRunningStatementsAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -588,6 +592,20 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBinaryLogicalExpAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.RunningStatements <em>Running Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.RunningStatements
+	 * @generated
+	 */
+	public Adapter createRunningStatementsAdapter() {
 		return null;
 	}
 

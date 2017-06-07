@@ -2,8 +2,6 @@
  */
 package robotDSLEcore;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Build Statements</b></em>'.
@@ -14,5 +12,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BuildStatements extends EObject {
+public interface BuildStatements extends Statements {
 } // BuildStatements
