@@ -163,6 +163,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.FULL: {
 				Full full = (Full)theEObject;
 				T result = caseFull(full);
+				if (result == null) result = caseSingleLogalExp(full);
 				if (result == null) result = caseLogicalExps(full);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -170,6 +171,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.MARK: {
 				Mark mark = (Mark)theEObject;
 				T result = caseMark(mark);
+				if (result == null) result = caseSingleLogalExp(mark);
 				if (result == null) result = caseLogicalExps(mark);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -177,6 +179,7 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.WALL_AHEAD: {
 				WallAhead wallAhead = (WallAhead)theEObject;
 				T result = caseWallAhead(wallAhead);
+				if (result == null) result = caseSingleLogalExp(wallAhead);
 				if (result == null) result = caseLogicalExps(wallAhead);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -184,7 +187,82 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 			case RobotDSLEcorePackage.HEADING: {
 				Heading heading = (Heading)theEObject;
 				T result = caseHeading(heading);
+				if (result == null) result = caseSingleLogalExp(heading);
 				if (result == null) result = caseLogicalExps(heading);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.BUILD_STATEMENTS: {
+				BuildStatements buildStatements = (BuildStatements)theEObject;
+				T result = caseBuildStatements(buildStatements);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.DESTROY_WALL: {
+				DestroyWall destroyWall = (DestroyWall)theEObject;
+				T result = caseDestroyWall(destroyWall);
+				if (result == null) result = caseBuildStatements(destroyWall);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.PICK_MARK: {
+				PickMark pickMark = (PickMark)theEObject;
+				T result = casePickMark(pickMark);
+				if (result == null) result = caseBuildStatements(pickMark);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.DROP_MARK: {
+				DropMark dropMark = (DropMark)theEObject;
+				T result = caseDropMark(dropMark);
+				if (result == null) result = caseBuildStatements(dropMark);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.BUILD_WALL: {
+				BuildWall buildWall = (BuildWall)theEObject;
+				T result = caseBuildWall(buildWall);
+				if (result == null) result = caseBuildStatements(buildWall);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.BINARIES: {
+				Binaries binaries = (Binaries)theEObject;
+				T result = caseBinaries(binaries);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.AND: {
+				And and = (And)theEObject;
+				T result = caseAnd(and);
+				if (result == null) result = caseBinaries(and);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.OR: {
+				Or or = (Or)theEObject;
+				T result = caseOr(or);
+				if (result == null) result = caseBinaries(or);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.NOT: {
+				Not not = (Not)theEObject;
+				T result = caseNot(not);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.SINGLE_LOGAL_EXP: {
+				SingleLogalExp singleLogalExp = (SingleLogalExp)theEObject;
+				T result = caseSingleLogalExp(singleLogalExp);
+				if (result == null) result = caseLogicalExps(singleLogalExp);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP: {
+				BinaryLogicalExp binaryLogicalExp = (BinaryLogicalExp)theEObject;
+				T result = caseBinaryLogicalExp(binaryLogicalExp);
+				if (result == null) result = caseLogicalExps(binaryLogicalExp);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -444,6 +522,171 @@ public class RobotDSLEcoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHeading(Heading object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Build Statements</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Build Statements</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBuildStatements(BuildStatements object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Destroy Wall</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Destroy Wall</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDestroyWall(DestroyWall object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pick Mark</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pick Mark</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePickMark(PickMark object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Drop Mark</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Drop Mark</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDropMark(DropMark object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Build Wall</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Build Wall</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBuildWall(BuildWall object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Binaries</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Binaries</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBinaries(Binaries object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>And</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>And</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnd(And object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Or</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Or</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOr(Or object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Not</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Not</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNot(Not object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Single Logal Exp</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Single Logal Exp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingleLogalExp(SingleLogalExp object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Binary Logical Exp</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Binary Logical Exp</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBinaryLogicalExp(BinaryLogicalExp object) {
 		return null;
 	}
 

@@ -15,6 +15,7 @@
     <genClasses ecoreClass="robotDSLEcore.ecore#//Script">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Script/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Script/buildstatements"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Statements"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//CommandStatement"/>
@@ -41,11 +42,44 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Comment/comment"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//LogicalExps"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//Full"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//Mark"/>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//WallAhead"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Full">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Full/not"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Mark">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Mark/not"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//WallAhead">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WallAhead/not"/>
+    </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Heading">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//Heading/direction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Heading/not"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//BuildStatements"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//DestroyWall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//DestroyWall/row"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//DestroyWall/column"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//PickMark">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//PickMark/row"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//PickMark/column"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//DropMark">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//DropMark/row"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//DropMark/column"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//BuildWall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//BuildWall/row"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//BuildWall/column"/>
+    </genClasses>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Binaries"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//And"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Or"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Not"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//SingleLogalExp"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//BinaryLogicalExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//BinaryLogicalExp/binaries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//BinaryLogicalExp/singlelogalexp"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

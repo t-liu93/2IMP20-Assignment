@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import robotDSLEcore.BuildStatements;
 import robotDSLEcore.RobotDSLEcorePackage;
 import robotDSLEcore.Script;
 import robotDSLEcore.Statements;
@@ -29,6 +30,7 @@ import robotDSLEcore.Statements;
  * <ul>
  *   <li>{@link robotDSLEcore.impl.ScriptImpl#getName <em>Name</em>}</li>
  *   <li>{@link robotDSLEcore.impl.ScriptImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.ScriptImpl#getBuildstatements <em>Buildstatements</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +65,16 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * @ordered
 	 */
 	protected EList<Statements> statements;
+
+	/**
+	 * The cached value of the '{@link #getBuildstatements() <em>Buildstatements</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBuildstatements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BuildStatements> buildstatements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,11 +133,25 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<BuildStatements> getBuildstatements() {
+		if (buildstatements == null) {
+			buildstatements = new EObjectContainmentEList<BuildStatements>(BuildStatements.class, this, RobotDSLEcorePackage.SCRIPT__BUILDSTATEMENTS);
+		}
+		return buildstatements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
 				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+			case RobotDSLEcorePackage.SCRIPT__BUILDSTATEMENTS:
+				return ((InternalEList<?>)getBuildstatements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -142,6 +168,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 				return getName();
 			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
 				return getStatements();
+			case RobotDSLEcorePackage.SCRIPT__BUILDSTATEMENTS:
+				return getBuildstatements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,6 +190,10 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 				getStatements().clear();
 				getStatements().addAll((Collection<? extends Statements>)newValue);
 				return;
+			case RobotDSLEcorePackage.SCRIPT__BUILDSTATEMENTS:
+				getBuildstatements().clear();
+				getBuildstatements().addAll((Collection<? extends BuildStatements>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,6 +212,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
 				getStatements().clear();
 				return;
+			case RobotDSLEcorePackage.SCRIPT__BUILDSTATEMENTS:
+				getBuildstatements().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,6 +231,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RobotDSLEcorePackage.SCRIPT__STATEMENTS:
 				return statements != null && !statements.isEmpty();
+			case RobotDSLEcorePackage.SCRIPT__BUILDSTATEMENTS:
+				return buildstatements != null && !buildstatements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

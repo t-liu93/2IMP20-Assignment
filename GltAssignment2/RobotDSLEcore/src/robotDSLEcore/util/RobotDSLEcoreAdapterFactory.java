@@ -136,6 +136,50 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 				return createHeadingAdapter();
 			}
 			@Override
+			public Adapter caseBuildStatements(BuildStatements object) {
+				return createBuildStatementsAdapter();
+			}
+			@Override
+			public Adapter caseDestroyWall(DestroyWall object) {
+				return createDestroyWallAdapter();
+			}
+			@Override
+			public Adapter casePickMark(PickMark object) {
+				return createPickMarkAdapter();
+			}
+			@Override
+			public Adapter caseDropMark(DropMark object) {
+				return createDropMarkAdapter();
+			}
+			@Override
+			public Adapter caseBuildWall(BuildWall object) {
+				return createBuildWallAdapter();
+			}
+			@Override
+			public Adapter caseBinaries(Binaries object) {
+				return createBinariesAdapter();
+			}
+			@Override
+			public Adapter caseAnd(And object) {
+				return createAndAdapter();
+			}
+			@Override
+			public Adapter caseOr(Or object) {
+				return createOrAdapter();
+			}
+			@Override
+			public Adapter caseNot(Not object) {
+				return createNotAdapter();
+			}
+			@Override
+			public Adapter caseSingleLogalExp(SingleLogalExp object) {
+				return createSingleLogalExpAdapter();
+			}
+			@Override
+			public Adapter caseBinaryLogicalExp(BinaryLogicalExp object) {
+				return createBinaryLogicalExpAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -390,6 +434,160 @@ public class RobotDSLEcoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHeadingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.BuildStatements <em>Build Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.BuildStatements
+	 * @generated
+	 */
+	public Adapter createBuildStatementsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.DestroyWall <em>Destroy Wall</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.DestroyWall
+	 * @generated
+	 */
+	public Adapter createDestroyWallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.PickMark <em>Pick Mark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.PickMark
+	 * @generated
+	 */
+	public Adapter createPickMarkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.DropMark <em>Drop Mark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.DropMark
+	 * @generated
+	 */
+	public Adapter createDropMarkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.BuildWall <em>Build Wall</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.BuildWall
+	 * @generated
+	 */
+	public Adapter createBuildWallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Binaries <em>Binaries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Binaries
+	 * @generated
+	 */
+	public Adapter createBinariesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.And <em>And</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.And
+	 * @generated
+	 */
+	public Adapter createAndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Or <em>Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Or
+	 * @generated
+	 */
+	public Adapter createOrAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.Not <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.Not
+	 * @generated
+	 */
+	public Adapter createNotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.SingleLogalExp <em>Single Logal Exp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.SingleLogalExp
+	 * @generated
+	 */
+	public Adapter createSingleLogalExpAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link robotDSLEcore.BinaryLogicalExp <em>Binary Logical Exp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see robotDSLEcore.BinaryLogicalExp
+	 * @generated
+	 */
+	public Adapter createBinaryLogicalExpAdapter() {
 		return null;
 	}
 

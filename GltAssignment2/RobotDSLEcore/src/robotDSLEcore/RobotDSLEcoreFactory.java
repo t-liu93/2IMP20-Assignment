@@ -175,6 +175,105 @@ public interface RobotDSLEcoreFactory extends EFactory {
 	Heading createHeading();
 
 	/**
+	 * Returns a new object of class '<em>Build Statements</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Build Statements</em>'.
+	 * @generated
+	 */
+	BuildStatements createBuildStatements();
+
+	/**
+	 * Returns a new object of class '<em>Destroy Wall</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Destroy Wall</em>'.
+	 * @generated
+	 */
+	DestroyWall createDestroyWall();
+
+	/**
+	 * Returns a new object of class '<em>Pick Mark</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pick Mark</em>'.
+	 * @generated
+	 */
+	PickMark createPickMark();
+
+	/**
+	 * Returns a new object of class '<em>Drop Mark</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Drop Mark</em>'.
+	 * @generated
+	 */
+	DropMark createDropMark();
+
+	/**
+	 * Returns a new object of class '<em>Build Wall</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Build Wall</em>'.
+	 * @generated
+	 */
+	BuildWall createBuildWall();
+
+	/**
+	 * Returns a new object of class '<em>Binaries</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Binaries</em>'.
+	 * @generated
+	 */
+	Binaries createBinaries();
+
+	/**
+	 * Returns a new object of class '<em>And</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>And</em>'.
+	 * @generated
+	 */
+	And createAnd();
+
+	/**
+	 * Returns a new object of class '<em>Or</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Or</em>'.
+	 * @generated
+	 */
+	Or createOr();
+
+	/**
+	 * Returns a new object of class '<em>Not</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Not</em>'.
+	 * @generated
+	 */
+	Not createNot();
+
+	/**
+	 * Returns a new object of class '<em>Single Logal Exp</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Single Logal Exp</em>'.
+	 * @generated
+	 */
+	SingleLogalExp createSingleLogalExp();
+
+	/**
+	 * Returns a new object of class '<em>Binary Logical Exp</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Binary Logical Exp</em>'.
+	 * @generated
+	 */
+	BinaryLogicalExp createBinaryLogicalExp();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

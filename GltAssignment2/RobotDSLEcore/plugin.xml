@@ -7,9 +7,17 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated robotDSLEcoreExtendedLogic -->
+      <package
+            uri="robotDSLEcoreExtendedLogic"
+            class="robotDSLEcoreExtendedLogic.RobotDSLEcoreExtendedLogicPackage"
+            genModel="model/robotDSLEcoreExtendedLogic.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated robotDSLEcore -->
       <package
-            uri="http://www.example.org/robotDSLEcore"
+            uri="robotDSLEcore"
             class="robotDSLEcore.RobotDSLEcorePackage"
             genModel="model/robotDSLEcore.genmodel"/>
    </extension>

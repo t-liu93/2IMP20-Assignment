@@ -39,7 +39,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/robotDSLEcore";
+	String eNS_URI = "robotDSLEcore";
 
 	/**
 	 * The package namespace name.
@@ -86,13 +86,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int SCRIPT__STATEMENTS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Buildstatements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__BUILDSTATEMENTS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Script</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_FEATURE_COUNT = 2;
+	int SCRIPT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Script</em>' class.
@@ -130,7 +139,6 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @ordered
 	 */
 	int STATEMENTS_OPERATION_COUNT = 0;
-
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.CommandStatementImpl <em>Command Statement</em>}' class.
@@ -447,7 +455,6 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 */
 	int TRACE_MESSAGE_OPERATION_COUNT = COMMAND_STATEMENT_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.CommentImpl <em>Comment</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -485,7 +492,6 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 */
 	int COMMENT_OPERATION_COUNT = COMMAND_STATEMENT_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.LogicalExpsImpl <em>Logical Exps</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -515,6 +521,34 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int LOGICAL_EXPS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.SingleLogalExpImpl <em>Single Logal Exp</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.SingleLogalExpImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getSingleLogalExp()
+	 * @generated
+	 */
+	int SINGLE_LOGAL_EXP = 26;
+
+	/**
+	 * The number of structural features of the '<em>Single Logal Exp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_LOGAL_EXP_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Single Logal Exp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_LOGAL_EXP_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.FullImpl <em>Full</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -525,13 +559,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int FULL = 13;
 
 	/**
+	 * The feature id for the '<em><b>Not</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FULL__NOT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Full</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FULL_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+	int FULL_FEATURE_COUNT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Full</em>' class.
@@ -540,7 +583,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FULL_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+	int FULL_OPERATION_COUNT = SINGLE_LOGAL_EXP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.MarkImpl <em>Mark</em>}' class.
@@ -553,13 +596,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int MARK = 14;
 
 	/**
+	 * The feature id for the '<em><b>Not</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MARK__NOT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Mark</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MARK_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+	int MARK_FEATURE_COUNT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Mark</em>' class.
@@ -568,7 +620,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MARK_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+	int MARK_OPERATION_COUNT = SINGLE_LOGAL_EXP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.WallAheadImpl <em>Wall Ahead</em>}' class.
@@ -581,13 +633,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int WALL_AHEAD = 15;
 
 	/**
+	 * The feature id for the '<em><b>Not</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WALL_AHEAD__NOT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Wall Ahead</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WALL_AHEAD_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 0;
+	int WALL_AHEAD_FEATURE_COUNT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Wall Ahead</em>' class.
@@ -596,7 +657,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WALL_AHEAD_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+	int WALL_AHEAD_OPERATION_COUNT = SINGLE_LOGAL_EXP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.impl.HeadingImpl <em>Heading</em>}' class.
@@ -615,7 +676,16 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEADING__DIRECTION = LOGICAL_EXPS_FEATURE_COUNT + 0;
+	int HEADING__DIRECTION = SINGLE_LOGAL_EXP_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Not</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HEADING__NOT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Heading</em>' class.
@@ -624,7 +694,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEADING_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 1;
+	int HEADING_FEATURE_COUNT = SINGLE_LOGAL_EXP_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Heading</em>' class.
@@ -633,7 +703,377 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HEADING_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
+	int HEADING_OPERATION_COUNT = SINGLE_LOGAL_EXP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.BuildStatementsImpl <em>Build Statements</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.BuildStatementsImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBuildStatements()
+	 * @generated
+	 */
+	int BUILD_STATEMENTS = 17;
+
+	/**
+	 * The number of structural features of the '<em>Build Statements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD_STATEMENTS_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Build Statements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD_STATEMENTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.DestroyWallImpl <em>Destroy Wall</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.DestroyWallImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDestroyWall()
+	 * @generated
+	 */
+	int DESTROY_WALL = 18;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESTROY_WALL__ROW = BUILD_STATEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Column</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESTROY_WALL__COLUMN = BUILD_STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Destroy Wall</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESTROY_WALL_FEATURE_COUNT = BUILD_STATEMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Destroy Wall</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESTROY_WALL_OPERATION_COUNT = BUILD_STATEMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.PickMarkImpl <em>Pick Mark</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.PickMarkImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getPickMark()
+	 * @generated
+	 */
+	int PICK_MARK = 19;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICK_MARK__ROW = BUILD_STATEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Column</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICK_MARK__COLUMN = BUILD_STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Pick Mark</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICK_MARK_FEATURE_COUNT = BUILD_STATEMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Pick Mark</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PICK_MARK_OPERATION_COUNT = BUILD_STATEMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.DropMarkImpl <em>Drop Mark</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.DropMarkImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDropMark()
+	 * @generated
+	 */
+	int DROP_MARK = 20;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_MARK__ROW = BUILD_STATEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Column</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_MARK__COLUMN = BUILD_STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Drop Mark</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_MARK_FEATURE_COUNT = BUILD_STATEMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Drop Mark</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_MARK_OPERATION_COUNT = BUILD_STATEMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.BuildWallImpl <em>Build Wall</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.BuildWallImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBuildWall()
+	 * @generated
+	 */
+	int BUILD_WALL = 21;
+
+	/**
+	 * The feature id for the '<em><b>Row</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD_WALL__ROW = BUILD_STATEMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Column</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD_WALL__COLUMN = BUILD_STATEMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Build Wall</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD_WALL_FEATURE_COUNT = BUILD_STATEMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Build Wall</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD_WALL_OPERATION_COUNT = BUILD_STATEMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.BinariesImpl <em>Binaries</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.BinariesImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBinaries()
+	 * @generated
+	 */
+	int BINARIES = 22;
+
+	/**
+	 * The number of structural features of the '<em>Binaries</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARIES_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Binaries</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARIES_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.AndImpl <em>And</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.AndImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getAnd()
+	 * @generated
+	 */
+	int AND = 23;
+
+	/**
+	 * The number of structural features of the '<em>And</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_FEATURE_COUNT = BINARIES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>And</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_OPERATION_COUNT = BINARIES_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.OrImpl <em>Or</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.OrImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getOr()
+	 * @generated
+	 */
+	int OR = 24;
+
+	/**
+	 * The number of structural features of the '<em>Or</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_FEATURE_COUNT = BINARIES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Or</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_OPERATION_COUNT = BINARIES_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.NotImpl <em>Not</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.NotImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getNot()
+	 * @generated
+	 */
+	int NOT = 25;
+
+	/**
+	 * The number of structural features of the '<em>Not</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Not</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.BinaryLogicalExpImpl <em>Binary Logical Exp</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.BinaryLogicalExpImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBinaryLogicalExp()
+	 * @generated
+	 */
+	int BINARY_LOGICAL_EXP = 27;
+
+	/**
+	 * The feature id for the '<em><b>Binaries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_LOGICAL_EXP__BINARIES = LOGICAL_EXPS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Singlelogalexp</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_LOGICAL_EXP__SINGLELOGALEXP = LOGICAL_EXPS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Binary Logical Exp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_LOGICAL_EXP_FEATURE_COUNT = LOGICAL_EXPS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Binary Logical Exp</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_LOGICAL_EXP_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.
@@ -643,7 +1083,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDirections()
 	 * @generated
 	 */
-	int DIRECTIONS = 17;
+	int DIRECTIONS = 28;
 
 
 	/**
@@ -677,6 +1117,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getScript_Statements();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.Script#getBuildstatements <em>Buildstatements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Buildstatements</em>'.
+	 * @see robotDSLEcore.Script#getBuildstatements()
+	 * @see #getScript()
+	 * @generated
+	 */
+	EReference getScript_Buildstatements();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.Statements <em>Statements</em>}'.
@@ -897,6 +1348,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getFull();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.Full#getNot <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Not</em>'.
+	 * @see robotDSLEcore.Full#getNot()
+	 * @see #getFull()
+	 * @generated
+	 */
+	EReference getFull_Not();
+
+	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.Mark <em>Mark</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,6 +1369,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getMark();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.Mark#getNot <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Not</em>'.
+	 * @see robotDSLEcore.Mark#getNot()
+	 * @see #getMark()
+	 * @generated
+	 */
+	EReference getMark_Not();
+
+	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.WallAhead <em>Wall Ahead</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -915,6 +1388,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getWallAhead();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.WallAhead#getNot <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Not</em>'.
+	 * @see robotDSLEcore.WallAhead#getNot()
+	 * @see #getWallAhead()
+	 * @generated
+	 */
+	EReference getWallAhead_Not();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.Heading <em>Heading</em>}'.
@@ -936,6 +1420,237 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHeading_Direction();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.Heading#getNot <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Not</em>'.
+	 * @see robotDSLEcore.Heading#getNot()
+	 * @see #getHeading()
+	 * @generated
+	 */
+	EReference getHeading_Not();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.BuildStatements <em>Build Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Build Statements</em>'.
+	 * @see robotDSLEcore.BuildStatements
+	 * @generated
+	 */
+	EClass getBuildStatements();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.DestroyWall <em>Destroy Wall</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Destroy Wall</em>'.
+	 * @see robotDSLEcore.DestroyWall
+	 * @generated
+	 */
+	EClass getDestroyWall();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.DestroyWall#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see robotDSLEcore.DestroyWall#getRow()
+	 * @see #getDestroyWall()
+	 * @generated
+	 */
+	EAttribute getDestroyWall_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.DestroyWall#getColumn <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column</em>'.
+	 * @see robotDSLEcore.DestroyWall#getColumn()
+	 * @see #getDestroyWall()
+	 * @generated
+	 */
+	EAttribute getDestroyWall_Column();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.PickMark <em>Pick Mark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pick Mark</em>'.
+	 * @see robotDSLEcore.PickMark
+	 * @generated
+	 */
+	EClass getPickMark();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.PickMark#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see robotDSLEcore.PickMark#getRow()
+	 * @see #getPickMark()
+	 * @generated
+	 */
+	EAttribute getPickMark_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.PickMark#getColumn <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column</em>'.
+	 * @see robotDSLEcore.PickMark#getColumn()
+	 * @see #getPickMark()
+	 * @generated
+	 */
+	EAttribute getPickMark_Column();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.DropMark <em>Drop Mark</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Drop Mark</em>'.
+	 * @see robotDSLEcore.DropMark
+	 * @generated
+	 */
+	EClass getDropMark();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.DropMark#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see robotDSLEcore.DropMark#getRow()
+	 * @see #getDropMark()
+	 * @generated
+	 */
+	EAttribute getDropMark_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.DropMark#getColumn <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column</em>'.
+	 * @see robotDSLEcore.DropMark#getColumn()
+	 * @see #getDropMark()
+	 * @generated
+	 */
+	EAttribute getDropMark_Column();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.BuildWall <em>Build Wall</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Build Wall</em>'.
+	 * @see robotDSLEcore.BuildWall
+	 * @generated
+	 */
+	EClass getBuildWall();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.BuildWall#getRow <em>Row</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Row</em>'.
+	 * @see robotDSLEcore.BuildWall#getRow()
+	 * @see #getBuildWall()
+	 * @generated
+	 */
+	EAttribute getBuildWall_Row();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotDSLEcore.BuildWall#getColumn <em>Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column</em>'.
+	 * @see robotDSLEcore.BuildWall#getColumn()
+	 * @see #getBuildWall()
+	 * @generated
+	 */
+	EAttribute getBuildWall_Column();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.Binaries <em>Binaries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Binaries</em>'.
+	 * @see robotDSLEcore.Binaries
+	 * @generated
+	 */
+	EClass getBinaries();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.And <em>And</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>And</em>'.
+	 * @see robotDSLEcore.And
+	 * @generated
+	 */
+	EClass getAnd();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.Or <em>Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Or</em>'.
+	 * @see robotDSLEcore.Or
+	 * @generated
+	 */
+	EClass getOr();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.Not <em>Not</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Not</em>'.
+	 * @see robotDSLEcore.Not
+	 * @generated
+	 */
+	EClass getNot();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.SingleLogalExp <em>Single Logal Exp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Single Logal Exp</em>'.
+	 * @see robotDSLEcore.SingleLogalExp
+	 * @generated
+	 */
+	EClass getSingleLogalExp();
+
+	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.BinaryLogicalExp <em>Binary Logical Exp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Binary Logical Exp</em>'.
+	 * @see robotDSLEcore.BinaryLogicalExp
+	 * @generated
+	 */
+	EClass getBinaryLogicalExp();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.BinaryLogicalExp#getBinaries <em>Binaries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Binaries</em>'.
+	 * @see robotDSLEcore.BinaryLogicalExp#getBinaries()
+	 * @see #getBinaryLogicalExp()
+	 * @generated
+	 */
+	EReference getBinaryLogicalExp_Binaries();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.BinaryLogicalExp#getSinglelogalexp <em>Singlelogalexp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Singlelogalexp</em>'.
+	 * @see robotDSLEcore.BinaryLogicalExp#getSinglelogalexp()
+	 * @see #getBinaryLogicalExp()
+	 * @generated
+	 */
+	EReference getBinaryLogicalExp_Singlelogalexp();
 
 	/**
 	 * Returns the meta object for enum '{@link robotDSLEcore.Directions <em>Directions</em>}'.
@@ -995,6 +1710,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCRIPT__STATEMENTS = eINSTANCE.getScript_Statements();
+
+		/**
+		 * The meta object literal for the '<em><b>Buildstatements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCRIPT__BUILDSTATEMENTS = eINSTANCE.getScript_Buildstatements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.StatementsImpl <em>Statements</em>}' class.
@@ -1191,6 +1914,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EClass FULL = eINSTANCE.getFull();
 
 		/**
+		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FULL__NOT = eINSTANCE.getFull_Not();
+
+		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.MarkImpl <em>Mark</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1201,6 +1932,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EClass MARK = eINSTANCE.getMark();
 
 		/**
+		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MARK__NOT = eINSTANCE.getMark_Not();
+
+		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.WallAheadImpl <em>Wall Ahead</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1209,6 +1948,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EClass WALL_AHEAD = eINSTANCE.getWallAhead();
+
+		/**
+		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WALL_AHEAD__NOT = eINSTANCE.getWallAhead_Not();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.HeadingImpl <em>Heading</em>}' class.
@@ -1227,6 +1974,204 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HEADING__DIRECTION = eINSTANCE.getHeading_Direction();
+
+		/**
+		 * The meta object literal for the '<em><b>Not</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HEADING__NOT = eINSTANCE.getHeading_Not();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.BuildStatementsImpl <em>Build Statements</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.BuildStatementsImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBuildStatements()
+		 * @generated
+		 */
+		EClass BUILD_STATEMENTS = eINSTANCE.getBuildStatements();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.DestroyWallImpl <em>Destroy Wall</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.DestroyWallImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDestroyWall()
+		 * @generated
+		 */
+		EClass DESTROY_WALL = eINSTANCE.getDestroyWall();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DESTROY_WALL__ROW = eINSTANCE.getDestroyWall_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Column</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DESTROY_WALL__COLUMN = eINSTANCE.getDestroyWall_Column();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.PickMarkImpl <em>Pick Mark</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.PickMarkImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getPickMark()
+		 * @generated
+		 */
+		EClass PICK_MARK = eINSTANCE.getPickMark();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PICK_MARK__ROW = eINSTANCE.getPickMark_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Column</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PICK_MARK__COLUMN = eINSTANCE.getPickMark_Column();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.DropMarkImpl <em>Drop Mark</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.DropMarkImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDropMark()
+		 * @generated
+		 */
+		EClass DROP_MARK = eINSTANCE.getDropMark();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DROP_MARK__ROW = eINSTANCE.getDropMark_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Column</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DROP_MARK__COLUMN = eINSTANCE.getDropMark_Column();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.BuildWallImpl <em>Build Wall</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.BuildWallImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBuildWall()
+		 * @generated
+		 */
+		EClass BUILD_WALL = eINSTANCE.getBuildWall();
+
+		/**
+		 * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUILD_WALL__ROW = eINSTANCE.getBuildWall_Row();
+
+		/**
+		 * The meta object literal for the '<em><b>Column</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUILD_WALL__COLUMN = eINSTANCE.getBuildWall_Column();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.BinariesImpl <em>Binaries</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.BinariesImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBinaries()
+		 * @generated
+		 */
+		EClass BINARIES = eINSTANCE.getBinaries();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.AndImpl <em>And</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.AndImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getAnd()
+		 * @generated
+		 */
+		EClass AND = eINSTANCE.getAnd();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.OrImpl <em>Or</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.OrImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getOr()
+		 * @generated
+		 */
+		EClass OR = eINSTANCE.getOr();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.NotImpl <em>Not</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.NotImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getNot()
+		 * @generated
+		 */
+		EClass NOT = eINSTANCE.getNot();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.SingleLogalExpImpl <em>Single Logal Exp</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.SingleLogalExpImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getSingleLogalExp()
+		 * @generated
+		 */
+		EClass SINGLE_LOGAL_EXP = eINSTANCE.getSingleLogalExp();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.BinaryLogicalExpImpl <em>Binary Logical Exp</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.BinaryLogicalExpImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getBinaryLogicalExp()
+		 * @generated
+		 */
+		EClass BINARY_LOGICAL_EXP = eINSTANCE.getBinaryLogicalExp();
+
+		/**
+		 * The meta object literal for the '<em><b>Binaries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_LOGICAL_EXP__BINARIES = eINSTANCE.getBinaryLogicalExp_Binaries();
+
+		/**
+		 * The meta object literal for the '<em><b>Singlelogalexp</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_LOGICAL_EXP__SINGLELOGALEXP = eINSTANCE.getBinaryLogicalExp_Singlelogalexp();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.

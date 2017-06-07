@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link robotDSLEcore.Script#getName <em>Name</em>}</li>
  *   <li>{@link robotDSLEcore.Script#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotDSLEcore.Script#getBuildstatements <em>Buildstatements</em>}</li>
  * </ul>
  *
  * @see robotDSLEcore.RobotDSLEcorePackage#getScript()
@@ -64,5 +65,21 @@ public interface Script extends EObject {
 	 * @generated
 	 */
 	EList<Statements> getStatements();
+
+	/**
+	 * Returns the value of the '<em><b>Buildstatements</b></em>' containment reference list.
+	 * The list contents are of type {@link robotDSLEcore.BuildStatements}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Buildstatements</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Buildstatements</em>' containment reference list.
+	 * @see robotDSLEcore.RobotDSLEcorePackage#getScript_Buildstatements()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<BuildStatements> getBuildstatements();
 
 } // Script

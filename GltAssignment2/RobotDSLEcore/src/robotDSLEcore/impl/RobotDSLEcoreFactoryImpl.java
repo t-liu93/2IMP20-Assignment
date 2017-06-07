@@ -74,6 +74,17 @@ public class RobotDSLEcoreFactoryImpl extends EFactoryImpl implements RobotDSLEc
 			case RobotDSLEcorePackage.MARK: return createMark();
 			case RobotDSLEcorePackage.WALL_AHEAD: return createWallAhead();
 			case RobotDSLEcorePackage.HEADING: return createHeading();
+			case RobotDSLEcorePackage.BUILD_STATEMENTS: return createBuildStatements();
+			case RobotDSLEcorePackage.DESTROY_WALL: return createDestroyWall();
+			case RobotDSLEcorePackage.PICK_MARK: return createPickMark();
+			case RobotDSLEcorePackage.DROP_MARK: return createDropMark();
+			case RobotDSLEcorePackage.BUILD_WALL: return createBuildWall();
+			case RobotDSLEcorePackage.BINARIES: return createBinaries();
+			case RobotDSLEcorePackage.AND: return createAnd();
+			case RobotDSLEcorePackage.OR: return createOr();
+			case RobotDSLEcorePackage.NOT: return createNot();
+			case RobotDSLEcorePackage.SINGLE_LOGAL_EXP: return createSingleLogalExp();
+			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP: return createBinaryLogicalExp();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -277,6 +288,116 @@ public class RobotDSLEcoreFactoryImpl extends EFactoryImpl implements RobotDSLEc
 	public Heading createHeading() {
 		HeadingImpl heading = new HeadingImpl();
 		return heading;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BuildStatements createBuildStatements() {
+		BuildStatementsImpl buildStatements = new BuildStatementsImpl();
+		return buildStatements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DestroyWall createDestroyWall() {
+		DestroyWallImpl destroyWall = new DestroyWallImpl();
+		return destroyWall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PickMark createPickMark() {
+		PickMarkImpl pickMark = new PickMarkImpl();
+		return pickMark;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DropMark createDropMark() {
+		DropMarkImpl dropMark = new DropMarkImpl();
+		return dropMark;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BuildWall createBuildWall() {
+		BuildWallImpl buildWall = new BuildWallImpl();
+		return buildWall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Binaries createBinaries() {
+		BinariesImpl binaries = new BinariesImpl();
+		return binaries;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public And createAnd() {
+		AndImpl and = new AndImpl();
+		return and;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Or createOr() {
+		OrImpl or = new OrImpl();
+		return or;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Not createNot() {
+		NotImpl not = new NotImpl();
+		return not;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SingleLogalExp createSingleLogalExp() {
+		SingleLogalExpImpl singleLogalExp = new SingleLogalExpImpl();
+		return singleLogalExp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BinaryLogicalExp createBinaryLogicalExp() {
+		BinaryLogicalExpImpl binaryLogicalExp = new BinaryLogicalExpImpl();
+		return binaryLogicalExp;
 	}
 
 	/**

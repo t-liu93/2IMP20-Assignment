@@ -10,20 +10,31 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import robotDSLEcore.And;
+import robotDSLEcore.Binaries;
+import robotDSLEcore.BinaryLogicalExp;
+import robotDSLEcore.BuildStatements;
+import robotDSLEcore.BuildWall;
 import robotDSLEcore.CommandStatement;
 import robotDSLEcore.Comment;
+import robotDSLEcore.DestroyWall;
 import robotDSLEcore.Directions;
 import robotDSLEcore.Drop;
+import robotDSLEcore.DropMark;
 import robotDSLEcore.Full;
 import robotDSLEcore.Heading;
 import robotDSLEcore.IfStatement;
 import robotDSLEcore.LogicalExps;
 import robotDSLEcore.Mark;
+import robotDSLEcore.Not;
+import robotDSLEcore.Or;
 import robotDSLEcore.Pick;
+import robotDSLEcore.PickMark;
 import robotDSLEcore.RepeatStatement;
 import robotDSLEcore.RobotDSLEcoreFactory;
 import robotDSLEcore.RobotDSLEcorePackage;
 import robotDSLEcore.Script;
+import robotDSLEcore.SingleLogalExp;
 import robotDSLEcore.Statements;
 import robotDSLEcore.Step;
 import robotDSLEcore.TraceMessage;
@@ -162,6 +173,83 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass buildStatementsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass destroyWallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pickMarkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dropMarkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass buildWallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binariesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass andEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass orEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass notEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass singleLogalExpEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binaryLogicalExpEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum directionsEEnum = null;
 
 	/**
@@ -250,6 +338,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 */
 	public EReference getScript_Statements() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getScript_Buildstatements() {
+		return (EReference)scriptEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -446,6 +543,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFull_Not() {
+		return (EReference)fullEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMark() {
 		return markEClass;
 	}
@@ -455,8 +561,26 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMark_Not() {
+		return (EReference)markEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getWallAhead() {
 		return wallAheadEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWallAhead_Not() {
+		return (EReference)wallAheadEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -475,6 +599,204 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 */
 	public EAttribute getHeading_Direction() {
 		return (EAttribute)headingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHeading_Not() {
+		return (EReference)headingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBuildStatements() {
+		return buildStatementsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDestroyWall() {
+		return destroyWallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDestroyWall_Row() {
+		return (EAttribute)destroyWallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDestroyWall_Column() {
+		return (EAttribute)destroyWallEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPickMark() {
+		return pickMarkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPickMark_Row() {
+		return (EAttribute)pickMarkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPickMark_Column() {
+		return (EAttribute)pickMarkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDropMark() {
+		return dropMarkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDropMark_Row() {
+		return (EAttribute)dropMarkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDropMark_Column() {
+		return (EAttribute)dropMarkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBuildWall() {
+		return buildWallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBuildWall_Row() {
+		return (EAttribute)buildWallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBuildWall_Column() {
+		return (EAttribute)buildWallEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaries() {
+		return binariesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAnd() {
+		return andEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOr() {
+		return orEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNot() {
+		return notEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSingleLogalExp() {
+		return singleLogalExpEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaryLogicalExp() {
+		return binaryLogicalExpEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryLogicalExp_Binaries() {
+		return (EReference)binaryLogicalExpEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBinaryLogicalExp_Singlelogalexp() {
+		return (EReference)binaryLogicalExpEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -517,6 +839,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		scriptEClass = createEClass(SCRIPT);
 		createEAttribute(scriptEClass, SCRIPT__NAME);
 		createEReference(scriptEClass, SCRIPT__STATEMENTS);
+		createEReference(scriptEClass, SCRIPT__BUILDSTATEMENTS);
 
 		statementsEClass = createEClass(STATEMENTS);
 
@@ -551,13 +874,49 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		logicalExpsEClass = createEClass(LOGICAL_EXPS);
 
 		fullEClass = createEClass(FULL);
+		createEReference(fullEClass, FULL__NOT);
 
 		markEClass = createEClass(MARK);
+		createEReference(markEClass, MARK__NOT);
 
 		wallAheadEClass = createEClass(WALL_AHEAD);
+		createEReference(wallAheadEClass, WALL_AHEAD__NOT);
 
 		headingEClass = createEClass(HEADING);
 		createEAttribute(headingEClass, HEADING__DIRECTION);
+		createEReference(headingEClass, HEADING__NOT);
+
+		buildStatementsEClass = createEClass(BUILD_STATEMENTS);
+
+		destroyWallEClass = createEClass(DESTROY_WALL);
+		createEAttribute(destroyWallEClass, DESTROY_WALL__ROW);
+		createEAttribute(destroyWallEClass, DESTROY_WALL__COLUMN);
+
+		pickMarkEClass = createEClass(PICK_MARK);
+		createEAttribute(pickMarkEClass, PICK_MARK__ROW);
+		createEAttribute(pickMarkEClass, PICK_MARK__COLUMN);
+
+		dropMarkEClass = createEClass(DROP_MARK);
+		createEAttribute(dropMarkEClass, DROP_MARK__ROW);
+		createEAttribute(dropMarkEClass, DROP_MARK__COLUMN);
+
+		buildWallEClass = createEClass(BUILD_WALL);
+		createEAttribute(buildWallEClass, BUILD_WALL__ROW);
+		createEAttribute(buildWallEClass, BUILD_WALL__COLUMN);
+
+		binariesEClass = createEClass(BINARIES);
+
+		andEClass = createEClass(AND);
+
+		orEClass = createEClass(OR);
+
+		notEClass = createEClass(NOT);
+
+		singleLogalExpEClass = createEClass(SINGLE_LOGAL_EXP);
+
+		binaryLogicalExpEClass = createEClass(BINARY_LOGICAL_EXP);
+		createEReference(binaryLogicalExpEClass, BINARY_LOGICAL_EXP__BINARIES);
+		createEReference(binaryLogicalExpEClass, BINARY_LOGICAL_EXP__SINGLELOGALEXP);
 
 		// Create enums
 		directionsEEnum = createEEnum(DIRECTIONS);
@@ -601,15 +960,24 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		pickEClass.getESuperTypes().add(this.getCommandStatement());
 		traceMessageEClass.getESuperTypes().add(this.getCommandStatement());
 		commentEClass.getESuperTypes().add(this.getCommandStatement());
-		fullEClass.getESuperTypes().add(this.getLogicalExps());
-		markEClass.getESuperTypes().add(this.getLogicalExps());
-		wallAheadEClass.getESuperTypes().add(this.getLogicalExps());
-		headingEClass.getESuperTypes().add(this.getLogicalExps());
+		fullEClass.getESuperTypes().add(this.getSingleLogalExp());
+		markEClass.getESuperTypes().add(this.getSingleLogalExp());
+		wallAheadEClass.getESuperTypes().add(this.getSingleLogalExp());
+		headingEClass.getESuperTypes().add(this.getSingleLogalExp());
+		destroyWallEClass.getESuperTypes().add(this.getBuildStatements());
+		pickMarkEClass.getESuperTypes().add(this.getBuildStatements());
+		dropMarkEClass.getESuperTypes().add(this.getBuildStatements());
+		buildWallEClass.getESuperTypes().add(this.getBuildStatements());
+		andEClass.getESuperTypes().add(this.getBinaries());
+		orEClass.getESuperTypes().add(this.getBinaries());
+		singleLogalExpEClass.getESuperTypes().add(this.getLogicalExps());
+		binaryLogicalExpEClass.getESuperTypes().add(this.getLogicalExps());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScript_Statements(), this.getStatements(), null, "statements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Buildstatements(), this.getBuildStatements(), null, "buildstatements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementsEClass, Statements.class, "Statements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -644,13 +1012,49 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEClass(logicalExpsEClass, LogicalExps.class, "LogicalExps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(fullEClass, Full.class, "Full", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFull_Not(), this.getNot(), null, "not", null, 0, 1, Full.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(markEClass, Mark.class, "Mark", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMark_Not(), this.getNot(), null, "not", null, 0, 1, Mark.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(wallAheadEClass, WallAhead.class, "WallAhead", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWallAhead_Not(), this.getNot(), null, "not", null, 0, 1, WallAhead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(headingEClass, Heading.class, "Heading", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHeading_Direction(), this.getDirections(), "direction", null, 0, 1, Heading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHeading_Not(), this.getNot(), null, "not", null, 0, 1, Heading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(buildStatementsEClass, BuildStatements.class, "BuildStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(destroyWallEClass, DestroyWall.class, "DestroyWall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDestroyWall_Row(), ecorePackage.getEInt(), "row", null, 0, 1, DestroyWall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDestroyWall_Column(), ecorePackage.getEInt(), "column", null, 0, 1, DestroyWall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pickMarkEClass, PickMark.class, "PickMark", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPickMark_Row(), ecorePackage.getEInt(), "row", null, 0, 1, PickMark.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPickMark_Column(), ecorePackage.getEInt(), "column", null, 0, 1, PickMark.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dropMarkEClass, DropMark.class, "DropMark", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDropMark_Row(), ecorePackage.getEInt(), "row", null, 0, 1, DropMark.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDropMark_Column(), ecorePackage.getEInt(), "column", null, 0, 1, DropMark.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(buildWallEClass, BuildWall.class, "BuildWall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBuildWall_Row(), ecorePackage.getEInt(), "row", null, 0, 1, BuildWall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBuildWall_Column(), ecorePackage.getEInt(), "column", null, 0, 1, BuildWall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(binariesEClass, Binaries.class, "Binaries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(notEClass, Not.class, "Not", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(singleLogalExpEClass, SingleLogalExp.class, "SingleLogalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(binaryLogicalExpEClass, BinaryLogicalExp.class, "BinaryLogicalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBinaryLogicalExp_Binaries(), this.getBinaries(), null, "binaries", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(directionsEEnum, Directions.class, "Directions");
