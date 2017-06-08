@@ -1,28 +1,208 @@
-\documentclass[]{article}
+\documentclass[a4paper, 11pt]{article}
 
-%opening
-\title{RobotDSL Part2 \\
-README}
-\author{Tianyu Liu 0937147 \\
-Xiayang Hao 0892474}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{algorithm,algpseudocode}
+\usepackage{a4wide,amsmath,amssymb,fancyhdr,graphicx,tabularx,xspace,array}
+\usepackage{amsthm}
+\usepackage{mathtools,enumerate}
+\usepackage{hyperref}
+\usepackage{float}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\setlength\parindent{0pt}
+\setlength\extrarowheight{2pt}
+
+\newcommand{\myopt}{\mbox{{\sc opt}}\xspace}
+\newcommand{\myalg}{\mbox{{\sc alg}}\xspace}
+\newcommand{\tab}{\hspace{4ex}}
+\newcommand{\twoline}{\vspace{2ex}}
+\newcommand{\oneline}{\vspace{1ex}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\bb}{\bigbreak}
+
+\definecolor{commentGreen}{rgb}{0.08,0.38,0.12}
+\lstset{language = SQL,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue}\fontfamily{Courier New},
+    commentstyle=\color{commentGreen}\fontfamily{Courier New},
+    stringstyle=\color{red}\fontfamily{Courier New}}
 
 \begin{document}
 
-\maketitle
+%    Title page
+%----------------------------------------------------------------------------------------------------------------------
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+    \centering
+    \textsc{\LARGE Eindhoven University of Technology}\\[1.5cm]
+    \textsc{\Large 2IMP20 Generic Language Technology}\\[1.5cm]
+    \textsc{\large Assignment 2}\\
+    \textsc{\large RobotDSL}\\[2cm]
+    \textsc{\Large README}\\[3cm]
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushleft} \large
+            \emph{Authors:}\\ [0.5cm]
+            Tianyu \textsc{Liu}\\
+            Student Number: 0937147\\
+            E-mail: t.liu.1@student.tue.nl\\ [0.2cm]
+            Xiayang \textsc{Hao}\\
+            Student Number: 0892474\\
+            E-mail: x.hao@student.tue.nl\\ [0.2cm]
+        \end{flushleft}
+    \end{minipage}
+    
+    \vspace{15ex}
+    {\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+    \vfill
+\end{titlepage}
+%----------------------------------------------------------------------------------------------------------------------
 
-%\begin{abstract}
-%\textsl{}
-%\end{abstract}
+% Page start from 1 on the first page of table of contents
+\setcounter{page}{1} 
+
+% Table of Contents
+%-----------------------------------------------------------------------------------------------------
+%\tableofcontents
+
+\newpage 
+
+% Report Body
+%------------------------------------------------------------------------
 
 \section{Model design strategy}
 
+The metamodel of this RobotDSL contains the following classes:
+\begin{itemize}
+\item \texttt{Script}\\
+The entry class of the whole metamodel, represents the script itself. The \texttt{Script} class has one attribute, namely \texttt{name} with type \texttt{EString}, represents the name of the script. \bigbreak
+
+\texttt{Script} composites \textit{zero to many} class \texttt{Statements}. Since one script can have multiple statements, we used this relation. Also, as designed in the Rascal grammar, we allow so-called 'empty statement list' in the script, so the composition relation is \textit{zero to many}. 
+
+\item \texttt{Statements}\\
+This is the class represents all the statements in the script. It is the super type (also known as super class) of two classes: \texttt{RunningStatements}, the statements that used to operate the robot and \texttt{BuildStatements}, the statements that used to build or destroy the scene. \bigbreak
+
+Since a statement can be either running statement or build statement, we used the super type relation to represent this. 
+
+\item \texttt{RunningStatements}\\
+This is the sub type of \texttt{Statements}, represents all statements apart from the build statements. \bigbreak
+
+A running statement can be one of the following: command statement, if statement, while statement or repeat statement. As a result, \texttt{RunningStatements} is the super class of the mentioned four classes. 
+
+\item \texttt{BuildStatements} \\
+This class represents the statements to change the scene (build or destroy walls, pick or drop marks). Hence we created 4 sub classes, namely \texttt{BuildWall}, \texttt{DestroyWall}, \texttt{DropMark} and \texttt{PickMark}. All of the 4 classes consider \texttt{BuildStatements} as its super class. \bigbreak
+
+Each of the sub class consists of 2 attributes, namely \texttt{row} with type \texttt{EInt} and \texttt{column} with type \texttt{EInt}. Since for each of the build statement, a specific position (in row and column) will be given. 
+
+\item \texttt{CommandStatement} \\
+This class represents the basic command statement as described in the language description. Hence, it has 6 sub classes: \texttt{Step}, \texttt{TurnLeft}, \texttt{Drop}, \texttt{Pick}, \texttt{TraceMessage} and \texttt{Comment}, represents the 6 basic commands of the language, respectively. Since comments are also considered as commands, we put \texttt{Comment} as a sub class of \texttt{CommandStatement}. 
+
+\item \texttt{IfStatement} \\
+The \texttt{IfStatement} represents the 'if' conditional statement in the robot DSL. It contains exact one \textit{logical expression} (the logical expression can have many binary logical expressions) so we added a \textit{one to one} composition relation to class \texttt{LogicalExps}. A \texttt{IfStatemet} can also have many running statements (empty statement also allowed here) in it. Therefore we added a \textit{zero to many} composition relation to \texttt{RunningStatements}. 
+
+\item \texttt{WhileStatement} \\
+This class represents the 'while' loop statement. Similar to \texttt{IfStatement}, a logical expression and many running statements is composited in the while statement. 
+
+\item \texttt{RepeatStatement} \\
+This class represents the 'repeat' statement of the DSL. It has one attribute \texttt{time} with type \texttt{EInt}, represents the \textit{repeat time}. Since a repeat statement can have multiple command statements, it has a \textit{zero to many} composition relation to \texttt{CommandStatement} 
+
+\item \texttt{Basic commands}, 6 classes \\
+There are 6 basic commands as described, hence we created 6 classes to represent them, namely \texttt{Step}, \texttt{TurnLeft}, \texttt{Pick}, \texttt{Drop}, \texttt{TraceMessage} and \texttt{Comment}. \bigbreak
+
+\texttt{TraceMessage} has one attribute named \texttt{message} with type \texttt{EString} as this command consists of one string message. \bigbreak
+
+\texttt{Comment} has one attribute named \texttt{comment} with type \texttt{Estring} to represent the comment message. 
+
+\item \texttt{LogicalExps} \\
+This class represents the general logical expressions, including single logical expressions as well as binary ones. Therefore, we created two sub classes, namely \texttt{SingleLogicalExp} and \texttt{BinaryLogicalExp}. 
+
+\item \texttt{SingleLogicalExp} \\
+This classes contains the 4 basic logical expressions introduced in this robot DSL. 4 classes, \texttt{Full}, \texttt{WallAhead}, \texttt{Mark} and \texttt{Heading} are created to represent the basic logical expressions, respectively. 
+
+\item \texttt{Full}, \texttt{WallAhead} and \texttt{Mark} \\
+These three classes are sub classes of \texttt{SingleLogicalExp}. In order to represent the extended logic of the DSL, we created a class named \texttt{Not} to represent the negativity of the single logic. \bigbreak 
+
+Also, a composition relation to class \texttt{Not} was added. Since for each single logical expression, there can be at most one 'not' associated with it, we set the composition relation to \textit{zero or one} relation. 
+
+\item \texttt{Heading} \\
+This class is also the sub class of \texttt{SingleLogicalExp} and represents one of the 4 basic logical expression. Different from the other 3, it has one attribute, named \texttt{direction} with type \texttt{Directions} to show the exact heading direction. \texttt{Directions} is an enumeration. 
+
+\item \texttt{Directions} \\
+This is an enumeration classifier, enumerates 4 directions, namely 'south', 'north', 'west' and 'east'. It is a data type and represents the direction of robot. 
+
+\item \texttt{BinaryLogicalExp} \\
+This class represents an extension of the basic logical expression. The extended feature allows to consider multiple basic logical expressions as one logical expression. \bigbreak
+
+Two or more basic logical expressions are connected by a binary operator. Hence we added one \textit{two to many} composition relation to \texttt{SingleLogicalExp}. Also, a \textit{one to many} composition relation is added to class \texttt{Binaries}, which represents the binary operators. 
+
+\item \texttt{Binaries} \\
+This class represents the binary operators, namely 'and' and 'or' in this case. Hence two sub classes, \texttt{And} and \texttt{Or} were created to represent the operators, respectively. 
+\end{itemize}
+
 \section{Grammar changes}
+
+The automatic generated grammar (.xtext file) is not good enough, we modified a little bit in it to make it satisfy the DSL requirement. Since the changes happened in many places, it is not possible to list all changes in this document. Only the general explanation will be described. 
+
+\begin{itemize}
+\item Delete useless blocks \\
+The grammar generator generates something like \texttt{Statements\_Impl} and added into the main blocks. However, we do not need such '\_Impl' blocks. Hence we simply deleted the reference in the main blocks. 
+
+\item Modify the sequence of tokens \\
+For each block, we modify the sequence of tokens to satisfy the requirement. For instance, in \texttt{IfStatement} we put logical expressions between token \texttt{if} and \texttt{do}. \bigbreak
+
+Also, we added some more tokens like \texttt{runs as} in \texttt{Script} or \texttt{else do} in \texttt{IfStatement}. 
+
+\item Add necessary data type \\
+For classes like \texttt{Script} and \texttt{Comments}, they have attributes with type \texttt{EString}. However, the default definition of \texttt{EString} is not sufficient for us. We created a new \textit{terminal} called \texttt{NAME}, returns \texttt{EString} that consists of only letters since the script name can only be letters. Also, we created a new \textit{terminal} called \texttt{COMMENTS} to represent the comment, namely a string start with a '\#' and end with a new line. \bigbreak
+
+This changes also happened on the trace message. 
+
+\end{itemize}
 
 \section{Difficulties with the metamodel}
 
+There are following difficulties we faced in making the metamodel: 
+\begin{itemize}
+\item Find a proper representation of the context free grammar \\
+It is difficult to find the representation, especially the relation between classes. We must be very careful to determine whether there should be a normal reference between two classes, or a super class/sub class, or a reference with containment (i.e. composition). \bigbreak
+
+\item Extend a meta model \\
+We found it is difficult to extend a meta model. Originally, we decided to build the extensions (logical extension and build scene extension) by inheritance. However, we had some difficulties in building the .genmodel file as well as the grammar. The grammar only includes the base model but not the extended one. We have no idea on how it works till now. Fortunately, we succeed in building the extended model itself. 
+\end{itemize}
+
 \section{Difficulties with the grammar}
 
+The following difficulties are what we faced in building the grammar: 
+\begin{itemize}
+\item The containment relation \\
+The relation is containment or not affects the grammar a lot. We spent quite a few hours on finding out why our grammar did not work. Finally we found that the problem was in the ecore model. 
+
+\item The $ += $ operator is a little bit confusing. \\
+Different from the real context free grammar, the xtext grammar uses operators to represent the existence of some tokens. At the very first moment we found it is confusing because it is quite different from normal grammars. Generally speaking, the learning curve of xtext grammar is flat. 
+
+\item EString, EInt, INT, STRING can be mixed up \\
+There are type like EString, EInt but also type like INT and STRING. They are different but with very similar names. EString can be incorrectly considered as normal Strings but this is definitely not the case. We messed up these types at the beginning. 
+\end{itemize}
+
 \section{Comparison between Xtext and Rascal}
+
+In general, the documentation of Xtext is better than Rascal, hence the learning curve of Xtext can be smoother than that of Rascal. It is much easier to get started with Ecore and Xtext than with Rascal. If we did not gain Rascal experience from \textit{Software Evolution} course, we would got stuck at some point in the first assignment. \bigbreak
+
+From the DSL language development point of view Rascal is better than Xtext. As mentioned in the previous section, Rascal uses normal regular expression and context free grammars to define a grammar but Xtext uses an alternated way. To develop in Xtext we need to start with modeling. It may take some effort to transfer a well formed Rascal grammar to a meta model. Also, rascal can generate a parse tree of the input script but Xtext cannot. 
+
+From the user's point of view Xtext is much better than Rascal. We do not think Rascal grammar can be applied to some text editor for real use. We have to use Rascal console to test the grammar. So for the developer who will use the DSL, an editor with Xtext plugin can be directly used as the development environment of the DSL, which is much more convenient and applicable. 
 
 
 \end{document}
