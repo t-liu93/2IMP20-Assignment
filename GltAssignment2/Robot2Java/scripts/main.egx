@@ -1,0 +1,5 @@
+rule robot2Java {
+	template: "robot2Java.egl"
+	
+	target: "Robot2Java/src/Script.java"
+}
