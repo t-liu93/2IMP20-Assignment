@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<robotDSLEcore:Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:robotDSLEcore="robotDSLEcore" name="SampleBuildStep">
+  <statements xsi:type="robotDSLEcore:BuildWall" row="1" column="4"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+</robotDSLEcore:Script>
