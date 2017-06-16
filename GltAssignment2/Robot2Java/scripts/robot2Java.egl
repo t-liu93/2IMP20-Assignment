@@ -5,9 +5,26 @@ public class Script extends RobotFrame {
 	
 	@Override
 	protected void perform() {
-		System.out.println("This is a test generator");
+		[% for (statement in robotDSLEcore.c_statements) {
+			if (statement.type == "robotDSLEcore:Comment") {
+			} else if (statement.type == "robotDSLEcore:Step" ) { %] 
+				step();
+			[% }
+			} %]
+		}
+		
 	}
 	
+	
+	//Statement methods
+	private void step() {
+		if (canMove()) {
+			moveRobot();
+			pause();
+		} else {
+			reportError("Oops, There's a wall in front of me. I can't make a step forward.");
+		}
+	}
 	
 	//Main class
 	public static void main(String[] args) {
