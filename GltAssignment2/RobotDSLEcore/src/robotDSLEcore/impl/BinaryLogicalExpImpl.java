@@ -4,6 +4,7 @@ package robotDSLEcore.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -45,14 +47,14 @@ public class BinaryLogicalExpImpl extends LogicalExpsImpl implements BinaryLogic
 	protected EList<Binaries> binaries;
 
 	/**
-	 * The cached value of the '{@link #getSinglelogalexp() <em>Singlelogalexp</em>}' containment reference list.
+	 * The cached value of the '{@link #getSinglelogalexp() <em>Singlelogalexp</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSinglelogalexp()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SingleLogalExp> singlelogalexp;
+	protected SingleLogalExp singlelogalexp;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,11 +92,42 @@ public class BinaryLogicalExpImpl extends LogicalExpsImpl implements BinaryLogic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SingleLogalExp> getSinglelogalexp() {
-		if (singlelogalexp == null) {
-			singlelogalexp = new EObjectContainmentEList<SingleLogalExp>(SingleLogalExp.class, this, RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP);
-		}
+	public SingleLogalExp getSinglelogalexp() {
 		return singlelogalexp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSinglelogalexp(SingleLogalExp newSinglelogalexp, NotificationChain msgs) {
+		SingleLogalExp oldSinglelogalexp = singlelogalexp;
+		singlelogalexp = newSinglelogalexp;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP, oldSinglelogalexp, newSinglelogalexp);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSinglelogalexp(SingleLogalExp newSinglelogalexp) {
+		if (newSinglelogalexp != singlelogalexp) {
+			NotificationChain msgs = null;
+			if (singlelogalexp != null)
+				msgs = ((InternalEObject)singlelogalexp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP, null, msgs);
+			if (newSinglelogalexp != null)
+				msgs = ((InternalEObject)newSinglelogalexp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP, null, msgs);
+			msgs = basicSetSinglelogalexp(newSinglelogalexp, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP, newSinglelogalexp, newSinglelogalexp));
 	}
 
 	/**
@@ -108,7 +141,7 @@ public class BinaryLogicalExpImpl extends LogicalExpsImpl implements BinaryLogic
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP__BINARIES:
 				return ((InternalEList<?>)getBinaries()).basicRemove(otherEnd, msgs);
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP:
-				return ((InternalEList<?>)getSinglelogalexp()).basicRemove(otherEnd, msgs);
+				return basicSetSinglelogalexp(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,8 +176,7 @@ public class BinaryLogicalExpImpl extends LogicalExpsImpl implements BinaryLogic
 				getBinaries().addAll((Collection<? extends Binaries>)newValue);
 				return;
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP:
-				getSinglelogalexp().clear();
-				getSinglelogalexp().addAll((Collection<? extends SingleLogalExp>)newValue);
+				setSinglelogalexp((SingleLogalExp)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,7 +194,7 @@ public class BinaryLogicalExpImpl extends LogicalExpsImpl implements BinaryLogic
 				getBinaries().clear();
 				return;
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP:
-				getSinglelogalexp().clear();
+				setSinglelogalexp((SingleLogalExp)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -179,7 +211,7 @@ public class BinaryLogicalExpImpl extends LogicalExpsImpl implements BinaryLogic
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP__BINARIES:
 				return binaries != null && !binaries.isEmpty();
 			case RobotDSLEcorePackage.BINARY_LOGICAL_EXP__SINGLELOGALEXP:
-				return singlelogalexp != null && !singlelogalexp.isEmpty();
+				return singlelogalexp != null;
 		}
 		return super.eIsSet(featureID);
 	}

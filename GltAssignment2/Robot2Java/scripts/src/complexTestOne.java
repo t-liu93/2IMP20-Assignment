@@ -6,6 +6,12 @@ public class complexTestOne extends RobotFrame {
 	protected void perform() {
 		step();
 		turnLeft();
+		abc
+		abc
+					[[not: null]]
+		abc
+		abc
+		abc
 		step();
 		step();
 		step();
@@ -46,7 +52,7 @@ public class complexTestOne extends RobotFrame {
 	}
 	//Pick
 	private void pick() {
-		if (super.getCurrentCell.getMarks() == 0) {
+		if (super.getCurrentCell().getMarks() == 0) {
 			reportError("There is no mark in this cell, I cannot pick up.");
 		} else {
 			super.removeMark();

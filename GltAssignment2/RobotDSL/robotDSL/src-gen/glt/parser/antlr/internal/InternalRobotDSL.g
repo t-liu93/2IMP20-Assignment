@@ -1778,7 +1778,7 @@ ruleBinaryLogicalExp returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBinaryLogicalExpRule());
 					}
-					add(
+					set(
 						$current,
 						"singlelogalexp",
 						lv_singlelogalexp_0_0,
@@ -1789,42 +1789,21 @@ ruleBinaryLogicalExp returns [EObject current=null]
 		)
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getBinaryLogicalExpAccess().getBinariesBinariesParserRuleCall_1_0_0());
+				{
+					newCompositeNode(grammarAccess.getBinaryLogicalExpAccess().getBinariesBinariesParserRuleCall_1_0());
+				}
+				lv_binaries_1_0=ruleBinaries
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBinaryLogicalExpRule());
 					}
-					lv_binaries_1_0=ruleBinaries
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBinaryLogicalExpRule());
-						}
-						add(
-							$current,
-							"binaries",
-							lv_binaries_1_0,
-							"glt.RobotDSL.Binaries");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getBinaryLogicalExpAccess().getSinglelogalexpSingleLogalExpParserRuleCall_1_1_0());
-					}
-					lv_singlelogalexp_2_0=ruleSingleLogalExp
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBinaryLogicalExpRule());
-						}
-						add(
-							$current,
-							"singlelogalexp",
-							lv_singlelogalexp_2_0,
-							"glt.RobotDSL.SingleLogalExp");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"binaries",
+						lv_binaries_1_0,
+						"glt.RobotDSL.Binaries");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)+
 	)
@@ -1887,6 +1866,25 @@ ruleAnd returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getAndAccess().getAndKeyword_1());
 		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAndAccess().getSinglelogalexpSingleLogalExpParserRuleCall_2_0());
+				}
+				lv_singlelogalexp_2_0=ruleSingleLogalExp
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAndRule());
+					}
+					set(
+						$current,
+						"singlelogalexp",
+						lv_singlelogalexp_2_0,
+						"glt.RobotDSL.SingleLogalExp");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -1917,6 +1915,25 @@ ruleOr returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getOrAccess().getOrKeyword_1());
 		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOrAccess().getSinglelogalexpSingleLogalExpParserRuleCall_2_0());
+				}
+				lv_singlelogalexp_2_0=ruleSingleLogalExp
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOrRule());
+					}
+					set(
+						$current,
+						"singlelogalexp",
+						lv_singlelogalexp_2_0,
+						"glt.RobotDSL.SingleLogalExp");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

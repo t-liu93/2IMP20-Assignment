@@ -757,6 +757,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBinaries_Singlelogalexp() {
+		return (EReference)binariesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAnd() {
 		return andEClass;
 	}
@@ -948,6 +957,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		createEAttribute(buildWallEClass, BUILD_WALL__COLUMN);
 
 		binariesEClass = createEClass(BINARIES);
+		createEReference(binariesEClass, BINARIES__SINGLELOGALEXP);
 
 		andEClass = createEClass(AND);
 
@@ -1093,6 +1103,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEAttribute(getBuildWall_Column(), ecorePackage.getEInt(), "column", null, 0, 1, BuildWall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(binariesEClass, Binaries.class, "Binaries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBinaries_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 1, 1, Binaries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1104,7 +1115,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		initEClass(binaryLogicalExpEClass, BinaryLogicalExp.class, "BinaryLogicalExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBinaryLogicalExp_Binaries(), this.getBinaries(), null, "binaries", null, 1, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 2, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 1, 1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runningStatementsEClass, RunningStatements.class, "RunningStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

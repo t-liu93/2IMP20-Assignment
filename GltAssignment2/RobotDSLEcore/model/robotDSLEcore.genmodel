@@ -72,7 +72,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//BuildWall/row"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotDSLEcore.ecore#//BuildWall/column"/>
     </genClasses>
-    <genClasses ecoreClass="robotDSLEcore.ecore#//Binaries"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Binaries">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Binaries/singlelogalexp"/>
+    </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//And"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Or"/>
     <genClasses ecoreClass="robotDSLEcore.ecore#//Not"/>

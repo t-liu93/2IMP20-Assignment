@@ -21,8 +21,11 @@ public class [%=Script.a_name %] extends RobotFrame {
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
 		traceMessage([%=statement.a_message%]);
 			[%} 
-			else if (statement.getAttribute("xsi:type") == "robotDLSEcore:IfStatement") { %]
-			
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:IfStatement") { %]
+		abc
+				[% if (statement.e_logicalexps.getAttribute("xsi:type") == "robotDSLEcore:Full") { %]
+					[%=statement.e_logicalexps.c_not%]
+				[%}%]
 			[%} %]
 		[%} %]
 		

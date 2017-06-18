@@ -39,19 +39,29 @@ public interface BinaryLogicalExp extends LogicalExps {
 	EList<Binaries> getBinaries();
 
 	/**
-	 * Returns the value of the '<em><b>Singlelogalexp</b></em>' containment reference list.
-	 * The list contents are of type {@link robotDSLEcore.SingleLogalExp}.
+	 * Returns the value of the '<em><b>Singlelogalexp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Singlelogalexp</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Singlelogalexp</em>' containment reference list.
+	 * @return the value of the '<em>Singlelogalexp</em>' containment reference.
+	 * @see #setSinglelogalexp(SingleLogalExp)
 	 * @see robotDSLEcore.RobotDSLEcorePackage#getBinaryLogicalExp_Singlelogalexp()
-	 * @model containment="true" lower="2"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<SingleLogalExp> getSinglelogalexp();
+	SingleLogalExp getSinglelogalexp();
+
+	/**
+	 * Sets the value of the '{@link robotDSLEcore.BinaryLogicalExp#getSinglelogalexp <em>Singlelogalexp</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Singlelogalexp</em>' containment reference.
+	 * @see #getSinglelogalexp()
+	 * @generated
+	 */
+	void setSinglelogalexp(SingleLogalExp value);
 
 } // BinaryLogicalExp

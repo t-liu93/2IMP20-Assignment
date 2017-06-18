@@ -70,7 +70,6 @@ public class RobotDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHeadingAccess().getGroup(), "rule__Heading__Group__0");
 					put(grammarAccess.getSingleLogalExp_ImplAccess().getGroup(), "rule__SingleLogalExp_Impl__Group__0");
 					put(grammarAccess.getBinaryLogicalExpAccess().getGroup(), "rule__BinaryLogicalExp__Group__0");
-					put(grammarAccess.getBinaryLogicalExpAccess().getGroup_1(), "rule__BinaryLogicalExp__Group_1__0");
 					put(grammarAccess.getNotAccess().getGroup(), "rule__Not__Group__0");
 					put(grammarAccess.getBinaries_ImplAccess().getGroup(), "rule__Binaries_Impl__Group__0");
 					put(grammarAccess.getAndAccess().getGroup(), "rule__And__Group__0");
@@ -107,8 +106,9 @@ public class RobotDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHeadingAccess().getNotAssignment_1(), "rule__Heading__NotAssignment_1");
 					put(grammarAccess.getHeadingAccess().getDirectionAssignment_3(), "rule__Heading__DirectionAssignment_3");
 					put(grammarAccess.getBinaryLogicalExpAccess().getSinglelogalexpAssignment_0(), "rule__BinaryLogicalExp__SinglelogalexpAssignment_0");
-					put(grammarAccess.getBinaryLogicalExpAccess().getBinariesAssignment_1_0(), "rule__BinaryLogicalExp__BinariesAssignment_1_0");
-					put(grammarAccess.getBinaryLogicalExpAccess().getSinglelogalexpAssignment_1_1(), "rule__BinaryLogicalExp__SinglelogalexpAssignment_1_1");
+					put(grammarAccess.getBinaryLogicalExpAccess().getBinariesAssignment_1(), "rule__BinaryLogicalExp__BinariesAssignment_1");
+					put(grammarAccess.getAndAccess().getSinglelogalexpAssignment_2(), "rule__And__SinglelogalexpAssignment_2");
+					put(grammarAccess.getOrAccess().getSinglelogalexpAssignment_2(), "rule__Or__SinglelogalexpAssignment_2");
 				}
 			};
 		}

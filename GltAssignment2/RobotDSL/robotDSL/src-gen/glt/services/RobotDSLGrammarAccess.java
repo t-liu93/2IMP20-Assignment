@@ -1167,40 +1167,28 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSinglelogalexpAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_0_0 = (RuleCall)cSinglelogalexpAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cBinariesAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cBinariesBinariesParserRuleCall_1_0_0 = (RuleCall)cBinariesAssignment_1_0.eContents().get(0);
-		private final Assignment cSinglelogalexpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_1_1_0 = (RuleCall)cSinglelogalexpAssignment_1_1.eContents().get(0);
+		private final Assignment cBinariesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBinariesBinariesParserRuleCall_1_0 = (RuleCall)cBinariesAssignment_1.eContents().get(0);
 		
 		//BinaryLogicalExp:
-		//	singlelogalexp+=SingleLogalExp (binaries+=Binaries
-		//	singlelogalexp+=SingleLogalExp)+;
+		//	singlelogalexp=SingleLogalExp
+		//	binaries+=Binaries+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//singlelogalexp+=SingleLogalExp (binaries+=Binaries singlelogalexp+=SingleLogalExp)+
+		//singlelogalexp=SingleLogalExp binaries+=Binaries+
 		public Group getGroup() { return cGroup; }
 		
-		//singlelogalexp+=SingleLogalExp
+		//singlelogalexp=SingleLogalExp
 		public Assignment getSinglelogalexpAssignment_0() { return cSinglelogalexpAssignment_0; }
 		
 		//SingleLogalExp
 		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_0_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_0_0; }
 		
-		//(binaries+=Binaries singlelogalexp+=SingleLogalExp)+
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//binaries+=Binaries
-		public Assignment getBinariesAssignment_1_0() { return cBinariesAssignment_1_0; }
+		//binaries+=Binaries+
+		public Assignment getBinariesAssignment_1() { return cBinariesAssignment_1; }
 		
 		//Binaries
-		public RuleCall getBinariesBinariesParserRuleCall_1_0_0() { return cBinariesBinariesParserRuleCall_1_0_0; }
-		
-		//singlelogalexp+=SingleLogalExp
-		public Assignment getSinglelogalexpAssignment_1_1() { return cSinglelogalexpAssignment_1_1; }
-		
-		//SingleLogalExp
-		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_1_1_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_1_1_0; }
+		public RuleCall getBinariesBinariesParserRuleCall_1_0() { return cBinariesBinariesParserRuleCall_1_0; }
 	}
 	public class NotElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Not");
@@ -1247,13 +1235,16 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cAndAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cAndKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSinglelogalexpAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_2_0 = (RuleCall)cSinglelogalexpAssignment_2.eContents().get(0);
 		
 		//And:
 		//	{And}
-		//	'and';
+		//	'and'
+		//	singlelogalexp=SingleLogalExp;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{And} 'and'
+		//{And} 'and' singlelogalexp=SingleLogalExp
 		public Group getGroup() { return cGroup; }
 		
 		//{And}
@@ -1261,19 +1252,28 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'and'
 		public Keyword getAndKeyword_1() { return cAndKeyword_1; }
+		
+		//singlelogalexp=SingleLogalExp
+		public Assignment getSinglelogalexpAssignment_2() { return cSinglelogalexpAssignment_2; }
+		
+		//SingleLogalExp
+		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_2_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_2_0; }
 	}
 	public class OrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Or");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cOrAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cOrKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSinglelogalexpAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSinglelogalexpSingleLogalExpParserRuleCall_2_0 = (RuleCall)cSinglelogalexpAssignment_2.eContents().get(0);
 		
 		//Or:
 		//	{Or}
-		//	'or';
+		//	'or'
+		//	singlelogalexp=SingleLogalExp;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Or} 'or'
+		//{Or} 'or' singlelogalexp=SingleLogalExp
 		public Group getGroup() { return cGroup; }
 		
 		//{Or}
@@ -1281,6 +1281,12 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'or'
 		public Keyword getOrKeyword_1() { return cOrKeyword_1; }
+		
+		//singlelogalexp=SingleLogalExp
+		public Assignment getSinglelogalexpAssignment_2() { return cSinglelogalexpAssignment_2; }
+		
+		//SingleLogalExp
+		public RuleCall getSinglelogalexpSingleLogalExpParserRuleCall_2_0() { return cSinglelogalexpSingleLogalExpParserRuleCall_2_0; }
 	}
 	public class EIntElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.EInt");
@@ -1865,8 +1871,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BinaryLogicalExp:
-	//	singlelogalexp+=SingleLogalExp (binaries+=Binaries
-	//	singlelogalexp+=SingleLogalExp)+;
+	//	singlelogalexp=SingleLogalExp
+	//	binaries+=Binaries+;
 	public BinaryLogicalExpElements getBinaryLogicalExpAccess() {
 		return pBinaryLogicalExp;
 	}
@@ -1909,7 +1915,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//And:
 	//	{And}
-	//	'and';
+	//	'and'
+	//	singlelogalexp=SingleLogalExp;
 	public AndElements getAndAccess() {
 		return pAnd;
 	}
@@ -1920,7 +1927,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Or:
 	//	{Or}
-	//	'or';
+	//	'or'
+	//	singlelogalexp=SingleLogalExp;
 	public OrElements getOrAccess() {
 		return pOr;
 	}

@@ -200,9 +200,8 @@ SingleLogalExp_Impl returns SingleLogalExp:
 	;
 
 BinaryLogicalExp returns BinaryLogicalExp:
-	singlelogalexp+=SingleLogalExp
-	(binaries+=Binaries
-	singlelogalexp+=SingleLogalExp)+;
+	singlelogalexp=SingleLogalExp
+	(binaries+=Binaries)+;
 
 Not returns Not:
 	{Not}
@@ -220,11 +219,13 @@ Binaries_Impl returns Binaries:
 And returns And:
 	{And}
 	'and'
+	singlelogalexp=SingleLogalExp
 	;
 
 Or returns Or:
 	{Or}
 	'or'
+	singlelogalexp=SingleLogalExp
 	;
 
 EInt returns ecore::EInt:

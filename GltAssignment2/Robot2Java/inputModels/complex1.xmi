@@ -38,11 +38,13 @@
   </statements>
   <statements xsi:type="robotDSLEcore:IfStatement">
     <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
-      <binaries xsi:type="robotDSLEcore:And"/>
-      <binaries xsi:type="robotDSLEcore:And"/>
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Mark"/>
+      </binaries>
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
+      </binaries>
       <singlelogalexp xsi:type="robotDSLEcore:Full"/>
-      <singlelogalexp xsi:type="robotDSLEcore:Mark"/>
-      <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
     </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:Drop"/>
   </statements>
@@ -50,11 +52,12 @@
   <statements xsi:type="robotDSLEcore:Comment" comment="#both not&#xA;"/>
   <statements xsi:type="robotDSLEcore:IfStatement">
     <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
-      <binaries xsi:type="robotDSLEcore:And"/>
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Mark">
+          <not/>
+        </singlelogalexp>
+      </binaries>
       <singlelogalexp xsi:type="robotDSLEcore:Full">
-        <not/>
-      </singlelogalexp>
-      <singlelogalexp xsi:type="robotDSLEcore:Mark">
         <not/>
       </singlelogalexp>
     </logicalexps>
@@ -64,11 +67,12 @@
   <statements xsi:type="robotDSLEcore:Comment" comment="#one not at front&#xA;"/>
   <statements xsi:type="robotDSLEcore:WhileStatement">
     <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
-      <binaries xsi:type="robotDSLEcore:And"/>
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
+      </binaries>
       <singlelogalexp xsi:type="robotDSLEcore:WallAhead">
         <not/>
       </singlelogalexp>
-      <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
     </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:Step"/>
     <runningstatements xsi:type="robotDSLEcore:TraceMessage" message="&quot;go one step&quot;"/>
@@ -76,11 +80,12 @@
   <statements xsi:type="robotDSLEcore:Comment" comment="#one not at rear&#xA;"/>
   <statements xsi:type="robotDSLEcore:IfStatement">
     <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
-      <binaries xsi:type="robotDSLEcore:And"/>
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Full">
+          <not/>
+        </singlelogalexp>
+      </binaries>
       <singlelogalexp xsi:type="robotDSLEcore:Heading"/>
-      <singlelogalexp xsi:type="robotDSLEcore:Full">
-        <not/>
-      </singlelogalexp>
     </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:Drop"/>
     <runningstatements xsi:type="robotDSLEcore:TraceMessage" message="&quot;drop one&quot;"/>
@@ -88,9 +93,10 @@
   <statements xsi:type="robotDSLEcore:Comment" comment="#both true&#xA;"/>
   <statements xsi:type="robotDSLEcore:WhileStatement">
     <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
-      <binaries xsi:type="robotDSLEcore:And"/>
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="west"/>
+      </binaries>
       <singlelogalexp xsi:type="robotDSLEcore:WallAhead"/>
-      <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="west"/>
     </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
   </statements>

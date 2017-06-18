@@ -162,10 +162,16 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     And returns And
 	 *
 	 * Constraint:
-	 *     {And}
+	 *     singlelogalexp=SingleLogalExp
 	 */
 	protected void sequence_And(ISerializationContext context, And semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.BINARIES__SINGLELOGALEXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.BINARIES__SINGLELOGALEXP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAndAccess().getSinglelogalexpSingleLogalExpParserRuleCall_2_0(), semanticObject.getSinglelogalexp());
+		feeder.finish();
 	}
 	
 	
@@ -187,7 +193,7 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     BinaryLogicalExp returns BinaryLogicalExp
 	 *
 	 * Constraint:
-	 *     (singlelogalexp+=SingleLogalExp (binaries+=Binaries singlelogalexp+=SingleLogalExp)+)
+	 *     (singlelogalexp=SingleLogalExp binaries+=Binaries+)
 	 */
 	protected void sequence_BinaryLogicalExp(ISerializationContext context, BinaryLogicalExp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -418,10 +424,16 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Or returns Or
 	 *
 	 * Constraint:
-	 *     {Or}
+	 *     singlelogalexp=SingleLogalExp
 	 */
 	protected void sequence_Or(ISerializationContext context, Or semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RobotDSLEcorePackage.Literals.BINARIES__SINGLELOGALEXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotDSLEcorePackage.Literals.BINARIES__SINGLELOGALEXP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOrAccess().getSinglelogalexpSingleLogalExpParserRuleCall_2_0(), semanticObject.getSinglelogalexp());
+		feeder.finish();
 	}
 	
 	

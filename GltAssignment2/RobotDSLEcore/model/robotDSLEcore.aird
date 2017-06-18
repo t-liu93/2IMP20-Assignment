@@ -1003,6 +1003,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_j5_eilRSEeezK8UjqMjtIA" id="(0.576271186440678,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_j5_ei1RSEeezK8UjqMjtIA" id="(0.864406779661017,1.0)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_hJqLQFRaEeezK8UjqMjtIA" type="4001" element="_hJOtcFRaEeezK8UjqMjtIA" source="_UDzdsEumEeefJsSws62rHg" target="_wxRSQEunEeefJsSws62rHg">
+          <children xmi:type="notation:Node" xmi:id="_hJqLRFRaEeezK8UjqMjtIA" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hJqLRVRaEeezK8UjqMjtIA" x="18" y="-43"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_hJqLRlRaEeezK8UjqMjtIA" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hJqLR1RaEeezK8UjqMjtIA" x="3" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_hJqLSFRaEeezK8UjqMjtIA" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hJqLSVRaEeezK8UjqMjtIA" x="-22" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_hJqLQVRaEeezK8UjqMjtIA" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_hJqLQlRaEeezK8UjqMjtIA" fontColor="7490599" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hJqLQ1RaEeezK8UjqMjtIA" points="[0, 0, 87, 285]$[0, -206, 87, 79]$[-52, -206, 35, 79]$[-52, -286, 35, -1]$[-70, -286, 17, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hJqLSlRaEeezK8UjqMjtIA" id="(0.3135593220338983,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hJqLS1RaEeezK8UjqMjtIA" id="(0.8559322033898306,1.0)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_iFCggEq5Eeef2eXAnKAtpw" name="Script" tooltipText="" outgoingEdges="_O-014Eq_Eeef2eXAnKAtpw" width="12" height="10">
@@ -1552,7 +1568,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UDlbQEumEeefJsSws62rHg" name="Binaries" tooltipText="" incomingEdges="_XMz2AEumEeefJsSws62rHg _XlifEEumEeefJsSws62rHg _Pe1LwEuoEeefJsSws62rHg" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_UDlbQEumEeefJsSws62rHg" name="Binaries" tooltipText="" outgoingEdges="_hJOtcFRaEeezK8UjqMjtIA" incomingEdges="_XMz2AEumEeefJsSws62rHg _XlifEEumEeefJsSws62rHg _Pe1LwEuoEeefJsSws62rHg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="robotDSLEcore.ecore#//Binaries"/>
       <semanticElements xmi:type="ecore:EClass" href="robotDSLEcore.ecore#//Binaries"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1620,7 +1636,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_wxKkkEunEeefJsSws62rHg" name="SingleLogalExp" tooltipText="" outgoingEdges="_3l5nwEunEeefJsSws62rHg" incomingEdges="_8sZngEunEeefJsSws62rHg _9KsGAEunEeefJsSws62rHg _9l1J4EunEeefJsSws62rHg _AUFf4EuoEeefJsSws62rHg _S37OgEuoEeefJsSws62rHg" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_wxKkkEunEeefJsSws62rHg" name="SingleLogalExp" tooltipText="" outgoingEdges="_3l5nwEunEeefJsSws62rHg" incomingEdges="_8sZngEunEeefJsSws62rHg _9KsGAEunEeefJsSws62rHg _9l1J4EunEeefJsSws62rHg _AUFf4EuoEeefJsSws62rHg _S37OgEuoEeefJsSws62rHg _hJOtcFRaEeezK8UjqMjtIA" width="12" height="10">
       <target xmi:type="ecore:EClass" href="robotDSLEcore.ecore#//SingleLogalExp"/>
       <semanticElements xmi:type="ecore:EClass" href="robotDSLEcore.ecore#//SingleLogalExp"/>
       <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_wxLLoEunEeefJsSws62rHg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
@@ -1774,7 +1790,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_S37OgEuoEeefJsSws62rHg" name="[2..*] singlelogalexp" sourceNode="_x1JKEEunEeefJsSws62rHg" targetNode="_wxKkkEunEeefJsSws62rHg">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_S37OgEuoEeefJsSws62rHg" name="[1..1] singlelogalexp" sourceNode="_x1JKEEunEeefJsSws62rHg" targetNode="_wxKkkEunEeefJsSws62rHg">
       <target xmi:type="ecore:EReference" href="robotDSLEcore.ecore#//BinaryLogicalExp/singlelogalexp"/>
       <semanticElements xmi:type="ecore:EReference" href="robotDSLEcore.ecore#//BinaryLogicalExp/singlelogalexp"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UgyCsEuoEeefJsSws62rHg" description="_seUVkErGEeef2eXAnKAtpw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
@@ -1928,6 +1944,17 @@
         <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_j5l14lRSEeezK8UjqMjtIA" showIcon="false" labelColor="39,76,114">
           <customFeatures>labelSize</customFeatures>
         </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_hJOtcFRaEeezK8UjqMjtIA" name="[1..1] singlelogalexp" sourceNode="_UDlbQEumEeefJsSws62rHg" targetNode="_wxKkkEunEeefJsSws62rHg">
+      <target xmi:type="ecore:EReference" href="robotDSLEcore.ecore#//Binaries/singlelogalexp"/>
+      <semanticElements xmi:type="ecore:EReference" href="robotDSLEcore.ecore#//Binaries/singlelogalexp"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_jbK64FRaEeezK8UjqMjtIA" description="_seUVkErGEeef2eXAnKAtpw" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_jbK64VRaEeezK8UjqMjtIA" showIcon="false">
+          <labelFormat>bold</labelFormat>
+        </centerLabelStyle>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_jbK64lRaEeezK8UjqMjtIA" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>

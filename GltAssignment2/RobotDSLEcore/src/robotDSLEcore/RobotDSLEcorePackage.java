@@ -956,13 +956,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int BINARIES = 22;
 
 	/**
+	 * The feature id for the '<em><b>Singlelogalexp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARIES__SINGLELOGALEXP = 0;
+
+	/**
 	 * The number of structural features of the '<em>Binaries</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARIES_FEATURE_COUNT = 0;
+	int BINARIES_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Binaries</em>' class.
@@ -982,6 +991,15 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	int AND = 23;
+
+	/**
+	 * The feature id for the '<em><b>Singlelogalexp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__SINGLELOGALEXP = BINARIES__SINGLELOGALEXP;
 
 	/**
 	 * The number of structural features of the '<em>And</em>' class.
@@ -1010,6 +1028,15 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	int OR = 24;
+
+	/**
+	 * The feature id for the '<em><b>Singlelogalexp</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__SINGLELOGALEXP = BINARIES__SINGLELOGALEXP;
 
 	/**
 	 * The number of structural features of the '<em>Or</em>' class.
@@ -1077,7 +1104,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int BINARY_LOGICAL_EXP__BINARIES = LOGICAL_EXPS_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singlelogalexp</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Singlelogalexp</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1646,6 +1673,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getBinaries();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.Binaries#getSinglelogalexp <em>Singlelogalexp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Singlelogalexp</em>'.
+	 * @see robotDSLEcore.Binaries#getSinglelogalexp()
+	 * @see #getBinaries()
+	 * @generated
+	 */
+	EReference getBinaries_Singlelogalexp();
+
+	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.And <em>And</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1707,10 +1745,10 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EReference getBinaryLogicalExp_Binaries();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.BinaryLogicalExp#getSinglelogalexp <em>Singlelogalexp</em>}'.
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.BinaryLogicalExp#getSinglelogalexp <em>Singlelogalexp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Singlelogalexp</em>'.
+	 * @return the meta object for the containment reference '<em>Singlelogalexp</em>'.
 	 * @see robotDSLEcore.BinaryLogicalExp#getSinglelogalexp()
 	 * @see #getBinaryLogicalExp()
 	 * @generated
@@ -2204,6 +2242,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EClass BINARIES = eINSTANCE.getBinaries();
 
 		/**
+		 * The meta object literal for the '<em><b>Singlelogalexp</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARIES__SINGLELOGALEXP = eINSTANCE.getBinaries_Singlelogalexp();
+
+		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.AndImpl <em>And</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2262,7 +2308,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 		EReference BINARY_LOGICAL_EXP__BINARIES = eINSTANCE.getBinaryLogicalExp_Binaries();
 
 		/**
-		 * The meta object literal for the '<em><b>Singlelogalexp</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Singlelogalexp</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
