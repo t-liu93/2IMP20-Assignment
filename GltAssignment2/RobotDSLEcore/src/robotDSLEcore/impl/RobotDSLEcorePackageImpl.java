@@ -1081,7 +1081,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEReference(getWallAhead_Not(), this.getNot(), null, "not", null, 0, 1, WallAhead.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(headingEClass, Heading.class, "Heading", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHeading_Direction(), this.getDirections(), "direction", null, 0, 1, Heading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHeading_Direction(), this.getDirections(), "direction", "default", 0, 1, Heading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHeading_Not(), this.getNot(), null, "not", null, 0, 1, Heading.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(buildStatementsEClass, BuildStatements.class, "BuildStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1128,6 +1128,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		addEEnumLiteral(directionsEEnum, Directions.NORTH);
 		addEEnumLiteral(directionsEEnum, Directions.WEST);
 		addEEnumLiteral(directionsEEnum, Directions.EAST);
+		addEEnumLiteral(directionsEEnum, Directions.DEFAULT);
 
 		// Create resource
 		createResource(eNS_URI);

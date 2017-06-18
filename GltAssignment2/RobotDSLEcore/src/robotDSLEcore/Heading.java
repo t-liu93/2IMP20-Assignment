@@ -23,6 +23,7 @@ package robotDSLEcore;
 public interface Heading extends SingleLogalExp {
 	/**
 	 * Returns the value of the '<em><b>Direction</b></em>' attribute.
+	 * The default value is <code>"default"</code>.
 	 * The literals are from the enumeration {@link robotDSLEcore.Directions}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -34,7 +35,7 @@ public interface Heading extends SingleLogalExp {
 	 * @see robotDSLEcore.Directions
 	 * @see #setDirection(Directions)
 	 * @see robotDSLEcore.RobotDSLEcorePackage#getHeading_Direction()
-	 * @model
+	 * @model default="default"
 	 * @generated
 	 */
 	Directions getDirection();

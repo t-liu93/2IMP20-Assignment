@@ -22,15 +22,89 @@ public class [%=Script.a_name %] extends RobotFrame {
 		traceMessage([%=statement.a_message%]);
 			[%} 
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:IfStatement") { %]
-		abc
-				[% if (statement.e_logicalexps.getAttribute("xsi:type") == "robotDSLEcore:Full") { %]
-					[%=statement.e_logicalexps.c_not%]
-				[%}%]
-			[%} %]
+		if ([% for (logalExps in statement.c_logicalexps) { 
+					if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]isFull()[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Mark") {
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]isMark()[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") {
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]wallAhead()[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Heading") {
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]heading(Direction.[%=logalExps.a_direction%])[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:BinaryLogicalExp") {
+						if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") {
+							for (e in logalExps.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]isFull()[%
+						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") {
+							for (e in logalExps.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]isMark()[%
+						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") {
+							for (e in logalExps.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]wallAhead()[%
+						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") {
+							for (e in logalExps.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]heading(Direction.[%=logalExps.e_singlelogalexp.a_direction%])[%
+						}
+						for (binary in logalExps.c_binaries) {
+							if (binary.getAttribute("xsi:type") == "robotDSLEcore:And") {
+								%] &&[%
+								if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
+									for (e in logalExps.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%] isFull()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") { 
+									for (e in logalExps.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%] isMark()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") { 
+									for (e in logalExps.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%] wallAhead()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") { 
+									for (e in logalExps.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%] heading(Direction.[%=binary.e_singlelogalexp.a_direction%])[%
+								} 
+							} 
+						}
+					}
+				}%]) {
+				[% for (runningStats in statement.c_runningstatements) {
+				 	if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Step") { %]
+			step();
+					[% } 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
+			turnLeft();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
+			drop();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
+			pick();
+					[%}
+					} %]
+		} [%} %]
+			
 		[%} %]
-		
 	}
 	
+	
+	//Some additional logical methods
+	private boolean wallAhead() {
+		return ! super.canMove();
+	}
 	
 	//Statement methods
 	//Step

@@ -85,7 +85,7 @@
           <not/>
         </singlelogalexp>
       </binaries>
-      <singlelogalexp xsi:type="robotDSLEcore:Heading"/>
+      <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="south"/>
     </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:Drop"/>
     <runningstatements xsi:type="robotDSLEcore:TraceMessage" message="&quot;drop one&quot;"/>

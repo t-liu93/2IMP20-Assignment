@@ -4,27 +4,74 @@ public class complexTestOne extends RobotFrame {
 	
 	@Override
 	protected void perform() {
+			
 		step();
+			
 		turnLeft();
-		abc
-		abc
-					[[not: null]]
-		abc
-		abc
-		abc
+			
+			
+		if (heading(Direction.north)) {
+			step();
+			pick();
+		} 			
+			
+		if (!isFull()) {
+			pick();
+			drop();
+		} 			
+			
+			
+			
+			
+			
+			
+		if (isFull() && isMark() && heading(Direction.north)) {
+			drop();
+		} 			
+			
+			
+		if (isFull() && isMark()) {
+			drop();
+		} 			
+			
+			
+			
+		if (heading(Direction.south) && isFull()) {
+			drop();
+		} 			
+			
+			
+			
 		step();
+			
 		step();
+			
 		step();
+			
 		turnLeft();
+			
 		turnLeft();
+			
 		drop();
+			
 		pick();
+			
 		traceMessage("so many commands");
+			
 		traceMessage("it is sizeable");
+			
 		traceMessage("good parser");
-		
+			
+			
+			
+			
 	}
 	
+	
+	//Some additional logical methods
+	private boolean wallAhead() {
+		return ! super.canMove();
+	}
 	
 	//Statement methods
 	//Step

@@ -56,7 +56,15 @@ public enum Directions implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EAST(3, "east", "east");
+	EAST(3, "east", "east"), /**
+	 * The '<em><b>Default</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DEFAULT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DEFAULT(4, "default", "default");
 
 	/**
 	 * The '<em><b>South</b></em>' literal value.
@@ -119,6 +127,21 @@ public enum Directions implements Enumerator {
 	public static final int EAST_VALUE = 3;
 
 	/**
+	 * The '<em><b>Default</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Default</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DEFAULT
+	 * @model name="default"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DEFAULT_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Directions</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +153,7 @@ public enum Directions implements Enumerator {
 			NORTH,
 			WEST,
 			EAST,
+			DEFAULT,
 		};
 
 	/**
@@ -190,6 +214,7 @@ public enum Directions implements Enumerator {
 			case NORTH_VALUE: return NORTH;
 			case WEST_VALUE: return WEST;
 			case EAST_VALUE: return EAST;
+			case DEFAULT_VALUE: return DEFAULT;
 		}
 		return null;
 	}

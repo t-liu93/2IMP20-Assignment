@@ -190,11 +190,15 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_iSDyYUrFEeef2eXAnKAtpw" fontName="Ubuntu" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_iSDyYkrFEeef2eXAnKAtpw"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_3XtYcFRzEeezK8UjqMjtIA" type="3010" element="_3XYBQFRzEeezK8UjqMjtIA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_3XtYcVRzEeezK8UjqMjtIA" fontName="Ubuntu" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_3XtYclRzEeezK8UjqMjtIA"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_ddpoNUrFEeef2eXAnKAtpw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_ddpoNkrFEeef2eXAnKAtpw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_ddpoMUrFEeef2eXAnKAtpw" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ddpoMkrFEeef2eXAnKAtpw" x="765" y="475" width="120" height="100"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ddpoMkrFEeef2eXAnKAtpw" x="765" y="475" width="120" height="113"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_Hbcf0ErGEeef2eXAnKAtpw" type="2003" element="_HbMBIErGEeef2eXAnKAtpw">
           <children xmi:type="notation:Node" xmi:id="_Hbcf00rGEeef2eXAnKAtpw" type="5007"/>
@@ -1233,6 +1237,14 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_3XYBQFRzEeezK8UjqMjtIA" name="default" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="robotDSLEcore.ecore#//Directions/default"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="robotDSLEcore.ecore#//Directions/default"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_3XYBQVRzEeezK8UjqMjtIA" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_HbMBIErGEeef2eXAnKAtpw" name="LogicalExps" tooltipText="" incomingEdges="_bB6JEErGEeef2eXAnKAtpw _ind6UErIEeef2eXAnKAtpw _3l5nwEunEeefJsSws62rHg _35R2wEunEeefJsSws62rHg" width="12" height="10">
       <target xmi:type="ecore:EClass" href="robotDSLEcore.ecore#//LogicalExps"/>
@@ -1310,7 +1322,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NZ7owErMEeef2eXAnKAtpw" name="direction : Directions = south" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NZ7owErMEeef2eXAnKAtpw" name="direction : Directions = default" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="robotDSLEcore.ecore#//Heading/direction"/>
         <semanticElements xmi:type="ecore:EAttribute" href="robotDSLEcore.ecore#//Heading/direction"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_OQBjQErMEeef2eXAnKAtpw" labelAlignment="LEFT">

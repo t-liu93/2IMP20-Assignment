@@ -41,6 +41,7 @@
     <eLiterals name="north" value="1"/>
     <eLiterals name="west" value="2"/>
     <eLiterals name="east" value="3"/>
+    <eLiterals name="default" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogicalExps"/>
   <eClassifiers xsi:type="ecore:EClass" name="Full" eSuperTypes="#//SingleLogalExp">
@@ -53,7 +54,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="not" eType="#//Not" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Heading" eSuperTypes="#//SingleLogalExp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Directions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Directions"
+        defaultValueLiteral="default"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="not" eType="#//Not" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BuildStatements" eSuperTypes="#//Statements"/>

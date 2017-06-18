@@ -38,7 +38,7 @@ public class HeadingImpl extends SingleLogalExpImpl implements Heading {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Directions DIRECTION_EDEFAULT = Directions.SOUTH;
+	protected static final Directions DIRECTION_EDEFAULT = Directions.DEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
