@@ -6,7 +6,6 @@ public class [%=Script.a_name %] extends RobotFrame {
 	@Override
 	protected void perform() {
 		[% for (statement in Script.c_statements) {%]
-		[*- basic commands *]
 			[% if (statement.getAttribute("xsi:type") == "robotDSLEcore:Step") { %]
 		step();
 			[% } 
@@ -21,9 +20,10 @@ public class [%=Script.a_name %] extends RobotFrame {
 			[%}
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
 		traceMessage([%=statement.a_message%]);
+			[%} 
+			else if (statement.getAttribute("xsi:type") == "robotDLSEcore:IfStatement") { %]
+			
 			[%} %]
-		[*- Control flows *]
-			[% else if (statement.getAttribute("xsi:type") == "robotDLSEcore:IfStatement"
 		[%} %]
 		
 	}

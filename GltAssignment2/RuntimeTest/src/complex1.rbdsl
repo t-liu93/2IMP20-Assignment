@@ -11,7 +11,7 @@ Script complexTestOne runs as
     end
     
     #if with else
-    if full do
+    if not full do
         pick
         drop
     end
@@ -35,7 +35,9 @@ Script complexTestOne runs as
     while mark do
         pick
     end
-    
+    if full and mark and heading north do
+    	drop
+    end
     #With some extension features
     #both not
     if not full and not mark do

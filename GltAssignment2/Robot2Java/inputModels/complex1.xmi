@@ -11,7 +11,9 @@
   </statements>
   <statements xsi:type="robotDSLEcore:Comment" comment="#if with else&#xA;"/>
   <statements xsi:type="robotDSLEcore:IfStatement">
-    <logicalexps xsi:type="robotDSLEcore:Full"/>
+    <logicalexps xsi:type="robotDSLEcore:Full">
+      <not/>
+    </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:Pick"/>
     <runningstatements xsi:type="robotDSLEcore:Drop"/>
     <else>
@@ -33,6 +35,16 @@
   <statements xsi:type="robotDSLEcore:WhileStatement">
     <logicalexps xsi:type="robotDSLEcore:Mark"/>
     <runningstatements xsi:type="robotDSLEcore:Pick"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:IfStatement">
+    <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
+      <binaries xsi:type="robotDSLEcore:And"/>
+      <binaries xsi:type="robotDSLEcore:And"/>
+      <singlelogalexp xsi:type="robotDSLEcore:Full"/>
+      <singlelogalexp xsi:type="robotDSLEcore:Mark"/>
+      <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
   </statements>
   <statements xsi:type="robotDSLEcore:Comment" comment="#With some extension features&#xA;"/>
   <statements xsi:type="robotDSLEcore:Comment" comment="#both not&#xA;"/>
