@@ -283,6 +283,15 @@ public interface RobotDSLEcoreFactory extends EFactory {
 	RunningStatements createRunningStatements();
 
 	/**
+	 * Returns a new object of class '<em>Else</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Else</em>'.
+	 * @generated
+	 */
+	Else createElse();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

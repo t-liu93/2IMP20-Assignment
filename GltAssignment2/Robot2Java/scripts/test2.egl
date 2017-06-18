@@ -1,0 +1,11 @@
+[*- Heading *]
+
+
+[*- List of authors *]
+[%=book.a_xsi.title%]
+<h2>Authors</h2>
+<ul>
+[%for (author in book.c_author) { %]
+  <li>[%=author.text%]
+[%}%]
+</ul>

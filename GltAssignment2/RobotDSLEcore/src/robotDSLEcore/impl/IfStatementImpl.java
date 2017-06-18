@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import robotDSLEcore.Else;
 import robotDSLEcore.IfStatement;
 import robotDSLEcore.LogicalExps;
 import robotDSLEcore.RobotDSLEcorePackage;
@@ -27,6 +28,7 @@ import robotDSLEcore.RunningStatements;
  * <ul>
  *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getLogicalexps <em>Logicalexps</em>}</li>
  *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getRunningstatements <em>Runningstatements</em>}</li>
+ *   <li>{@link robotDSLEcore.impl.IfStatementImpl#getElse <em>Else</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,6 +53,16 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 	 * @ordered
 	 */
 	protected EList<RunningStatements> runningstatements;
+
+	/**
+	 * The cached value of the '{@link #getElse() <em>Else</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getElse()
+	 * @generated
+	 * @ordered
+	 */
+	protected Else else_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,6 +143,49 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Else getElse() {
+		return else_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetElse(Else newElse, NotificationChain msgs) {
+		Else oldElse = else_;
+		else_ = newElse;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.IF_STATEMENT__ELSE, oldElse, newElse);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setElse(Else newElse) {
+		if (newElse != else_) {
+			NotificationChain msgs = null;
+			if (else_ != null)
+				msgs = ((InternalEObject)else_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotDSLEcorePackage.IF_STATEMENT__ELSE, null, msgs);
+			if (newElse != null)
+				msgs = ((InternalEObject)newElse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotDSLEcorePackage.IF_STATEMENT__ELSE, null, msgs);
+			msgs = basicSetElse(newElse, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotDSLEcorePackage.IF_STATEMENT__ELSE, newElse, newElse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -138,6 +193,8 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 				return basicSetLogicalexps(null, msgs);
 			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
 				return ((InternalEList<?>)getRunningstatements()).basicRemove(otherEnd, msgs);
+			case RobotDSLEcorePackage.IF_STATEMENT__ELSE:
+				return basicSetElse(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -154,6 +211,8 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 				return getLogicalexps();
 			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
 				return getRunningstatements();
+			case RobotDSLEcorePackage.IF_STATEMENT__ELSE:
+				return getElse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,6 +233,9 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 				getRunningstatements().clear();
 				getRunningstatements().addAll((Collection<? extends RunningStatements>)newValue);
 				return;
+			case RobotDSLEcorePackage.IF_STATEMENT__ELSE:
+				setElse((Else)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -192,6 +254,9 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
 				getRunningstatements().clear();
 				return;
+			case RobotDSLEcorePackage.IF_STATEMENT__ELSE:
+				setElse((Else)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,6 +273,8 @@ public class IfStatementImpl extends RunningStatementsImpl implements IfStatemen
 				return logicalexps != null;
 			case RobotDSLEcorePackage.IF_STATEMENT__RUNNINGSTATEMENTS:
 				return runningstatements != null && !runningstatements.isEmpty();
+			case RobotDSLEcorePackage.IF_STATEMENT__ELSE:
+				return else_ != null;
 		}
 		return super.eIsSet(featureID);
 	}

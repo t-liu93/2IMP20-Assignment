@@ -12,6 +12,7 @@ import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
+import robotDSLEcore.Else;
 import robotDSLEcore.IfStatement;
 import robotDSLEcore.LogicalExps;
 import robotDSLEcore.RunningStatements;
@@ -37,6 +38,7 @@ public class RobotDSLFormatter extends AbstractFormatter2 {
     for (final RunningStatements runningStatements : _runningstatements) {
       document.<RunningStatements>format(runningStatements);
     }
+    document.<Else>format(ifStatement.getElse());
   }
   
   public void format(final Object ifStatement, final IFormattableDocument document) {

@@ -45,8 +45,6 @@ public class RobotDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCommandStatement_ImplAccess().getGroup(), "rule__CommandStatement_Impl__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_4(), "rule__IfStatement__Group_4__0");
-					put(grammarAccess.getIfStatementAccess().getGroup_6(), "rule__IfStatement__Group_6__0");
-					put(grammarAccess.getIfStatementAccess().getGroup_6_2(), "rule__IfStatement__Group_6_2__0");
 					put(grammarAccess.getWhileStatementAccess().getGroup(), "rule__WhileStatement__Group__0");
 					put(grammarAccess.getWhileStatementAccess().getGroup_4(), "rule__WhileStatement__Group_4__0");
 					put(grammarAccess.getRepeatStatementAccess().getGroup(), "rule__RepeatStatement__Group__0");
@@ -64,6 +62,8 @@ public class RobotDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBuildWallAccess().getGroup(), "rule__BuildWall__Group__0");
 					put(grammarAccess.getRunningStatements_ImplAccess().getGroup(), "rule__RunningStatements_Impl__Group__0");
 					put(grammarAccess.getLogicalExps_ImplAccess().getGroup(), "rule__LogicalExps_Impl__Group__0");
+					put(grammarAccess.getElseAccess().getGroup(), "rule__Else__Group__0");
+					put(grammarAccess.getElseAccess().getGroup_3(), "rule__Else__Group_3__0");
 					put(grammarAccess.getFullAccess().getGroup(), "rule__Full__Group__0");
 					put(grammarAccess.getMarkAccess().getGroup(), "rule__Mark__Group__0");
 					put(grammarAccess.getWallAheadAccess().getGroup(), "rule__WallAhead__Group__0");
@@ -82,8 +82,7 @@ public class RobotDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getLogicalexpsAssignment_2(), "rule__IfStatement__LogicalexpsAssignment_2");
 					put(grammarAccess.getIfStatementAccess().getRunningstatementsAssignment_4_0(), "rule__IfStatement__RunningstatementsAssignment_4_0");
 					put(grammarAccess.getIfStatementAccess().getRunningstatementsAssignment_4_1(), "rule__IfStatement__RunningstatementsAssignment_4_1");
-					put(grammarAccess.getIfStatementAccess().getRunningstatementsAssignment_6_2_0(), "rule__IfStatement__RunningstatementsAssignment_6_2_0");
-					put(grammarAccess.getIfStatementAccess().getRunningstatementsAssignment_6_2_1(), "rule__IfStatement__RunningstatementsAssignment_6_2_1");
+					put(grammarAccess.getIfStatementAccess().getElseAssignment_6(), "rule__IfStatement__ElseAssignment_6");
 					put(grammarAccess.getWhileStatementAccess().getLogicalexpsAssignment_2(), "rule__WhileStatement__LogicalexpsAssignment_2");
 					put(grammarAccess.getWhileStatementAccess().getRunningstatementsAssignment_4_0(), "rule__WhileStatement__RunningstatementsAssignment_4_0");
 					put(grammarAccess.getWhileStatementAccess().getRunningstatementsAssignment_4_1(), "rule__WhileStatement__RunningstatementsAssignment_4_1");
@@ -100,6 +99,8 @@ public class RobotDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDropMarkAccess().getColumnAssignment_6(), "rule__DropMark__ColumnAssignment_6");
 					put(grammarAccess.getBuildWallAccess().getRowAssignment_4(), "rule__BuildWall__RowAssignment_4");
 					put(grammarAccess.getBuildWallAccess().getColumnAssignment_6(), "rule__BuildWall__ColumnAssignment_6");
+					put(grammarAccess.getElseAccess().getRunningstatementsAssignment_3_0(), "rule__Else__RunningstatementsAssignment_3_0");
+					put(grammarAccess.getElseAccess().getRunningstatementsAssignment_3_1(), "rule__Else__RunningstatementsAssignment_3_1");
 					put(grammarAccess.getFullAccess().getNotAssignment_1(), "rule__Full__NotAssignment_1");
 					put(grammarAccess.getMarkAccess().getNotAssignment_1(), "rule__Mark__NotAssignment_1");
 					put(grammarAccess.getWallAheadAccess().getNotAssignment_1(), "rule__WallAhead__NotAssignment_1");

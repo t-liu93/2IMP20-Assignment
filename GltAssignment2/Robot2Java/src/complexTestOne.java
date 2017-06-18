@@ -1,30 +1,14 @@
-[* General Class name *]
 
-public class [%=Script.a_name %] extends RobotFrame {
-	public [%=Script.a_name %](){}
+public class complexTestOne extends RobotFrame {
+	public complexTestOne(){}
 	
 	@Override
 	protected void perform() {
-		[% for (statement in Script.c_statements) {%]
-		[*- basic commands *]
-			[% if (statement.getAttribute("xsi:type") == "robotDSLEcore:Step") { %]
 		step();
-			[% } 
-			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
-		turnLeft();
-			[%}
-			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
-		drop();
-			[%}
-			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
 		pick();
-			[%}
-			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
-		traceMessage([%=statement.a_message%]);
-			[%} %]
-		[*- Control flows *]
-			[% else if (statement.getAttribute("xsi:type") == "robotDLSEcore:IfStatement"
-		[%} %]
+		traceMessage("so many commands");
+		traceMessage("it is sizeable");
+		traceMessage("good parser");
 		
 	}
 	
@@ -71,7 +55,7 @@ public class [%=Script.a_name %] extends RobotFrame {
 	
 	//Main class
 	public static void main(String[] args) {
-		[%=Script.a_name %] script = new [%=Script.a_name %]();
+		complexTestOne script = new complexTestOne();
 		script.initializeComponents();
 		script.run();
 	}

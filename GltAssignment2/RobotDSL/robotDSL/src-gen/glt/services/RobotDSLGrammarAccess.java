@@ -387,29 +387,20 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRunningstatementsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_4_1_0 = (RuleCall)cRunningstatementsAssignment_4_1.eContents().get(0);
 		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cElseKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cDoKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Group cGroup_6_2 = (Group)cGroup_6.eContents().get(2);
-		private final Assignment cRunningstatementsAssignment_6_2_0 = (Assignment)cGroup_6_2.eContents().get(0);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_6_2_0_0 = (RuleCall)cRunningstatementsAssignment_6_2_0.eContents().get(0);
-		private final Assignment cRunningstatementsAssignment_6_2_1 = (Assignment)cGroup_6_2.eContents().get(1);
-		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_6_2_1_0 = (RuleCall)cRunningstatementsAssignment_6_2_1.eContents().get(0);
-		private final Keyword cEndKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
+		private final Assignment cElseAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cElseElseParserRuleCall_6_0 = (RuleCall)cElseAssignment_6.eContents().get(0);
 		
 		//IfStatement:
 		//	{IfStatement}
 		//	'if'
 		//	logicalexps=LogicalExps
 		//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		//	'end' ('else'
-		//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		//	'end')?;
+		//	'end'
+		//	else=Else?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IfStatement} 'if' logicalexps=LogicalExps 'do' (runningstatements+=RunningStatements
-		//runningstatements+=RunningStatements*)? 'end' ('else' 'do' (runningstatements+=RunningStatements
-		//runningstatements+=RunningStatements*)? 'end')?
+		//runningstatements+=RunningStatements*)? 'end' else=Else?
 		public Group getGroup() { return cGroup; }
 		
 		//{IfStatement}
@@ -445,32 +436,11 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'end'
 		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 		
-		//('else' 'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)? 'end')?
-		public Group getGroup_6() { return cGroup_6; }
+		//else=Else?
+		public Assignment getElseAssignment_6() { return cElseAssignment_6; }
 		
-		//'else'
-		public Keyword getElseKeyword_6_0() { return cElseKeyword_6_0; }
-		
-		//'do'
-		public Keyword getDoKeyword_6_1() { return cDoKeyword_6_1; }
-		
-		//(runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-		public Group getGroup_6_2() { return cGroup_6_2; }
-		
-		//runningstatements+=RunningStatements
-		public Assignment getRunningstatementsAssignment_6_2_0() { return cRunningstatementsAssignment_6_2_0; }
-		
-		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_6_2_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_6_2_0_0; }
-		
-		//runningstatements+=RunningStatements*
-		public Assignment getRunningstatementsAssignment_6_2_1() { return cRunningstatementsAssignment_6_2_1; }
-		
-		//RunningStatements
-		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_6_2_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_6_2_1_0; }
-		
-		//'end'
-		public Keyword getEndKeyword_6_3() { return cEndKeyword_6_3; }
+		//Else
+		public RuleCall getElseElseParserRuleCall_6_0() { return cElseElseParserRuleCall_6_0; }
 	}
 	public class WhileStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.WhileStatement");
@@ -996,6 +966,56 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'LogicalExps'
 		public Keyword getLogicalExpsKeyword_1() { return cLogicalExpsKeyword_1; }
 	}
+	public class ElseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Else");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cElseAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cElseKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDoKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cRunningstatementsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_3_0_0 = (RuleCall)cRunningstatementsAssignment_3_0.eContents().get(0);
+		private final Assignment cRunningstatementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cRunningstatementsRunningStatementsParserRuleCall_3_1_0 = (RuleCall)cRunningstatementsAssignment_3_1.eContents().get(0);
+		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Else:
+		//	{Else}
+		//	'else'
+		//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+		//	'end';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Else} 'else' 'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)? 'end'
+		public Group getGroup() { return cGroup; }
+		
+		//{Else}
+		public Action getElseAction_0() { return cElseAction_0; }
+		
+		//'else'
+		public Keyword getElseKeyword_1() { return cElseKeyword_1; }
+		
+		//'do'
+		public Keyword getDoKeyword_2() { return cDoKeyword_2; }
+		
+		//(runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//runningstatements+=RunningStatements
+		public Assignment getRunningstatementsAssignment_3_0() { return cRunningstatementsAssignment_3_0; }
+		
+		//RunningStatements
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_3_0_0() { return cRunningstatementsRunningStatementsParserRuleCall_3_0_0; }
+		
+		//runningstatements+=RunningStatements*
+		public Assignment getRunningstatementsAssignment_3_1() { return cRunningstatementsAssignment_3_1; }
+		
+		//RunningStatements
+		public RuleCall getRunningstatementsRunningStatementsParserRuleCall_3_1_0() { return cRunningstatementsRunningStatementsParserRuleCall_3_1_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+	}
 	public class FullElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "glt.RobotDSL.Full");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1363,6 +1383,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final BuildWallElements pBuildWall;
 	private final RunningStatements_ImplElements pRunningStatements_Impl;
 	private final LogicalExps_ImplElements pLogicalExps_Impl;
+	private final ElseElements pElse;
 	private final FullElements pFull;
 	private final MarkElements pMark;
 	private final WallAheadElements pWallAhead;
@@ -1414,6 +1435,7 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pBuildWall = new BuildWallElements();
 		this.pRunningStatements_Impl = new RunningStatements_ImplElements();
 		this.pLogicalExps_Impl = new LogicalExps_ImplElements();
+		this.pElse = new ElseElements();
 		this.pFull = new FullElements();
 		this.pMark = new MarkElements();
 		this.pWallAhead = new WallAheadElements();
@@ -1571,9 +1593,8 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'if'
 	//	logicalexps=LogicalExps
 	//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-	//	'end' ('else'
-	//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-	//	'end')?;
+	//	'end'
+	//	else=Else?;
 	public IfStatementElements getIfStatementAccess() {
 		return pIfStatement;
 	}
@@ -1771,6 +1792,19 @@ public class RobotDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getLogicalExps_ImplRule() {
 		return getLogicalExps_ImplAccess().getRule();
+	}
+	
+	//Else:
+	//	{Else}
+	//	'else'
+	//	'do' (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+	//	'end';
+	public ElseElements getElseAccess() {
+		return pElse;
+	}
+	
+	public ParserRule getElseRule() {
+		return getElseAccess().getRule();
 	}
 	
 	//Full:

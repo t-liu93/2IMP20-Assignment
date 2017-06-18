@@ -3,8 +3,6 @@ package glt;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import glt.serializer.RobotDSLSemanticSequencer;
-
 import java.io.IOException;
 
 import org.eclipse.emf.common.util.URI;
@@ -21,7 +19,6 @@ import org.eclipse.xtext.resource.XtextResourceSet;
 public class Xtext2Ecore {
 	private static void exportXMI(String absuloteTargetFolderPath, String fileBaseName) {
 	   		new RobotDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
-	   		
 	   		new robotDSLEcore.util.RobotDSLEcoreAdapterFactory();
 	
 	    String inputURI = "file:///" + absuloteTargetFolderPath + "/" + fileBaseName + ".rbdsl";
@@ -43,7 +40,7 @@ public class Xtext2Ecore {
 	}
 	
 	public static void main(String[] args){
-		String folder = "/home/osboxes/Desktop/workspace/2IMP20-Assignment/GltAssignment2/SupportedFileForA3/SampleInputAndGeneratedClass";
+		String folder = "/home/osboxes/Desktop/workspace/2IMP20-Assignment/GltAssignment2";
 		exportXMI(folder, "complex1");
 	}
 }

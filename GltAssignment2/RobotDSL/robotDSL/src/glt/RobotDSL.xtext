@@ -53,12 +53,7 @@ IfStatement returns IfStatement:
 	'do'
 	( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
 	'end'
-	(
-		'else'
-		'do'
-		( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
-		'end'
-	)?
+	( else=Else )?
 	;
 
 WhileStatement returns WhileStatement:
@@ -163,6 +158,14 @@ RunningStatements_Impl returns RunningStatements:
 LogicalExps_Impl returns LogicalExps:
 	{LogicalExps}
 	'LogicalExps'
+	;
+
+Else returns Else:
+	{Else}
+	'else'
+	'do'
+	( runningstatements+=RunningStatements ( runningstatements+=RunningStatements)* )?
+	'end'
 	;
 
 Full returns Full:

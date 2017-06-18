@@ -29,7 +29,8 @@ class RobotDSLFormatter extends AbstractFormatter2 {
 		for (RunningStatements runningStatements : ifStatement.getRunningstatements()) {
 			runningStatements.format;
 		}
+		ifStatement.getElse.format;
 	}
 	
-	// TODO: implement for WhileStatement, RepeatStatement, Full, Mark, WallAhead, Heading, BinaryLogicalExp
+	// TODO: implement for WhileStatement, RepeatStatement, Else, Full, Mark, WallAhead, Heading, BinaryLogicalExp
 }

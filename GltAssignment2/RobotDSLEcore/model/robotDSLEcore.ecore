@@ -13,6 +13,7 @@
         eType="#//LogicalExps" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runningstatements" upperBound="-1"
         eType="#//RunningStatements" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//Else" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//RunningStatements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalexps" lowerBound="1"
@@ -84,4 +85,8 @@
         upperBound="-1" eType="#//SingleLogalExp" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RunningStatements" eSuperTypes="#//Statements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Else">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runningstatements" upperBound="-1"
+        eType="#//RunningStatements" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

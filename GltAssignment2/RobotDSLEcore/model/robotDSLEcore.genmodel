@@ -21,6 +21,7 @@
     <genClasses ecoreClass="robotDSLEcore.ecore#//IfStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/logicalexps"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/runningstatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//IfStatement/else"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//WhileStatement/logicalexps"/>
@@ -81,5 +82,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//BinaryLogicalExp/singlelogalexp"/>
     </genClasses>
     <genClasses ecoreClass="robotDSLEcore.ecore#//RunningStatements"/>
+    <genClasses ecoreClass="robotDSLEcore.ecore#//Else">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotDSLEcore.ecore#//Else/runningstatements"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

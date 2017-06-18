@@ -1,5 +1,7 @@
-rule robot2Java {
+rule robot2Java 
+	transform Script : t_Script{
+
 	template: "robot2Java.egl"
 	
-	target: "Robot2Java/src/Script.java"
+	target: "src/" + Script.a_name + ".java"
 }

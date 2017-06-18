@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link robotDSLEcore.IfStatement#getLogicalexps <em>Logicalexps</em>}</li>
  *   <li>{@link robotDSLEcore.IfStatement#getRunningstatements <em>Runningstatements</em>}</li>
+ *   <li>{@link robotDSLEcore.IfStatement#getElse <em>Else</em>}</li>
  * </ul>
  *
  * @see robotDSLEcore.RobotDSLEcorePackage#getIfStatement()
@@ -65,4 +66,30 @@ public interface IfStatement extends RunningStatements {
 	 * @generated
 	 */
 	EList<RunningStatements> getRunningstatements();
+
+	/**
+	 * Returns the value of the '<em><b>Else</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Else</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Else</em>' containment reference.
+	 * @see #setElse(Else)
+	 * @see robotDSLEcore.RobotDSLEcorePackage#getIfStatement_Else()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Else getElse();
+
+	/**
+	 * Sets the value of the '{@link robotDSLEcore.IfStatement#getElse <em>Else</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Else</em>' containment reference.
+	 * @see #getElse()
+	 * @generated
+	 */
+	void setElse(Else value);
 } // IfStatement

@@ -1,0 +1,17 @@
+rule Book2Page 
+  transform book : t_book {
+  
+  // We only want to generate pages
+  // for books that have their public
+  // attribute set to true
+  //guard : library.e_book.b_public
+  
+
+  
+  // The EGL template to be invoked
+  template : "test2.egl"
+  
+  // Output file
+  target : "gen/" + book.e_id.text + ".txt"
+  
+}

@@ -216,13 +216,22 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int IF_STATEMENT__RUNNINGSTATEMENTS = RUNNING_STATEMENTS_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Else</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__ELSE = RUNNING_STATEMENTS_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>If Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT_FEATURE_COUNT = RUNNING_STATEMENTS_FEATURE_COUNT + 2;
+	int IF_STATEMENT_FEATURE_COUNT = RUNNING_STATEMENTS_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>If Statement</em>' class.
@@ -1095,6 +1104,43 @@ public interface RobotDSLEcorePackage extends EPackage {
 	int BINARY_LOGICAL_EXP_OPERATION_COUNT = LOGICAL_EXPS_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link robotDSLEcore.impl.ElseImpl <em>Else</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see robotDSLEcore.impl.ElseImpl
+	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getElse()
+	 * @generated
+	 */
+	int ELSE = 29;
+
+	/**
+	 * The feature id for the '<em><b>Runningstatements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE__RUNNINGSTATEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Else</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Else</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELSE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1102,7 +1148,7 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getDirections()
 	 * @generated
 	 */
-	int DIRECTIONS = 29;
+	int DIRECTIONS = 30;
 
 
 	/**
@@ -1188,6 +1234,17 @@ public interface RobotDSLEcorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIfStatement_Runningstatements();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link robotDSLEcore.IfStatement#getElse <em>Else</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else</em>'.
+	 * @see robotDSLEcore.IfStatement#getElse()
+	 * @see #getIfStatement()
+	 * @generated
+	 */
+	EReference getIfStatement_Else();
 
 	/**
 	 * Returns the meta object for class '{@link robotDSLEcore.WhileStatement <em>While Statement</em>}'.
@@ -1671,6 +1728,27 @@ public interface RobotDSLEcorePackage extends EPackage {
 	EClass getRunningStatements();
 
 	/**
+	 * Returns the meta object for class '{@link robotDSLEcore.Else <em>Else</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Else</em>'.
+	 * @see robotDSLEcore.Else
+	 * @generated
+	 */
+	EClass getElse();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link robotDSLEcore.Else#getRunningstatements <em>Runningstatements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Runningstatements</em>'.
+	 * @see robotDSLEcore.Else#getRunningstatements()
+	 * @see #getElse()
+	 * @generated
+	 */
+	EReference getElse_Runningstatements();
+
+	/**
 	 * Returns the meta object for enum '{@link robotDSLEcore.Directions <em>Directions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1774,6 +1852,14 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference IF_STATEMENT__RUNNINGSTATEMENTS = eINSTANCE.getIfStatement_Runningstatements();
+
+		/**
+		 * The meta object literal for the '<em><b>Else</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_STATEMENT__ELSE = eINSTANCE.getIfStatement_Else();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -2192,6 +2278,24 @@ public interface RobotDSLEcorePackage extends EPackage {
 		 * @generated
 		 */
 		EClass RUNNING_STATEMENTS = eINSTANCE.getRunningStatements();
+
+		/**
+		 * The meta object literal for the '{@link robotDSLEcore.impl.ElseImpl <em>Else</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see robotDSLEcore.impl.ElseImpl
+		 * @see robotDSLEcore.impl.RobotDSLEcorePackageImpl#getElse()
+		 * @generated
+		 */
+		EClass ELSE = eINSTANCE.getElse();
+
+		/**
+		 * The meta object literal for the '<em><b>Runningstatements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELSE__RUNNINGSTATEMENTS = eINSTANCE.getElse_Runningstatements();
 
 		/**
 		 * The meta object literal for the '{@link robotDSLEcore.Directions <em>Directions</em>}' enum.

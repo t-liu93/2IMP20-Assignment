@@ -25,6 +25,7 @@ import robotDSLEcore.Comment;
 import robotDSLEcore.DestroyWall;
 import robotDSLEcore.Drop;
 import robotDSLEcore.DropMark;
+import robotDSLEcore.Else;
 import robotDSLEcore.Full;
 import robotDSLEcore.Heading;
 import robotDSLEcore.IfStatement;
@@ -89,6 +90,9 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case RobotDSLEcorePackage.DROP_MARK:
 				sequence_DropMark(context, (DropMark) semanticObject); 
+				return; 
+			case RobotDSLEcorePackage.ELSE:
+				sequence_Else(context, (Else) semanticObject); 
 				return; 
 			case RobotDSLEcorePackage.FULL:
 				sequence_Full(context, (Full) semanticObject); 
@@ -318,6 +322,18 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     Else returns Else
+	 *
+	 * Constraint:
+	 *     (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
+	 */
+	protected void sequence_Else(ISerializationContext context, Else semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     LogicalExps returns Full
 	 *     SingleLogalExp returns Full
 	 *     Full returns Full
@@ -351,11 +367,7 @@ public class RobotDSLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     IfStatement returns IfStatement
 	 *
 	 * Constraint:
-	 *     (
-	 *         logicalexps=LogicalExps 
-	 *         (runningstatements+=RunningStatements runningstatements+=RunningStatements*)? 
-	 *         (runningstatements+=RunningStatements runningstatements+=RunningStatements*)?
-	 *     )
+	 *     (logicalexps=LogicalExps (runningstatements+=RunningStatements runningstatements+=RunningStatements*)? else=Else?)
 	 */
 	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

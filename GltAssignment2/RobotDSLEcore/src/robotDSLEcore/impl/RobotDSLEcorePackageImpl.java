@@ -21,6 +21,7 @@ import robotDSLEcore.DestroyWall;
 import robotDSLEcore.Directions;
 import robotDSLEcore.Drop;
 import robotDSLEcore.DropMark;
+import robotDSLEcore.Else;
 import robotDSLEcore.Full;
 import robotDSLEcore.Heading;
 import robotDSLEcore.IfStatement;
@@ -258,6 +259,13 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass elseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum directionsEEnum = null;
 
 	/**
@@ -391,6 +399,15 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 */
 	public EReference getIfStatement_Runningstatements() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIfStatement_Else() {
+		return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -812,6 +829,24 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getElse() {
+		return elseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getElse_Runningstatements() {
+		return (EReference)elseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDirections() {
 		return directionsEEnum;
 	}
@@ -855,6 +890,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		ifStatementEClass = createEClass(IF_STATEMENT);
 		createEReference(ifStatementEClass, IF_STATEMENT__LOGICALEXPS);
 		createEReference(ifStatementEClass, IF_STATEMENT__RUNNINGSTATEMENTS);
+		createEReference(ifStatementEClass, IF_STATEMENT__ELSE);
 
 		whileStatementEClass = createEClass(WHILE_STATEMENT);
 		createEReference(whileStatementEClass, WHILE_STATEMENT__LOGICALEXPS);
@@ -927,6 +963,9 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 
 		runningStatementsEClass = createEClass(RUNNING_STATEMENTS);
 
+		elseEClass = createEClass(ELSE);
+		createEReference(elseEClass, ELSE__RUNNINGSTATEMENTS);
+
 		// Create enums
 		directionsEEnum = createEEnum(DIRECTIONS);
 	}
@@ -996,6 +1035,7 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIfStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 1, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIfStatement_Runningstatements(), this.getRunningStatements(), null, "runningstatements", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Else(), this.getElse(), null, "else", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWhileStatement_Logicalexps(), this.getLogicalExps(), null, "logicalexps", null, 1, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1067,6 +1107,9 @@ public class RobotDSLEcorePackageImpl extends EPackageImpl implements RobotDSLEc
 		initEReference(getBinaryLogicalExp_Singlelogalexp(), this.getSingleLogalExp(), null, "singlelogalexp", null, 2, -1, BinaryLogicalExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runningStatementsEClass, RunningStatements.class, "RunningStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(elseEClass, Else.class, "Else", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getElse_Runningstatements(), this.getRunningStatements(), null, "runningstatements", null, 0, -1, Else.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(directionsEEnum, Directions.class, "Directions");

@@ -715,58 +715,23 @@ ruleIfStatement returns [EObject current=null]
 			newLeafNode(otherlv_6, grammarAccess.getIfStatementAccess().getEndKeyword_5());
 		}
 		(
-			otherlv_7='else'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getIfStatementAccess().getElseKeyword_6_0());
-			}
-			otherlv_8='do'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getIfStatementAccess().getDoKeyword_6_1());
-			}
 			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getIfStatementAccess().getRunningstatementsRunningStatementsParserRuleCall_6_2_0_0());
-						}
-						lv_runningstatements_9_0=ruleRunningStatements
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getIfStatementRule());
-							}
-							add(
-								$current,
-								"runningstatements",
-								lv_runningstatements_9_0,
-								"glt.RobotDSL.RunningStatements");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getIfStatementAccess().getRunningstatementsRunningStatementsParserRuleCall_6_2_1_0());
-						}
-						lv_runningstatements_10_0=ruleRunningStatements
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getIfStatementRule());
-							}
-							add(
-								$current,
-								"runningstatements",
-								lv_runningstatements_10_0,
-								"glt.RobotDSL.RunningStatements");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)*
-			)?
-			otherlv_11='end'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getIfStatementAccess().getEndKeyword_6_3());
-			}
+				{
+					newCompositeNode(grammarAccess.getIfStatementAccess().getElseElseParserRuleCall_6_0());
+				}
+				lv_else_7_0=ruleElse
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfStatementRule());
+					}
+					set(
+						$current,
+						"else",
+						lv_else_7_0,
+						"glt.RobotDSL.Else");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)?
 	)
 ;
@@ -1487,6 +1452,84 @@ ruleBuildWall returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleElse
+entryRuleElse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getElseRule()); }
+	iv_ruleElse=ruleElse
+	{ $current=$iv_ruleElse.current; }
+	EOF;
+
+// Rule Else
+ruleElse returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getElseAccess().getElseAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='else'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getElseAccess().getElseKeyword_1());
+		}
+		otherlv_2='do'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getElseAccess().getDoKeyword_2());
+		}
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getElseAccess().getRunningstatementsRunningStatementsParserRuleCall_3_0_0());
+					}
+					lv_runningstatements_3_0=ruleRunningStatements
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getElseRule());
+						}
+						add(
+							$current,
+							"runningstatements",
+							lv_runningstatements_3_0,
+							"glt.RobotDSL.RunningStatements");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getElseAccess().getRunningstatementsRunningStatementsParserRuleCall_3_1_0());
+					}
+					lv_runningstatements_4_0=ruleRunningStatements
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getElseRule());
+						}
+						add(
+							$current,
+							"runningstatements",
+							lv_runningstatements_4_0,
+							"glt.RobotDSL.RunningStatements");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		otherlv_5='end'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getElseAccess().getEndKeyword_4());
+		}
 	)
 ;
 
