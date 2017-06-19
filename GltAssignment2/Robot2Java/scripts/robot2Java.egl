@@ -10,7 +10,7 @@ public class [%=Script.a_name %] extends RobotFrame {
 		step();
 			[% } 
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
-		turnLeft();
+		turnLeftSub();
 			[%}
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
 		drop();
@@ -20,9 +20,12 @@ public class [%=Script.a_name %] extends RobotFrame {
 			[%}
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
 		traceMessage([%=statement.a_message%]);
+			[%}
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
+		//[%=statement.a_comment%]
 			[%} 
-			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:IfStatement") { %]
-		if ([% for (logalExps in statement.c_logicalexps) { 
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:IfStatement") {
+	%]		if ([% for (logalExps in statement.c_logicalexps) { 
 					if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
 						for (e in logalExps.children) { 
 							if (e.tagName == "not") { %]![% }
@@ -41,43 +44,62 @@ public class [%=Script.a_name %] extends RobotFrame {
 						}%]heading(Direction.[%=logalExps.a_direction%])[%
 					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:BinaryLogicalExp") {
 						if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") {
-							for (e in logalExps.children) {
+							for (e in logalExps.e_singlelogalexp.children) {
 								if (e.tagName == "not") { %]![% }
 							}%]isFull()[%
 						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") {
-							for (e in logalExps.children) {
+							for (e in logalExps.e_singlelogalexp.children) {
 								if (e.tagName == "not") { %]![% }
 							}%]isMark()[%
 						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") {
-							for (e in logalExps.children) {
+							for (e in logalExps.e_singlelogalexp.children) {
 								if (e.tagName == "not") { %]![% }
 							}%]wallAhead()[%
 						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") {
-							for (e in logalExps.children) {
+							for (e in logalExps.e_singlelogalexp.children) {
 								if (e.tagName == "not") { %]![% }
 							}%]heading(Direction.[%=logalExps.e_singlelogalexp.a_direction%])[%
 						}
 						for (binary in logalExps.c_binaries) {
 							if (binary.getAttribute("xsi:type") == "robotDSLEcore:And") {
-								%] &&[%
+								%] && [%
 								if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
-									for (e in logalExps.children) { 
+									for (e in binary.e_singlelogalexp.children) { 
 										if (e.tagName == "not") { %]![% }
-									}%] isFull()[%
+									}%]isFull()[%
 								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") { 
-									for (e in logalExps.children) { 
+									for (e in binary.e_singlelogalexp.children) { 
 										if (e.tagName == "not") { %]![% }
-									}%] isMark()[%
+									}%]isMark()[%
 								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") { 
-									for (e in logalExps.children) { 
+									for (e in binary.e_singlelogalexp.children) { 
 										if (e.tagName == "not") { %]![% }
-									}%] wallAhead()[%
+									}%]wallAhead()[%
 								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") { 
-									for (e in logalExps.children) { 
+									for (e in binary.e_singlelogalexp.children) { 
 										if (e.tagName == "not") { %]![% }
-									}%] heading(Direction.[%=binary.e_singlelogalexp.a_direction%])[%
+									}%]heading(Direction.[%=binary.e_singlelogalexp.a_direction%])[%
 								} 
-							} 
+							} else if (binary.getAttribute("xsi:type") == "robotDSLEcore:Or") {
+								%] || [%
+								if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]isFull()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]isMark()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]wallAhead()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]heading(Direction.[%=binary.e_singlelogalexp.a_direction%])[%
+								} 
+							}
 						}
 					}
 				}%]) {
@@ -86,7 +108,7 @@ public class [%=Script.a_name %] extends RobotFrame {
 			step();
 					[% } 
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
-			turnLeft();
+			turnLeftSub();
 					[%}
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
 			drop();
@@ -94,9 +116,151 @@ public class [%=Script.a_name %] extends RobotFrame {
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
 			pick();
 					[%}
+					else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
+			traceMessage([%=statement.a_message%]);
+					[%}
 					} %]
-		} [%} %]
-			
+		} [% for (e in statement.c_else) {
+				%]else {
+				[%
+				for (runningStats in e.c_runningstatements) {
+					if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Step") { %]
+			step();
+					[% } 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
+			turnLeftSub();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
+			drop();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
+			pick();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
+			traceMessage([%=statement.a_message%]);
+					[%}
+				}
+			%]		}[%}
+		}
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:WhileStatement") { %]
+		while ([% for (logalExps in statement.c_logicalexps) { 
+					if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]isFull()[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Mark") {
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]isMark()[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") {
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]wallAhead()[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Heading") {
+						for (e in logalExps.children) { 
+							if (e.tagName == "not") { %]![% }
+						}%]heading(Direction.[%=logalExps.a_direction%])[%
+					} else if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:BinaryLogicalExp") {
+						if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") {
+							for (e in logalExps.e_singlelogalexp.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]isFull()[%
+						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") {
+							for (e in logalExps.e_singlelogalexp.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]isMark()[%
+						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") {
+							for (e in logalExps.e_singlelogalexp.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]wallAhead()[%
+						} else if (logalExps.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") {
+							for (e in logalExps.e_singlelogalexp.children) {
+								if (e.tagName == "not") { %]![% }
+							}%]heading(Direction.[%=logalExps.e_singlelogalexp.a_direction%])[%
+						}
+						for (binary in logalExps.c_binaries) {
+							if (binary.getAttribute("xsi:type") == "robotDSLEcore:And") {
+								%] && [%
+								if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]isFull()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]isMark()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]wallAhead()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]heading(Direction.[%=binary.e_singlelogalexp.a_direction%])[%
+								} 
+							} else if (binary.getAttribute("xsi:type") == "robotDSLEcore:Or") {
+								%] || [%
+								if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]isFull()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Mark") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]isMark()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:WallAhead") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]wallAhead()[%
+								} else if (binary.e_singlelogalexp.getAttribute("xsi:type") == "robotDSLEcore:Heading") { 
+									for (e in binary.e_singlelogalexp.children) { 
+										if (e.tagName == "not") { %]![% }
+									}%]heading(Direction.[%=binary.e_singlelogalexp.a_direction%])[%
+								} 
+							}
+						}
+					}
+				}%]) {
+				[% for (runningStats in statement.c_runningstatements) {
+				 	if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Step") { %]
+			step();
+					[% } 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
+			turnLeftSub();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
+			drop();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
+			pick();
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
+			traceMessage([%=runningStats.a_message%]);
+					[%}
+					} %]
+		}[%} 
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:RepeatStatement") { %]
+			for (int i=0; i < [%=statement.a_time%]; i ++) {
+				[%for (c in statement.c_commandstatement){ 
+					if (c.getAttribute("xsi:type") == "robotDSLEcore:Step") { %]
+			step();
+					[% } 
+					else if (c.getAttribute("xsi:type") == "robotDSLEcore:TurnLeft") { %]
+			turnLeftSub();
+					[%}
+					else if (c.getAttribute("xsi:type") == "robotDSLEcore:Drop") { %]
+			drop();
+					[%}
+					else if (c.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
+			pick();
+					[%}
+					else if (c.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
+			traceMessage([%=statement.a_message%]);
+					[%}
+				}%]
+			}
+			[%}%]
+		
 		[%} %]
 	}
 	

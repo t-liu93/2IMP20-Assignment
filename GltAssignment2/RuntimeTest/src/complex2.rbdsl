@@ -30,6 +30,9 @@ Script ComplexTestCaseTwo runs as
     #Now we can play!
     
     #First let the robot walk around
+    while not heading south do
+    	turnLeft
+    end
     #Assume it is heading south and at 1,1
     step
     step

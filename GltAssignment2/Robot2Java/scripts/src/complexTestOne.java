@@ -4,67 +4,99 @@ public class complexTestOne extends RobotFrame {
 	
 	@Override
 	protected void perform() {
-			
+		//# simple steps
+		
 		step();
-			
-		turnLeft();
-			
-			
-		if (heading(Direction.north)) {
-			step();
-			pick();
-		} 			
-			
+		
+		step();
+		
+		step();
+		
+		step();
+		
+		step();
+		
+		//#if conditional test
+		
+		if (heading(Direction.east)) {
+			turnLeftSub();
+			turnLeftSub();
+			turnLeftSub();
+		} 		
+		//#if with else
+		
 		if (!isFull()) {
+			drop();
+			drop();
+			drop();
+			drop();
+		} else {
 			pick();
+			pick();
+		}		
+		//#while loop test
+		
+		while (!isFull() && heading(Direction.south)) {
 			drop();
-		} 			
-			
-			
-			
-			
-			
-			
-		if (isFull() && isMark() && heading(Direction.north)) {
 			drop();
-		} 			
-			
-			
-		if (isFull() && isMark()) {
+		}		
+		while (isMark()) {
+			pick();
+		}		
+		//#Turnleft
+		
+			for (int i=0; i < 3; i ++) {
+			turnLeftSub();
+			}
+		
+		//#With some extension features
+		
+		//#both not
+		
+		if (!isFull() && !isMark()) {
 			drop();
-		} 			
-			
-			
-			
-		if (heading(Direction.south) && isFull()) {
+		} 		
+		//#one not at front
+		
+		while (!wallAhead() && !isFull()) {
+			step();
+			traceMessage("go one step");
+		}		
+		//#one not at rear
+		
+		if (!isMark() && !isFull()) {
 			drop();
-		} 			
-			
-			
-			
-		step();
-			
-		step();
-			
-		step();
-			
-		turnLeft();
-			
-		turnLeft();
-			
+		} 		
+		//#both true
+		
+		while (wallAhead() && heading(Direction.west)) {
+			turnLeftSub();
+		}		
+		//#Another list of commands
+		
+		turnLeftSub();
+		
+		turnLeftSub();
+		
 		drop();
-			
+		
 		pick();
-			
+		
 		traceMessage("so many commands");
-			
+		
 		traceMessage("it is sizeable");
-			
+		
 		traceMessage("good parser");
-			
-			
-			
-			
+		
+		while (isFull()) {
+			turnLeftSub();
+		}		
+		while (!wallAhead()) {
+			step();
+			step();
+			step();
+			step();
+		}		
 	}
 	
 	

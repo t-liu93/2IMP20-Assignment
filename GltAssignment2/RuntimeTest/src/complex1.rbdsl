@@ -2,28 +2,38 @@ Script complexTestOne runs as
     # simple steps
     
     step
-    turnLeft
+    step
+    step
+    step
+    step
     
-    #if conditional test
-    if heading north do
-        step
-        pick
+    #if conditional test   
+    if heading east do
+    	turnLeft
+    	turnLeft
+    	turnLeft
     end
     
     #if with else
     if not full do
-        pick
-        drop
+    	drop
+    	drop
+    	drop
+    	drop
     end
     else do
-        step
-        trace "not full"
+    	pick
+    	pick
     end
     
     #while loop test
-    while wall ahead do
-        #turnleft
-        turnLeft
+    while not full and heading south do
+    	drop
+    	drop
+    end
+    
+    while mark do
+    	pick
     end
     
     #Turnleft
@@ -31,13 +41,6 @@ Script complexTestOne runs as
         turnLeft
     end
     
-    #anotherwhileloop
-    while mark do
-        pick
-    end
-    if full and mark and heading north do
-    	drop
-    end
     #With some extension features
     #both not
     if not full and not mark do
@@ -46,13 +49,13 @@ Script complexTestOne runs as
     end
     
     #one not at front
-    while not wall ahead and heading north do
+    while not wall ahead and not full do
         step
         trace "go one step"
     end
     
     #one not at rear
-    if heading south and not full do
+    if not mark and not full do
         drop
         trace "drop one"
     end
@@ -63,9 +66,6 @@ Script complexTestOne runs as
     end
     
     #Another list of commands
-    step
-    step
-    step
     turnLeft
     turnLeft
     drop
@@ -78,14 +78,7 @@ Script complexTestOne runs as
         turnLeft
     end
     
-    while not full do
-        step
-    end
-    
     while not wall ahead do
-        step
-        step
-        step
         step
     end
 end
