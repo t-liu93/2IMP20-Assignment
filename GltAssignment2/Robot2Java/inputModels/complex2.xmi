@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ASCII"?>
+<robotDSLEcore:Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:robotDSLEcore="robotDSLEcore" name="ComplexTestCaseTwo">
+  <statements xsi:type="robotDSLEcore:Comment" comment="#First build some scene&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#How about a 3*3 scene?&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Then I should write 16 lines of code for building&#xA;"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="2" column="2"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="2" column="3"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="2" column="4"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="3" column="2"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="3" column="3"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="3" column="4"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="4" column="2"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="4" column="3"/>
+  <statements xsi:type="robotDSLEcore:BuildWall" row="4" column="4"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#need some marks I guess&#xA;"/>
+  <statements xsi:type="robotDSLEcore:DropMark" row="2" column="2"/>
+  <statements xsi:type="robotDSLEcore:DropMark" row="3" column="3"/>
+  <statements xsi:type="robotDSLEcore:DropMark" row="4" column="4"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Now we can play!&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#First let the robot walk around&#xA;"/>
+  <statements xsi:type="robotDSLEcore:WhileStatement">
+    <logicalexps xsi:type="robotDSLEcore:Heading" direction="south">
+      <not/>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Assume it is heading south and at 1,1&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#well turn right is 3 time turn left&#xA;"/>
+  <statements xsi:type="robotDSLEcore:RepeatStatement" time="3">
+    <commandstatement xsi:type="robotDSLEcore:TurnLeft"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:RepeatStatement" time="3">
+    <commandstatement xsi:type="robotDSLEcore:TurnLeft"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:WhileStatement">
+    <logicalexps xsi:type="robotDSLEcore:Heading" direction="east">
+      <not/>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Now back to the start position&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Now lets have some automatic running&#xA;"/>
+  <statements xsi:type="robotDSLEcore:WhileStatement">
+    <logicalexps xsi:type="robotDSLEcore:WallAhead">
+      <not/>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
+    <runningstatements xsi:type="robotDSLEcore:Step"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:IfStatement">
+    <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="east"/>
+      </binaries>
+      <singlelogalexp xsi:type="robotDSLEcore:WallAhead"/>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#put marks on all cells&#xA;"/>
+  <statements xsi:type="robotDSLEcore:WhileStatement">
+    <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Mark">
+          <not/>
+        </singlelogalexp>
+      </binaries>
+      <singlelogalexp xsi:type="robotDSLEcore:WallAhead">
+        <not/>
+      </singlelogalexp>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
+    <runningstatements xsi:type="robotDSLEcore:Step"/>
+  </statements>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Do not want to play anymore&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#destroy the walls&#xA;"/>
+  <statements xsi:type="robotDSLEcore:DestroyWall" row="2" column="2"/>
+  <statements xsi:type="robotDSLEcore:DestroyWall" row="3" column="3"/>
+  <statements xsi:type="robotDSLEcore:PickMark" row="2" column="2"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Okay. too many walls&#xA;"/>
+</robotDSLEcore:Script>
