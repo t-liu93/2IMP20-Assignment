@@ -1,44 +1,54 @@
 Script complexTestOne runs as
 	buildWall at row: 3 col: 3
+	buildWall at row: 2 col: 2
 	dropMark at row: 4 col: 4
+	dropMark at row: 5 col: 5
 	pickMark at row: 4 col: 4
 	destroyWall at row: 3 col: 3
 	
     # simple steps
     
     step
+    turnLeft
+    drop
+    turnLeft
     step
-    step
-    step
-    step
+    drop
+    pick
+    trace "Test trace message"
     
     #if conditional test   
-    if heading east do
-    	turnLeft
-    	turnLeft
+    if heading west do
+    	trace "Heading west"
     	turnLeft
     end
     
     #if with else
-    if not full do
-    	drop
-    	drop
-    	drop
-    	drop
+    if heading south do
+    	trace "Heading south"
     end
     else do
-    	pick
-    	pick
+    	trace "Not heading south"
+    	turnLeft
     end
     
     #while loop test
-    while not full and heading south do
-    	drop
+    while not full and not wall ahead do
     	drop
     end
     
+    step
+    
     while mark do
     	pick
+    end
+    
+    while wall ahead and not heading south do
+    	turnLeft
+    end
+    
+    while not heading south or not wall ahead do
+    	step
     end
     
     #Turnleft
@@ -46,42 +56,9 @@ Script complexTestOne runs as
         turnLeft
     end
     
-    #With some extension features
-    #both not
-    if not full and not mark do
-        drop
-        trace "dropped a mark"
-    end
-    
-    #one not at front
-    while not wall ahead and not full do
-        step
-        trace "go one step"
-    end
-    
-    #one not at rear
-    if not mark and not full do
-        drop
-        trace "drop one"
-    end
-    
-    #both true
-    while wall ahead and heading west do
-        turnLeft
-    end
-    
-    #Another list of commands
-    turnLeft
-    turnLeft
-    drop
-    pick
     trace "so many commands"
     trace "it is sizeable"
     trace "good parser"
-    
-    while full do
-        turnLeft
-    end
     
     while not wall ahead do
         step

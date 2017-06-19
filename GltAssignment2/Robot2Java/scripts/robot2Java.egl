@@ -164,7 +164,7 @@ public class [%=Script.a_name %] extends RobotFrame {
 			pick();
 					[%}
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
-			traceMessage([%=statement.a_message%]);
+			traceMessage([%=runningStats.a_message%]);
 					[%}
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
 			//[%=runningStats.a_comment%]
@@ -397,7 +397,7 @@ public class [%=Script.a_name %] extends RobotFrame {
 			removeWall(row, col);
 			minipause();
 		} else {
-			reportErrot("Attempted to destroy wall outside of the playground!");
+			reportError("Attempted to destroy wall outside of the playground!");
 		}
 	}
 	

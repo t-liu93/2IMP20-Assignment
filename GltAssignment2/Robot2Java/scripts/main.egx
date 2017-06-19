@@ -3,5 +3,5 @@ rule robot2Java
 
 	template: "robot2Java.egl"
 	
-	target: "src/" + Script.a_name + ".java"
+	target: "../outputModels/" + Script.a_name + ".java"
 }
