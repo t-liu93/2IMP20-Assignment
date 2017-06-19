@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="ASCII"?>
 <robotDSLEcore:Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:robotDSLEcore="robotDSLEcore" name="complexTestOne">
+  <statements xsi:type="robotDSLEcore:BuildWall" row="3" column="3"/>
+  <statements xsi:type="robotDSLEcore:DropMark" row="4" column="4"/>
+  <statements xsi:type="robotDSLEcore:PickMark" row="4" column="4"/>
+  <statements xsi:type="robotDSLEcore:DestroyWall" row="3" column="3"/>
   <statements xsi:type="robotDSLEcore:Comment" comment="# simple steps&#xA;"/>
   <statements xsi:type="robotDSLEcore:Step"/>
-  <statements xsi:type="robotDSLEcore:TurnLeft"/>
-  <statements xsi:type="robotDSLEcore:Comment" comment="#if conditional test&#xA;"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Step"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#if conditional test   &#xA;"/>
   <statements xsi:type="robotDSLEcore:IfStatement">
-    <logicalexps xsi:type="robotDSLEcore:Heading" direction="north"/>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
-    <runningstatements xsi:type="robotDSLEcore:Pick"/>
+    <logicalexps xsi:type="robotDSLEcore:Heading" direction="east"/>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
   </statements>
   <statements xsi:type="robotDSLEcore:Comment" comment="#if with else&#xA;"/>
   <statements xsi:type="robotDSLEcore:IfStatement">
     <logicalexps xsi:type="robotDSLEcore:Full">
       <not/>
     </logicalexps>
-    <runningstatements xsi:type="robotDSLEcore:Pick"/>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
     <runningstatements xsi:type="robotDSLEcore:Drop"/>
     <else>
-      <runningstatements xsi:type="robotDSLEcore:Step"/>
-      <runningstatements xsi:type="robotDSLEcore:TraceMessage" message="&quot;not full&quot;"/>
+      <runningstatements xsi:type="robotDSLEcore:Pick"/>
+      <runningstatements xsi:type="robotDSLEcore:Pick"/>
     </else>
   </statements>
   <statements xsi:type="robotDSLEcore:Comment" comment="#while loop test&#xA;"/>
   <statements xsi:type="robotDSLEcore:WhileStatement">
-    <logicalexps xsi:type="robotDSLEcore:WallAhead"/>
-    <runningstatements xsi:type="robotDSLEcore:Comment" comment="#turnleft&#xA;"/>
-    <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
+    <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
+      <binaries xsi:type="robotDSLEcore:And">
+        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="south"/>
+      </binaries>
+      <singlelogalexp xsi:type="robotDSLEcore:Full">
+        <not/>
+      </singlelogalexp>
+    </logicalexps>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
+    <runningstatements xsi:type="robotDSLEcore:Drop"/>
   </statements>
-  <statements xsi:type="robotDSLEcore:Comment" comment="#Turnleft&#xA;"/>
-  <statements xsi:type="robotDSLEcore:RepeatStatement" time="3">
-    <commandstatement xsi:type="robotDSLEcore:TurnLeft"/>
-  </statements>
-  <statements xsi:type="robotDSLEcore:Comment" comment="#anotherwhileloop&#xA;"/>
   <statements xsi:type="robotDSLEcore:WhileStatement">
     <logicalexps xsi:type="robotDSLEcore:Mark"/>
     <runningstatements xsi:type="robotDSLEcore:Pick"/>
   </statements>
-  <statements xsi:type="robotDSLEcore:IfStatement">
-    <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
-      <binaries xsi:type="robotDSLEcore:And">
-        <singlelogalexp xsi:type="robotDSLEcore:Mark"/>
-      </binaries>
-      <binaries xsi:type="robotDSLEcore:And">
-        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
-      </binaries>
-      <singlelogalexp xsi:type="robotDSLEcore:Full"/>
-    </logicalexps>
-    <runningstatements xsi:type="robotDSLEcore:Drop"/>
+  <statements xsi:type="robotDSLEcore:Comment" comment="#Turnleft&#xA;"/>
+  <statements xsi:type="robotDSLEcore:RepeatStatement" time="3">
+    <commandstatement xsi:type="robotDSLEcore:TurnLeft"/>
   </statements>
   <statements xsi:type="robotDSLEcore:Comment" comment="#With some extension features&#xA;"/>
   <statements xsi:type="robotDSLEcore:Comment" comment="#both not&#xA;"/>
@@ -68,7 +72,9 @@
   <statements xsi:type="robotDSLEcore:WhileStatement">
     <logicalexps xsi:type="robotDSLEcore:BinaryLogicalExp">
       <binaries xsi:type="robotDSLEcore:And">
-        <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="north"/>
+        <singlelogalexp xsi:type="robotDSLEcore:Full">
+          <not/>
+        </singlelogalexp>
       </binaries>
       <singlelogalexp xsi:type="robotDSLEcore:WallAhead">
         <not/>
@@ -85,7 +91,9 @@
           <not/>
         </singlelogalexp>
       </binaries>
-      <singlelogalexp xsi:type="robotDSLEcore:Heading" direction="south"/>
+      <singlelogalexp xsi:type="robotDSLEcore:Mark">
+        <not/>
+      </singlelogalexp>
     </logicalexps>
     <runningstatements xsi:type="robotDSLEcore:Drop"/>
     <runningstatements xsi:type="robotDSLEcore:TraceMessage" message="&quot;drop one&quot;"/>
@@ -101,9 +109,6 @@
     <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
   </statements>
   <statements xsi:type="robotDSLEcore:Comment" comment="#Another list of commands&#xA;"/>
-  <statements xsi:type="robotDSLEcore:Step"/>
-  <statements xsi:type="robotDSLEcore:Step"/>
-  <statements xsi:type="robotDSLEcore:Step"/>
   <statements xsi:type="robotDSLEcore:TurnLeft"/>
   <statements xsi:type="robotDSLEcore:TurnLeft"/>
   <statements xsi:type="robotDSLEcore:Drop"/>
@@ -116,18 +121,9 @@
     <runningstatements xsi:type="robotDSLEcore:TurnLeft"/>
   </statements>
   <statements xsi:type="robotDSLEcore:WhileStatement">
-    <logicalexps xsi:type="robotDSLEcore:Full">
-      <not/>
-    </logicalexps>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
-  </statements>
-  <statements xsi:type="robotDSLEcore:WhileStatement">
     <logicalexps xsi:type="robotDSLEcore:WallAhead">
       <not/>
     </logicalexps>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
     <runningstatements xsi:type="robotDSLEcore:Step"/>
   </statements>
 </robotDSLEcore:Script>

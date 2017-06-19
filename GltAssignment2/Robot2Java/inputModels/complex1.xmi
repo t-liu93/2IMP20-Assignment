@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <robotDSLEcore:Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:robotDSLEcore="robotDSLEcore" name="complexTestOne">
+  <statements xsi:type="robotDSLEcore:BuildWall" row="3" column="3"/>
+  <statements xsi:type="robotDSLEcore:DropMark" row="4" column="4"/>
+  <statements xsi:type="robotDSLEcore:PickMark" row="4" column="4"/>
+  <statements xsi:type="robotDSLEcore:DestroyWall" row="3" column="3"/>
   <statements xsi:type="robotDSLEcore:Comment" comment="# simple steps&#xA;"/>
   <statements xsi:type="robotDSLEcore:Step"/>
   <statements xsi:type="robotDSLEcore:Step"/>
@@ -120,9 +124,6 @@
     <logicalexps xsi:type="robotDSLEcore:WallAhead">
       <not/>
     </logicalexps>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
-    <runningstatements xsi:type="robotDSLEcore:Step"/>
     <runningstatements xsi:type="robotDSLEcore:Step"/>
   </statements>
 </robotDSLEcore:Script>

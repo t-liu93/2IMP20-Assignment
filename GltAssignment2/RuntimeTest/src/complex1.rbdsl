@@ -1,4 +1,9 @@
 Script complexTestOne runs as
+	buildWall at row: 3 col: 3
+	dropMark at row: 4 col: 4
+	pickMark at row: 4 col: 4
+	destroyWall at row: 3 col: 3
+	
     # simple steps
     
     step

@@ -24,6 +24,18 @@ public class [%=Script.a_name %] extends RobotFrame {
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
 		//[%=statement.a_comment%]
 			[%} 
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:BuildWall") { %]
+		buildWall([%=statement.a_row%], [%=statement.a_column%]);
+			[%}
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:DropMark") { %]
+		dropMark([%=statement.a_row%], [%=statement.a_column%]);
+			[%}
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:PickMark") { %]
+		pickMark([%=statement.a_row%], [%=statement.a_column%]);
+			[%}
+			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:DestroyWall") { %]
+		destroyWall([%=statement.a_row%], [%=statement.a_column%]);
+			[%}
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:IfStatement") {
 	%]		if ([% for (logalExps in statement.c_logicalexps) { 
 					if (logalExps.getAttribute("xsi:type") == "robotDSLEcore:Full") { 
@@ -116,8 +128,23 @@ public class [%=Script.a_name %] extends RobotFrame {
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Pick") { %]
 			pick();
 					[%}
-					else if (statement.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
-			traceMessage([%=statement.a_message%]);
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
+			traceMessage([%=runningStats.a_message%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
+			//[%=runningStats.a_comment%]
+			[%} 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:BuildWall") { %]
+			buildWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DropMark") { %]
+			dropMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:PickMark") { %]
+			pickMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DestroyWall") { %]
+			destroyWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
 					[%}
 					} %]
 		} [% for (e in statement.c_else) {
@@ -138,6 +165,21 @@ public class [%=Script.a_name %] extends RobotFrame {
 					[%}
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
 			traceMessage([%=statement.a_message%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
+			//[%=runningStats.a_comment%]
+			[%} 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:BuildWall") { %]
+			buildWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DropMark") { %]
+			dropMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:PickMark") { %]
+			pickMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DestroyWall") { %]
+			destroyWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
 					[%}
 				}
 			%]		}[%}
@@ -237,6 +279,21 @@ public class [%=Script.a_name %] extends RobotFrame {
 					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
 			traceMessage([%=runningStats.a_message%]);
 					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
+			//[%=runningStats.a_comment%]
+			[%} 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:BuildWall") { %]
+			buildWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DropMark") { %]
+			dropMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:PickMark") { %]
+			pickMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DestroyWall") { %]
+			destroyWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
 					} %]
 		}[%} 
 			else if (statement.getAttribute("xsi:type") == "robotDSLEcore:RepeatStatement") { %]
@@ -256,6 +313,21 @@ public class [%=Script.a_name %] extends RobotFrame {
 					[%}
 					else if (c.getAttribute("xsi:type") == "robotDSLEcore:TraceMessage") { %]
 			traceMessage([%=statement.a_message%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:Comment") { %]
+			//[%=runningStats.a_comment%]
+			[%} 
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:BuildWall") { %]
+			buildWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DropMark") { %]
+			dropMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:PickMark") { %]
+			pickMark([%=runningStats.a_row%], [%=runningStats.a_column%]);
+					[%}
+					else if (runningStats.getAttribute("xsi:type") == "robotDSLEcore:DestroyWall") { %]
+			destroyWall([%=runningStats.a_row%], [%=runningStats.a_column%]);
 					[%}
 				}%]
 			}
@@ -296,7 +368,7 @@ public class [%=Script.a_name %] extends RobotFrame {
 	}
 	//Pick
 	private void pick() {
-		if (super.getCurrentCell().getMarks() == 0) {
+		if (! isMark()) {
 			reportError("There is no mark in this cell, I cannot pick up.");
 		} else {
 			super.removeMark();
@@ -307,6 +379,50 @@ public class [%=Script.a_name %] extends RobotFrame {
 	private void traceMessage(String msg) {
 		super.trace(msg);
 		pause();
+	}
+	
+	//Build
+	private void buildWall(int row, int col) {
+		if (isAllowedRow(row) && isAllowedCol(col)) {
+			addWall(row, col);
+			minipause();
+		} else {
+			reportError("Attempted to build wall outside of the playground!");
+		}	
+	}
+	
+	//Destroy
+	private void destroyWall(int row, int col) {
+		if (isAllowedRow(row) && isAllowedCol(col)) {
+			removeWall(row, col);
+			minipause();
+		} else {
+			reportErrot("Attempted to destroy wall outside of the playground!");
+		}
+	}
+	
+	//Drop mark scene
+	private void dropMark(int row, int col) {
+		if (isAllowedRow(row) && isAllowedCol(col) && !isFull(row, col)) {
+			addMark(row, col);
+			minipause();
+		} else if (isAllowedRow(row) && isAllowedCol(col) && isFull(row, col)) {
+			reportError("Attempted to drop mark to a full cell!");
+		} else {
+			reportError("Attempted to drop mark out of the playground!");
+		}
+	}
+	
+	//Pick mark scene
+	private void pickMark(int row, int col) {
+		if (isAllowedRow(row) && isAllowedCol(col) && isMark(row, col)) {
+			removeMark(row, col);
+			minipause();
+		} else if (isAllowedRow(row) && isAllowedCol(col) && !isMark(row, col)) {
+			reportError("Attempted to pick mark from an empty cell!");
+		} else {
+			reportError("Attempted to pick mark out of the playground!");
+		}
 	}
 	
 	
