@@ -41,6 +41,6 @@ public class Xtext2Ecore {
 	
 	public static void main(String[] args){
 		String folder = "home/osboxes/Desktop/workspace/2IMP20-Assignment/GltAssignment2";
-		exportXMI(folder, "complex1");
+		exportXMI(folder, "complex2");
 	}
 }
